@@ -13,6 +13,7 @@
 
 class FA {
 private:
+    State* startstate;
     std::string type;
     std::set<std::string> alphabet;
     std::set<State*> states;
@@ -35,6 +36,7 @@ public:
     const std::set<State*>& getStates() const {return this->states;}
     const std::map<std::tuple<State*, std::string>, std::set<State*>>& getTransitions() const {return this->transitions;}
     const std::string& getTypeFA() const {return this->type;}
+    const State* getStartstate() const {return this->startstate;}
 
     void FAtoDot();
     void FAtoJSON();
