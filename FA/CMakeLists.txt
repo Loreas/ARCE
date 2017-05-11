@@ -13,4 +13,4 @@ set(FA_SOURCE_FILES
         NFA.cpp
         NFA.h)
 
-add_library(fa FA_SOURCE_FILES)
+add_library(fa ${FA_SOURCE_FILES})
