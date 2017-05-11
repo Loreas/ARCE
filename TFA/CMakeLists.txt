@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 11)
 set(TFA_SOURCE_FILES
         tfa.cpp)
 
-add_library(tfa ${TFA_SOURCE_FILES})
+add_library(TFA ${TFA_SOURCE_FILES})

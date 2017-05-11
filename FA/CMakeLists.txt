@@ -11,6 +11,8 @@ set(FA_SOURCE_FILES
         FA.cpp
         FA.h
         NFA.cpp
-        NFA.h)
+        NFA.h
+        State.cpp
+        State.h)
 
-add_library(fa ${FA_SOURCE_FILES})
+add_library(FA ${FA_SOURCE_FILES})
