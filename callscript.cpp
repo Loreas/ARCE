@@ -8,11 +8,7 @@ void call_script(string filename) {
 }
 
 void run_all_scripts(){
-    string command = "for f in *.py;do python ";
-           command += "$f";
-           command += "; done";
-
+    string command = "for f in *.py;do python ""$f""; done";
     system(command.c_str());
-
 
 }
