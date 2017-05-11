@@ -3,14 +3,12 @@ project(ARCE)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES
-        FA/DFA.cpp
-        FA/DFA.h
-        FA/eNFA.cpp
-        FA/eNFA.h
-        FA/FA.cpp
-        FA/FA.h
-        FA/NFA.cpp
-        FA/NFA.h)
+set(SOURCE_FILES main.cpp)
+
+add_subdirectory(MSSC)
+add_subdirectory(FA)
+add_subdirectory(regex_to_enfa)
+add_subdirectory(TFA)
 
 add_executable(ARCE ${SOURCE_FILES})
+target_link_libraries(ARCE MSSC FA regex_to_enfa TFA)
