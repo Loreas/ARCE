@@ -25,7 +25,7 @@ std::vector<const State*> eNFA::singleEclose(const State* state) const{
     return result;
 }
 
-std::set<const State*> eNFA::eclose(const State* state) const {
+std::set<const State*> eNFA::brokenEclose(const State* state) const {
     std::vector<const State*> epsTrans = singleEclose(state);
     std::set<const State*> result;
 
@@ -51,4 +51,31 @@ std::set<const State*> eNFA::ecloseSubset(std::vector<const State*> subset) cons
         result.insert(ecl.begin(), ecl.end());
     }
     return result;
+}
+
+std::set<const State*> eNFA::eclose(const State* state) const{
+    std::set<const State*> ecl = {state};
+    bool foundNew = true;
+    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions = getTransitions();
+
+    while(foundNew){
+        foundNew = false;
+        for(const State* s : ecl){
+            // Find all transitions from this state using eps
+            for(auto p : transitions){
+                if(std::get<0>(p.first) == s && std::get<1>(p.first) == epsilon){
+                    // Add all these states to ecl
+                    //std::copy(p.second.begin(), p.second.end(), std::inserter(ecl, ecl.end()));
+                    for(const State* toAdd : p.second){
+                        if(ecl.find(toAdd) == ecl.end()){
+                            foundNew = true;
+                            ecl.insert(toAdd);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return ecl;
 }

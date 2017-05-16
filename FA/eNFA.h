@@ -20,8 +20,9 @@ public:
     virtual void setEpsilon(std::string  epsilon);
 
     std::vector<const State*> singleEclose(const State* state) const;
-    std::set<const State*> eclose(const State* state) const;
+    std::set<const State*> brokenEclose(const State* state) const;
     std::set<const State*> ecloseSubset(std::vector<const State*> subset) const;
+    std::set<const State*> eclose(const State* state) const;
 };
 
 

@@ -13,7 +13,7 @@ int main(){
 
     RegToeNFA alg = RegToeNFA();
 
-    std::string regex = "a+b+cd";
+    std::string regex = "a+b+c+d";
 
     alg.ConvertReTo_eNfa(regex, eNFA1);
 
