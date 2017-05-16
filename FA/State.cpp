@@ -50,3 +50,11 @@ void State::setStarting(bool starting) {
 void State::setAccepting(bool accepting) {
     this->accepting = accepting;
 }
+
+State& State::operator=(const State& rhs){
+    this->starting = rhs.starting;
+    this->accepting = rhs.accepting;
+    this->name = rhs.name;
+
+    return (*this);
+}
