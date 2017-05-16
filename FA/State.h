@@ -25,7 +25,8 @@ public:
     void setName(const std::set<std::string> &name);
     void setStarting(bool starting);
     void setAccepting(bool accepting);
-};
 
+    State& operator=(const State& rhs);
+};
 
 #endif //AUTOMATATHEORY_STATE_H

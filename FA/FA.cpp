@@ -18,6 +18,10 @@ void FA::setAlphabet(std::set<std::string> alphabet) {
     this->alphabet = alphabet;
 }
 
+void FA::setStartstate(State* state) {
+    this->startstate = state;
+}
+
 void FA::addState(State *state) {
     states.insert(state);
 }
@@ -30,20 +34,21 @@ std::ostream& operator<<(std::ostream& os, const FA& Fa) {
     return os;
 }
 
-void FA::FAtoDot() {
+void FA::FAtoDot() const {
     std::ofstream dot;
-    dot.open(this->getTypeFA()+".dot");
+    std::string name = this->getTypeFA()+".dot";
+    dot.open(name);
     std::string startingState;
 
     dot << "digraph " << this->getTypeFA() << " {" << std::endl;
     dot << "rankdir=LR;" << std::endl;
     dot << "node [shape = doublecircle]; ";
 
+    startingState = this->getStartstate()->getName();
+
     for (State* state :this->states) {
         if (state->isAccepting())
-            dot << state->getName() << " ";
-        if (state->isStarting())
-            startingState = state->getName();
+            dot << "\"" << state->getName() << "\"" << " ";
     }
     dot << ";" << std::endl;
 
@@ -53,15 +58,16 @@ void FA::FAtoDot() {
 
     dot << "node [shape = circle];" << std::endl << std::endl;
 
-    dot << "startStateHelper" << " -> " << startingState << ";" << std::endl;
+    dot << "startStateHelper" << " -> " << "\"" << startingState << "\"" << ";" << std::endl;
 
-    std::map<std::tuple<State*, std::string>, std::set<State*>> transitions = this->getTransitions();
+    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions = this->getTransitions();
     //For each state, check every possible transition
 
     for (auto transition: transitions) {
         for (State *arrivingState: transition.second) {
-            dot << std::get<0>(transition.first)->getName() << " -> " << arrivingState->getName()
-                << "[label = \"" << std::get<1>(transition.first) << "\"];" << std::endl;
+            dot << "\"" << std::get<0>(transition.first)->getName() << "\"" << " -> " <<
+                "\"" << arrivingState->getName() << "\"" << "[label = \"" << std::get<1>(transition.first) << "\"];"
+                << std::endl;
         }
     }
 
