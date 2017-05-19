@@ -11,6 +11,7 @@ class DFA: public FA{
 public:
     DFA();
     virtual bool Validate() {return true;}
+    virtual bool checkString(std::string s);
 };
 
 

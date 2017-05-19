@@ -1,28 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <set>
-#include <string>
-#include <map>
-#include <algorithm>
-
-#include "../FA/FA.h"
-#include "../FA/State.h"
-#include "../FA/DFA.h"
-#include "../FA/eNFA.h"
-
-
+#include "MSSC.h"
 
 using namespace std;
-
-void printSS(std::vector<State> ss){
-    std::string out = "{";
-    for(State& s : ss){
-        out += s.getName() + ", ";
-    }
-    out.pop_back(); out.pop_back();
-    out += "}";
-    std::cout << out;
-}
 
 std::string getSSname(std::vector<const State*> ss){
     std::string name = "{";
