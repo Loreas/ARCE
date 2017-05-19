@@ -10,6 +10,7 @@
 class DFA: public FA{
 public:
     DFA();
+    DFA(const DFA& otherDFA);
     virtual bool Validate() {return true;}
     virtual bool checkString(std::string s);
 };

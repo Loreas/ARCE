@@ -17,12 +17,13 @@ private:
     std::string type;
     std::set<std::string> alphabet;
     std::set<State*> states;
-    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions;
+    std::map<std::tuple<const State*, std::string>, std::set<const State*>> transitions;
 
 public:
     FA() {
         this->type = "FA";
     }
+    FA(const FA& otherFA);
     ~FA();
     virtual bool Validate() {return false;}
     virtual const std::string getEpsilon() const {return "";}
@@ -35,7 +36,7 @@ public:
 
     const std::set<std::string>& getAlphabet() const {return this->alphabet;}
     const std::set<State*>& getStates() const {return this->states;}
-    const std::map<std::tuple<const State*, std::string>, std::set<State*>>& getTransitions() const {return this->transitions;}
+    const std::map<std::tuple<const State*, std::string>, std::set<const State*>>& getTransitions() const {return this->transitions;}
     const std::string& getTypeFA() const {return this->type;}
     const State* getStartstate() const {return this->startstate;}
 

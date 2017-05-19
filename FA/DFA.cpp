@@ -8,6 +8,9 @@ DFA::DFA() {
     this->setTypeFA("DFA");
 }
 
+DFA::DFA(const DFA& otherDFA)
+: FA(otherDFA) {}
+
 bool DFA::checkString(std::string s) {
 
     const State* curState = getStartstate();

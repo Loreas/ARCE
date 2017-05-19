@@ -12,14 +12,14 @@ std::string getSSname(std::vector<const State*> ss){
     return name;
 }
 
-DFA MSSC(eNFA& enfa, DFA& dfa){
+void MSSC(eNFA& enfa, DFA& dfa){
 
     typedef std::vector<const State*> subset;
     typedef std::tuple<std::string, std::string, std::string> transInfo;
 
     // Lazy eval
     std::set<std::string> alph = enfa.getAlphabet();
-    map<tuple<const State*, string>, set<State*>> transtable = enfa.getTransitions();
+    map<tuple<const State*, string>, set<const State*>> transtable = enfa.getTransitions();
     std::vector<transInfo> transitions;
     std::vector<State*> states;
     std::vector<subset> allSubsets;
@@ -128,7 +128,7 @@ DFA MSSC(eNFA& enfa, DFA& dfa){
     }
 
     // Taking care of a garbage state for transitions that "should exist, but don't"
-    map<tuple<const State*, string>, set<State*>> dfaTransitions = dfa.getTransitions();
+    map<tuple<const State*, string>, set<const State*>> dfaTransitions = dfa.getTransitions();
     for(State* s : dfa.getStates()){
         for(std::string c : alph){
             std::pair<State*, std::string> arg = std::make_pair(s, c);
@@ -141,5 +141,4 @@ DFA MSSC(eNFA& enfa, DFA& dfa){
         }
     }
 
-    return DFA();
 }

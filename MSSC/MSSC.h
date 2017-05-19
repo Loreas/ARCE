@@ -19,6 +19,6 @@
 
 std::string getSSname(std::vector<const State*> ss);
 
-DFA MSSC(eNFA& enfa, DFA& dfa);
+void MSSC(eNFA& enfa, DFA& dfa);
 
 #endif //ARCE_MSSC_H

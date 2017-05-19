@@ -35,6 +35,10 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automa
     State* lastState = NULL;
     State* currentFirstState = NULL;
     State* currentLastState = NULL;
+
+    State* concatenationFirst = NULL;
+    State* concatenationLast = NULL;
+
     std::tuple<State*, State*> currentFirstLastStates;
 
     int skipParenthesis = 0;
@@ -225,6 +229,8 @@ bool RegToeNFA::PeekNextCharStar(std::string regex, int currentPos) {
     }
     return false;
 }
+
+
 
 std::tuple<State*, State*> RegToeNFA::OperatorPlus(eNFA& automaton, bool& regORHappened, bool& regOR,
                                                    State* firstState, State* lastState,

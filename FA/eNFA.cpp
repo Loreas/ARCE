@@ -56,7 +56,7 @@ std::set<const State*> eNFA::ecloseSubset(std::vector<const State*> subset) cons
 std::set<const State*> eNFA::eclose(const State* state) const{
     std::set<const State*> ecl = {state};
     bool foundNew = true;
-    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions = getTransitions();
+    std::map<std::tuple<const State*, std::string>, std::set<const State*>> transitions = getTransitions();
 
     while(foundNew){
         foundNew = false;
