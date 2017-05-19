@@ -19,6 +19,6 @@ int main(){
     //Parser parser = Parser();
     //DFA dfa = parser.parseDFA("DFA.json");
 
-    
+
     return 0;
 }

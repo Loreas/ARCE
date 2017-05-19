@@ -45,7 +45,6 @@ DFA Parser::parseDFA(std::string filename) {
 
         for(auto& s : j["states"]){
             std::string name = s["name"];
-            name = "{" + name + "}";
             bool starting = s["starting"];
             bool accept = s["accepting"];
 
@@ -62,9 +61,7 @@ DFA Parser::parseDFA(std::string filename) {
         std::vector<transInfo> transitions;
         for(auto& t : j["transitions"]){
             std::string from = t["from"];
-            from = "{" + from + "}";
             std::string to = t["to"];
-            to = "{" + to + "}";
             std::string c = t["input"];
 
             transInfo trans = std::make_tuple(from, to, c);
