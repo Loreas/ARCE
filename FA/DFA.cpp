@@ -10,9 +10,16 @@ DFA::DFA() {
 
 bool DFA::checkString(std::string s) {
 
+    const State* curState = getStartstate();
+    std::map<std::tuple<const State*, std::string>, std::set<const State*>> transitions = getTransitions();
+
     for(int curI = 0; curI < s.size(); curI++){
         std::string curChar(1, s[curI]);
-        std::cout << curChar << ", ";
+        std::tuple<const State*, std::string> arg = std::make_tuple(curState, curChar);
+        // Check if the current state has a transition using this char
+        if(transitions.count(arg) != 0){
+            curState = *(transitions.at(arg).begin()); // TODO : oh shit, look at this -S. Fenoll
+        }
     }
-    std::cout << ".\n";
+    return curState->isAccepting();
 }
