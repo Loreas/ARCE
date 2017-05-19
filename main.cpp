@@ -5,7 +5,7 @@
 #include "Bot.h"
 
 int main(){
-
+    
     //// DEBUG & TESTING ZONE ////
     std::string dfaString = "a+b+c";
     std::string test = "ab";

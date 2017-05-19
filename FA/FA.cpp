@@ -14,7 +14,7 @@ FA::FA(const FA &otherFA) {
 
     // Deep copy al states
 
-    for (State* state: otherFA.states) {
+    for (const State* state: otherFA.states) {
         State* newState = new State(state->getName(), state->isStarting(), state->isAccepting());
 
         if (newState->isStarting())
@@ -42,10 +42,10 @@ FA::FA(const FA &otherFA) {
         //std::get<0>(trans) = "bla";
         std::string fromName = std::get<0>(trans);
         std::string toName = std::get<1>(trans);
-        State* from = nullptr;
-        State* to = nullptr;
+        const State* from = nullptr;
+        const State* to = nullptr;
         // TODO: temp fix
-        for(State* s : states){
+        for(const State* s : states){
             if(s->getName() == fromName) from = s;
             if(s->getName() == toName) to = s;
             if(to != nullptr and from != nullptr) break;
@@ -56,7 +56,7 @@ FA::FA(const FA &otherFA) {
 }
 
 FA::~FA() {
-    for (State* state: this->states) {
+    for (const State* state: this->states) {
         delete state;
     }
 }
@@ -65,15 +65,15 @@ void FA::setAlphabet(std::set<std::string> alphabet) {
     this->alphabet = alphabet;
 }
 
-void FA::setStartstate(State* state) {
+void FA::setStartstate(const State *state) {
     this->startstate = state;
 }
 
-void FA::addState(State *state) {
+void FA::addState(const State *state) {
     states.insert(state);
 }
 
-void FA::addTransition(State *stateFrom, std::string character, State *stateTo) {
+void FA::addTransition(const State *stateFrom, std::string character, const State *stateTo) {
     transitions[std::make_tuple(stateFrom, character)].insert(stateTo);
 }
 
@@ -101,7 +101,7 @@ void FA::FAtoJSON() {
         j << "  \"eps\": \"" + this->getEpsilon() << "\"," << std::endl;
 
     j << "  \"states\": [" << std::endl;
-    for (State* state: this->states) {
+    for (const State* state: this->states) {
         j << "    {" << std::endl;
         j << "      \"name\": \"" + state->getName() << "\"," << std::endl;
         j << "      \"starting\": " << state->isStarting() << "," << std::endl;
@@ -148,7 +148,7 @@ void FA::FAtoDot() const {
 
     startingState = this->getStartstate()->getName();
 
-    for (State* state :this->states) {
+    for (const State* state :this->states) {
         if (state->isAccepting())
             dot << "\"" + state->getName() + "\"" << " ";
     }
