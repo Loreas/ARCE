@@ -129,9 +129,9 @@ void MSSC(eNFA& enfa, DFA& dfa){
 
     // Taking care of a garbage state for transitions that "should exist, but don't"
     map<tuple<const State*, string>, set<const State*>> dfaTransitions = dfa.getTransitions();
-    for(State* s : dfa.getStates()){
+    for(const State* s : dfa.getStates()){
         for(std::string c : alph){
-            std::pair<State*, std::string> arg = std::make_pair(s, c);
+            std::pair<const State*, std::string> arg = std::make_pair(s, c);
             // If no entry exists for this char
             if(dfaTransitions.find(arg) == dfaTransitions.end()){
                 //std::cout << "No transition from " << s.getName() << " with " << c << ".\n";

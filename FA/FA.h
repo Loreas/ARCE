@@ -13,10 +13,10 @@
 
 class FA {
 private:
-    State* startstate;
+    const State* startstate;
     std::string type;
     std::set<std::string> alphabet;
-    std::set<State*> states;
+    std::set<const State*> states;
     std::map<std::tuple<const State*, std::string>, std::set<const State*>> transitions;
 
 public:
@@ -30,12 +30,12 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const FA& Fa);
 
     void setAlphabet(std::set<std::string> alphabet);
-    void setStartstate(State* state);
-    void addState(State* state);
-    void addTransition(State* stateFrom, std::string character, State* stateTo);
+    void setStartstate(const State *state);
+    void addState(const State *state);
+    void addTransition(const State *stateFrom, std::string character, const State *stateTo);
 
     const std::set<std::string>& getAlphabet() const {return this->alphabet;}
-    const std::set<State*>& getStates() const {return this->states;}
+    const std::set<const State*>& getStates() const {return this->states;}
     const std::map<std::tuple<const State*, std::string>, std::set<const State*>>& getTransitions() const {return this->transitions;}
     const std::string& getTypeFA() const {return this->type;}
     const State* getStartstate() const {return this->startstate;}

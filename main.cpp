@@ -7,6 +7,9 @@
 
 int main(){
 
+    // Parser parser = Parser();
+    // DFA dfa = parser.parseDFA("DFA.json");
+
     //// DEBUG & TESTING ZONE ////
     Parser parser;
     std::string dfaString = parser.parseRegex("./commands.json");
