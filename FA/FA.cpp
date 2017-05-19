@@ -16,7 +16,7 @@ FA::FA(const FA &otherFA) {
 
     for (const State* state: otherFA.states) {
         State* newState = new State(state->getName(), state->isStarting(), state->isAccepting());
-
+        this->addState(newState);
         if (newState->isStarting())
             this->startstate = newState;
     }
@@ -39,13 +39,12 @@ FA::FA(const FA &otherFA) {
 
     // Add transitions
     for(transInfo trans : transitions){
-        //std::get<0>(trans) = "bla";
         std::string fromName = std::get<0>(trans);
         std::string toName = std::get<1>(trans);
         const State* from = nullptr;
         const State* to = nullptr;
         // TODO: temp fix
-        for(const State* s : states){
+        for(const State* s : this->getStates()){
             if(s->getName() == fromName) from = s;
             if(s->getName() == toName) to = s;
             if(to != nullptr and from != nullptr) break;

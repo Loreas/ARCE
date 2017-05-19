@@ -3,9 +3,13 @@
 //
 
 #include "Bot.h"
+#include "Parser.h"
 
 int main(){
-    
+
+    // Parser parser = Parser();
+    // DFA dfa = parser.parseDFA("DFA.json");
+
     //// DEBUG & TESTING ZONE ////
     std::string dfaString = "a+b+c";
     std::string test = "ab";
