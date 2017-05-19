@@ -7,9 +7,6 @@
 
 int main(){
 
-    // Parser parser = Parser();
-    // DFA dfa = parser.parseDFA("DFA.json");
-
     //// DEBUG & TESTING ZONE ////
     std::string dfaString = "a+b+c";
     std::string test = "ab";
@@ -19,5 +16,9 @@ int main(){
     //botDfa->FAtoDot();
     std::cout << botDfa->checkString(test);
 
+    //Parser parser = Parser();
+    //DFA dfa = parser.parseDFA("DFA.json");
+
+    
     return 0;
 }
