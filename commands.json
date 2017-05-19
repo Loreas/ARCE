@@ -1,0 +1,11 @@
+{
+"commands": [
+	{
+	  "name" : "add",
+	  "regex" : "add + [a-z]",
+	  "language" : "python",
+	  "filename" : "./pup.py",
+	  "description" : "Adds something (this is a template)"
+	},
+]
+}

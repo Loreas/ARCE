@@ -9,6 +9,13 @@ DFA::DFA() {
 }
 
 DFA::DFA(const DFA& otherDFA)
-: FA(otherDFA) {
+: FA(otherDFA) {}
 
+bool DFA::checkString(std::string s) {
+
+    for(int curI = 0; curI < s.size(); curI++){
+        std::string curChar(1, s[curI]);
+        std::cout << curChar << ", ";
+    }
+    std::cout << ".\n";
 }

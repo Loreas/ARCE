@@ -2,27 +2,18 @@
 // Created by sergio on 11/05/17.
 //
 
-#include "FA/DFA.h"
-#include "FA/eNFA.h"
-#include "regex_to_enfa/regex_to_enfa.h"
-#include "MSSC/Fase1.cpp"
+#include "Bot.h"
 
 int main(){
 
-    eNFA eNFA1 = eNFA();
-
-    RegToeNFA alg = RegToeNFA();
-
-    std::string regex = "a+b+c+d";
-
-    alg.ConvertReTo_eNfa(regex, eNFA1);
-
-
-    DFA dfa = MSSC(eNFA1);
-
-    eNFA1.FAtoDot();
-
-    dfa.FAtoDot();
+    //// DEBUG & TESTING ZONE ////
+    std::string dfaString = "a+b+c";
+    std::string test = "when u get dragged back in2 slaver3";
+    Bot bot;
+    bot.buildDFA(dfaString);
+    DFA* botDfa = bot.getDFA();
+    //botDfa->FAtoDot();
+    botDfa->checkString(test);
 
     return 0;
 }

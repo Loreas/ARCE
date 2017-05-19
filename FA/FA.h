@@ -43,6 +43,8 @@ public:
     void FAtoDot() const;
     void FAtoJSON();
 
+    virtual bool checkString(std::string s) {return false;}
+
 protected:
     void setTypeFA(std::string type) {this->type = type;}
 };

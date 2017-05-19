@@ -3,7 +3,7 @@ project(ARCE)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp Bot.cpp Bot.h Parser.cpp Parser.h)
 
 add_subdirectory(MSSC)
 add_subdirectory(FA)
