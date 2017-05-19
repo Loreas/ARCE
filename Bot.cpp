@@ -8,6 +8,10 @@ std::string Bot::getPath() {
     return JSONpath;
 }
 
+DFA* Bot::getDFA() {
+    return dfa;
+}
+
 void Bot::setPath(std::string path) {
 
 }
@@ -20,8 +24,8 @@ void Bot::buildDFA(std::string regex) {
     converter.ConvertReTo_eNfa(regex, ENFA);
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
-    DFA dfaRaw;
-    MSSC(ENFA, dfaRaw);
+    DFA* dfaRaw = new DFA;
+    MSSC(ENFA, *dfaRaw);
 
     // TODO: Use TFA algorithm implemented by S. Fenoll to optimise DFA
 

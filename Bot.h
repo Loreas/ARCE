@@ -14,7 +14,7 @@
 class Bot {
 private:
     std::string JSONpath;
-    DFA dfa;
+    DFA* dfa;
 
 public:
 
@@ -28,6 +28,8 @@ public:
      * @return The path to the JSON file linking commands to their scripts
      */
     std::string getPath();
+
+    DFA* getDFA();
 
     /**
      *

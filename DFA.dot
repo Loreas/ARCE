@@ -1,0 +1,24 @@
+digraph DFA {
+rankdir=LR;
+node [shape = doublecircle]; "{7, 9, 7, 9}" "{1, 5, 9, 1, 5, 9}" "{3, 5, 9, 3, 5, 9}" ;
+node [shape = "none"] startStateHelper;
+startStateHelper [label = ""];
+node [shape = circle];
+
+startStateHelper -> "{0, 2, 4, 6, 8}";
+"{0, 2, 4, 6, 8}" -> "{1, 5, 9, 1, 5, 9}"[label = "a"];
+"{0, 2, 4, 6, 8}" -> "{3, 5, 9, 3, 5, 9}"[label = "b"];
+"{0, 2, 4, 6, 8}" -> "{7, 9, 7, 9}"[label = "c"];
+"{7, 9, 7, 9}" -> "Garbage"[label = "a"];
+"{7, 9, 7, 9}" -> "Garbage"[label = "b"];
+"{7, 9, 7, 9}" -> "Garbage"[label = "c"];
+"{1, 5, 9, 1, 5, 9}" -> "Garbage"[label = "a"];
+"{1, 5, 9, 1, 5, 9}" -> "Garbage"[label = "b"];
+"{1, 5, 9, 1, 5, 9}" -> "Garbage"[label = "c"];
+"{3, 5, 9, 3, 5, 9}" -> "Garbage"[label = "a"];
+"{3, 5, 9, 3, 5, 9}" -> "Garbage"[label = "b"];
+"{3, 5, 9, 3, 5, 9}" -> "Garbage"[label = "c"];
+"Garbage" -> "Garbage"[label = "a"];
+"Garbage" -> "Garbage"[label = "b"];
+"Garbage" -> "Garbage"[label = "c"];
+}
