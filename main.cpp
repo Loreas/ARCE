@@ -3,16 +3,18 @@
 //
 
 #include "Bot.h"
+#include "Parser.h"
 
 int main(){
 
     //// DEBUG & TESTING ZONE ////
-    std::string dfaString = "a+b+c";
+    Parser parser;
+    std::string dfaString = parser.parseRegex("./commands.json");
     std::string test = "ab";
     Bot bot;
     bot.buildDFA(dfaString);
     DFA* botDfa = bot.getDFA();
-    //botDfa->FAtoDot();
+    botDfa->FAtoDot();
     std::cout << botDfa->checkString(test);
 
     return 0;

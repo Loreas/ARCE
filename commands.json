@@ -2,10 +2,16 @@
 "commands": [
 	{
 	  "name" : "add",
-	  "regex" : "add + [a-z]",
+	  "regex" : "add+az",
 	  "language" : "python",
 	  "filename" : "./pup.py",
 	  "description" : "Adds something (this is a template)"
 	},
+	{
+	  "name" : "Template",
+	  "regex" : "template+1+2+3",
+	  "language" : "bash",
+	  "filename" : "echo 'smth'"
+	}
 ]
 }
