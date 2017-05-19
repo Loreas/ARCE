@@ -34,7 +34,7 @@ std::string getSSname(std::vector<const State*> ss){
     return name;
 }
 
-DFA MSSC(eNFA& enfa, DFA& dfa){
+DFA MSSC(eNFA& enfa){
 
     typedef std::vector<const State*> subset;
     typedef std::tuple<std::string, std::string, std::string> transInfo;
@@ -123,6 +123,7 @@ DFA MSSC(eNFA& enfa, DFA& dfa){
     states.push_back(deadState);
 
 
+    DFA dfa = DFA();
     dfa.setAlphabet(alph);
 
     // Add all created states to the dfa
@@ -163,5 +164,5 @@ DFA MSSC(eNFA& enfa, DFA& dfa){
         }
     }
 
-    return DFA();
+    return dfa;
 }

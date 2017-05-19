@@ -4,9 +4,56 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 #include "FA.h"
 
+FA::FA(const FA &otherFA) {
+    this->type = otherFA.type;
+    this->alphabet = otherFA.alphabet;
+
+    // Deep copy al states
+
+    for (State* state: otherFA.states) {
+        State* newState = new State(state->getName(), state->isStarting(), state->isAccepting());
+
+        if (newState->isStarting())
+            this->startstate = newState;
+    }
+
+    // Copy all transitions
+    typedef std::tuple<std::string, std::string, std::string> transInfo;
+    std::vector<transInfo> transitions;
+
+    for (auto trans: otherFA.transitions) {
+        std::string from = std::get<0>(std::get<0>(trans))->getName();
+        std::string c = std::get<1>(std::get<0>(trans));
+
+        for (State* state: std::get<1>(trans)) {
+            std::string to = state->getName();
+
+            transInfo trans = std::make_tuple(from, to, c);
+            transitions.push_back(trans);
+        }
+    }
+
+    // Add transitions
+    for(transInfo trans : transitions){
+        //std::get<0>(trans) = "bla";
+        std::string fromName = std::get<0>(trans);
+        std::string toName = std::get<1>(trans);
+        State* from = nullptr;
+        State* to = nullptr;
+        // TODO: temp fix
+        for(State* s : states){
+            if(s->getName() == fromName) from = s;
+            if(s->getName() == toName) to = s;
+            if(to != nullptr and from != nullptr) break;
+        }
+        std::string c = std::get<2>(trans);
+        this->addTransition(from, c ,to);
+    }
+}
 
 FA::~FA() {
     for (State* state: this->states) {
@@ -32,47 +79,6 @@ void FA::addTransition(State *stateFrom, std::string character, State *stateTo) 
 
 std::ostream& operator<<(std::ostream& os, const FA& Fa) {
     return os;
-}
-
-void FA::FAtoDot() const {
-    std::ofstream dot;
-    std::string name = this->getTypeFA()+".dot";
-    dot.open(name);
-    std::string startingState;
-
-    dot << "digraph " << this->getTypeFA() << " {" << std::endl;
-    dot << "rankdir=LR;" << std::endl;
-    dot << "node [shape = doublecircle]; ";
-
-    startingState = this->getStartstate()->getName();
-
-    for (State* state :this->states) {
-        if (state->isAccepting())
-            dot << "\"" << state->getName() << "\"" << " ";
-    }
-    dot << ";" << std::endl;
-
-    //Extra hidden node to show starting state
-    dot << "node [shape = \"none\"] startStateHelper;" << std::endl;
-    dot << "startStateHelper [label = \"\"];" << std::endl;
-
-    dot << "node [shape = circle];" << std::endl << std::endl;
-
-    dot << "startStateHelper" << " -> " << "\"" << startingState << "\"" << ";" << std::endl;
-
-    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions = this->getTransitions();
-    //For each state, check every possible transition
-
-    for (auto transition: transitions) {
-        for (State *arrivingState: transition.second) {
-            dot << "\"" << std::get<0>(transition.first)->getName() << "\"" << " -> " <<
-                "\"" << arrivingState->getName() << "\"" << "[label = \"" << std::get<1>(transition.first) << "\"];"
-                << std::endl;
-        }
-    }
-
-    dot << "}";
-    dot.close();
 }
 
 void FA::FAtoJSON() {
@@ -128,4 +134,45 @@ void FA::FAtoJSON() {
 
     j << "}";
     j.close();
+}
+
+void FA::FAtoDot() const {
+    std::ofstream dot;
+    std::string name = this->getTypeFA()+".dot";
+    dot.open(name);
+    std::string startingState;
+
+    dot << "digraph " << this->getTypeFA() << " {" << std::endl;
+    dot << "rankdir=LR;" << std::endl;
+    dot << "node [shape = doublecircle]; ";
+
+    startingState = this->getStartstate()->getName();
+
+    for (State* state :this->states) {
+        if (state->isAccepting())
+            dot << "\"" << state->getName() << "\"" << " ";
+    }
+    dot << ";" << std::endl;
+
+    //Extra hidden node to show starting state
+    dot << "node [shape = \"none\"] startStateHelper;" << std::endl;
+    dot << "startStateHelper [label = \"\"];" << std::endl;
+
+    dot << "node [shape = circle];" << std::endl << std::endl;
+
+    dot << "startStateHelper" << " -> " << "\"" << startingState << "\"" << ";" << std::endl;
+
+    std::map<std::tuple<const State*, std::string>, std::set<State*>> transitions = this->getTransitions();
+    //For each state, check every possible transition
+
+    for (auto transition: transitions) {
+        for (State *arrivingState: transition.second) {
+            dot << "\"" << std::get<0>(transition.first)->getName() << "\"" << " -> " <<
+                "\"" << arrivingState->getName() << "\"" << "[label = \"" << std::get<1>(transition.first) << "\"];"
+                << std::endl;
+        }
+    }
+
+    dot << "}";
+    dot.close();
 }

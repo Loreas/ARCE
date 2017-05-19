@@ -7,3 +7,8 @@
 DFA::DFA() {
     this->setTypeFA("DFA");
 }
+
+DFA::DFA(const DFA& otherDFA)
+: FA(otherDFA) {
+
+}

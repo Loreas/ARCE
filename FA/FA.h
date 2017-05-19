@@ -23,6 +23,7 @@ public:
     FA() {
         this->type = "FA";
     }
+    FA(const FA& otherFA);
     ~FA();
     virtual bool Validate() {return false;}
     virtual const std::string getEpsilon() const {return "";}

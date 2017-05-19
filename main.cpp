@@ -13,19 +13,16 @@ int main(){
 
     RegToeNFA alg = RegToeNFA();
 
-    std::string regex = "a+b+cd";
+    std::string regex = "a+b+c+d";
 
     alg.ConvertReTo_eNfa(regex, eNFA1);
 
 
-    DFA dfa = DFA();
-    MSSC(eNFA1, dfa);
+    DFA dfa = MSSC(eNFA1);
 
     eNFA1.FAtoDot();
-    eNFA1.FAtoJSON();
 
     dfa.FAtoDot();
-    dfa.FAtoJSON();
 
     return 0;
 }
