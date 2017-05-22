@@ -4,6 +4,7 @@
 
 #include "Bot.h"
 #include "Parser.h"
+#include "TFA/tfa.h"
 
 int main(){
 
@@ -16,8 +17,9 @@ int main(){
     //botDfa->FAtoDot();
     std::cout << botDfa->checkString(test);
 
-    //Parser parser = Parser();
-    //DFA dfa = parser.parseDFA("DFA.json");
+    Parser parser = Parser();
+    DFA dfa = parser.parseDFA("DFA.json");
+    DFA lol = tfa(dfa);
 
 
     return 0;
