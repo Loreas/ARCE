@@ -10,11 +10,11 @@
 #include <algorithm>
 #include "FA.h"
 
-class eNFA: public FA{
+class ENFA: public FA{
 private:
     std::string epsilon;
 public:
-    eNFA();
+    ENFA();
     virtual bool Validate() {return true;}
     virtual const std::string getEpsilon() const {return this->epsilon;}
     virtual void setEpsilon(std::string  epsilon);

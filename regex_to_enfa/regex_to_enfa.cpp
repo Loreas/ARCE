@@ -8,7 +8,7 @@
 #include <tuple>
 #include <string.h>
 
-#include "../FA/eNFA.h"
+#include "../FA/ENFA.h"
 #include "../FA/State.h"
 #include "regex_to_enfa.h"
 #include <sstream>
@@ -17,7 +17,7 @@ RegToeNFA::RegToeNFA() {
     this->stateCounter = 0;
 }
 
-void RegToeNFA::ConvertReTo_eNfa(std::string& regex, eNFA& automaton) {
+void RegToeNFA::ConvertReTo_eNfa(std::string& regex, ENFA& automaton) {
     std::tuple<bool, std::set<std::string>, std::string> alphabet = ValidityAndAlphabetRegex(regex);
 
     if (std::get<0>(alphabet)) {
@@ -30,20 +30,21 @@ void RegToeNFA::ConvertReTo_eNfa(std::string& regex, eNFA& automaton) {
     }
 }
 
-std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automaton, int currentPos) {
+std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string &regex, ENFA &automaton, int currentPos) {
     State* firstState = NULL;
     State* lastState = NULL;
+
     State* currentFirstState = NULL;
     State* currentLastState = NULL;
 
-    State* concatenationFirst = NULL;
-    State* concatenationLast = NULL;
+    State* previousFirstState = NULL;
+    State* previousLastState = NULL;
 
     std::tuple<State*, State*> currentFirstLastStates;
 
     int skipParenthesis = 0;
+    int posParenthesis = 0;
     bool regOR = false;
-    bool regORHappened = false;
     bool epsilon = false;
 
 
@@ -53,11 +54,12 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automa
         }
         else if (regex[currentPos] == '(') {
             if (skipParenthesis != 0) {
+                posParenthesis = currentPos;
                 ++skipParenthesis;
                 continue;
             }
 
-            currentFirstLastStates = this->buildeNFA(regex, automaton, currentPos+1);
+            currentFirstLastStates = this->buildeNFA(regex, automaton, currentPos + 1);
             currentFirstState = std::get<0>(currentFirstLastStates);
             currentLastState = std::get<1>(currentFirstLastStates);
 
@@ -80,24 +82,42 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automa
                 currentLastState = std::get<1>(currentFirstLastStates);
             }
 
-            if (firstState == NULL)
+            // No other state present in current frame
+            // CurrentFirst and currentLast are first and last
+            // Can't do checkConcatenationPrevious or + with other states
+            if ((firstState == NULL) && (lastState == NULL)) {
                 firstState = currentFirstState;
-            if (lastState == NULL)
-                lastState = currentLastState;
-
-            //Concatenatie
-            if (!regOR && (firstState != currentFirstState) && (lastState != currentLastState)) {
-                lastState->setAccepting(false);
-                currentFirstState->setStarting(false);
-                automaton.addTransition(lastState, automaton.getEpsilon(), currentFirstState);
                 lastState = currentLastState;
             }
+            else {
+                // Check if concatenation with previous
+                if (this->checkConcatenationPrevious(automaton, regex, posParenthesis)) {
+                    automaton.addTransition(previousLastState, automaton.getEpsilon(), currentFirstState);
+                    previousLastState->setAccepting(false);
+                    currentFirstState->setStarting(false);
+                    currentFirstState = previousFirstState;
+                }
+                // Check if concatenation with next, continue if so
+                if (this->checkConcatenationNext(automaton, regex, currentPos)) {
+                    previousFirstState = currentFirstState;
+                    previousLastState = currentLastState;
+                }
+                    // No concatenation with next, so operator + can be performed
+                else if (regOR) {
+                    currentFirstLastStates = this->OperatorPlus(automaton, regOR, firstState, lastState,
+                                                                currentFirstState, currentLastState);
+                    firstState = std::get<0>(currentFirstLastStates);
+                    lastState = std::get<1>(currentFirstLastStates);
 
-            //Do operator + if necessecary, returns new first and last state for current parentheses
-            //First to last is now the complete regex within the current parentheses
-            currentFirstLastStates = this->OperatorPlus(automaton, regORHappened, regOR, firstState, lastState, currentFirstState, currentLastState);
-            firstState = std::get<0>(currentFirstLastStates);
-            lastState = std::get<1>(currentFirstLastStates);
+                    regOR = false;
+                }
+                else {
+                    firstState = currentFirstState;
+                    lastState = currentLastState;
+                }
+            }
+            previousFirstState = currentFirstState;
+            previousLastState = currentLastState;
         }
         else if (regex[currentPos] == '+') {
             if (skipParenthesis != 0)
@@ -122,7 +142,8 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automa
 
             if (skipParenthesis != 0)
                 continue;
-            //Create the 2 states needed for a single character
+
+            // Create the 2 states needed for a single character
             currentFirstState = new State(std::to_string(this->stateCounter++), true, false);
             automaton.addState(currentFirstState);
             currentLastState = new State(std::to_string(this->stateCounter++), false, true);
@@ -130,45 +151,60 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string& regex, eNFA& automa
             //Add a transition between the 2 states
             automaton.addTransition(currentFirstState, std::string(1, currentChar), currentLastState);
 
-            //Peek voor Operator*
-            //Excecute operator*
-            //Returns new currentFirst, currentLast
+            // Peek voor Operator*
+            // Excecute operator*
+            // Returns new currentFirst, currentLast
             if (this->PeekNextCharStar(regex, currentPos)) {
                 currentFirstLastStates = this->OperatorStar(automaton, currentFirstState, currentLastState);
                 currentFirstState = std::get<0>(currentFirstLastStates);
                 currentLastState = std::get<1>(currentFirstLastStates);
             }
 
-            //No other state present in current frame
-            //CurrentFirst and currentLast are first and last
-            //Can't do concatenation or + with other states
+            // No other state present in current frame
+            // CurrentFirst and currentLast are first and last
+            // Can't do checkConcatenationPrevious or + with other states
             if ((firstState == NULL) && (lastState == NULL)) {
                 firstState = currentFirstState;
                 lastState = currentLastState;
             }
             else {
-                if (regOR) {
-                    //Do operator + if necessecary, returns new first and last state for current parentheses
-                    currentFirstLastStates = this->OperatorPlus(automaton, regORHappened, regOR, firstState, lastState,
-                                                            currentFirstState, currentLastState);
+                // Check if concatenation with previous
+                if (this->checkConcatenationPrevious(automaton, regex, currentPos)) {
+                    automaton.addTransition(previousLastState, automaton.getEpsilon(), currentFirstState);
+                    previousLastState->setAccepting(false);
+                    currentFirstState->setStarting(false);
+                    currentFirstState = previousFirstState;
+                }
+                    // Check if concatenation with next, continue if so
+                if (this->checkConcatenationNext(automaton, regex, currentPos)) {
+                    previousFirstState = currentFirstState;
+                    previousLastState = currentLastState;
+                }
+                // No concatenation with next, so operator + can be performed
+                else if (regOR) {
+                    currentFirstLastStates = this->OperatorPlus(automaton, regOR, firstState, lastState,
+                                                                currentFirstState, currentLastState);
                     firstState = std::get<0>(currentFirstLastStates);
                     lastState = std::get<1>(currentFirstLastStates);
 
+                    regOR = false;
                 }
-                //Not a +, so a concatenation with last
                 else {
-                    automaton.addTransition(lastState, automaton.getEpsilon(), currentFirstState);
-                    lastState->setAccepting(false);
-                    currentFirstState->setStarting(false);
+                    firstState = currentFirstState;
                     lastState = currentLastState;
                 }
+
             }
+            previousFirstState = currentFirstState;
+            previousLastState = currentLastState;
         }
     }
 
     // Set the first state of the FA as the starting state
     automaton.setStartstate(firstState);
+
 }
+
 
 std::tuple<bool, std::set<std::string>, std::string> RegToeNFA::ValidityAndAlphabetRegex(std::string &regex) {
     int parenthesis = 0;
@@ -230,18 +266,54 @@ bool RegToeNFA::PeekNextCharStar(std::string regex, int currentPos) {
     return false;
 }
 
+bool RegToeNFA::checkConcatenationPrevious(ENFA &automaton, std::string regex, int currentPos) {
+    if (currentPos - 1 >= 0) {
+        // Check if concatenation with previous ')', '*' or character from the alphabet
+        if ((regex[currentPos-1] == ')') or (regex[currentPos-1] == '*') or
+            ((automaton.getAlphabet().find(std::string(1, regex[currentPos-1]))
+              != automaton.getAlphabet().end()))) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RegToeNFA::checkConcatenationNext(ENFA &automaton, std::string regex, int currentPos) {
+    if (currentPos + 1 < regex.size()) {
+        // Check if concatenation with next '(' or next character from the alphabet
+        if ((regex[currentPos + 1] == '(') or
+            ((automaton.getAlphabet().find(std::string(1, regex[currentPos + 1]))
+              != automaton.getAlphabet().end()))) {
+            return true;
+        }
+    }
 
 
-std::tuple<State*, State*> RegToeNFA::OperatorPlus(eNFA& automaton, bool& regORHappened, bool& regOR,
-                                                   State* firstState, State* lastState,
-                                                   State* currentFirstState, State* currentLastState) {
+    // Voor geval "a**" moet een loop geschreven
+
+    // In case of next char '*' check character after it
+    if (currentPos + 2 < regex.size() and regex[currentPos + 1] == '*') {
+        if ((regex[currentPos + 2] == '(') or
+            ((automaton.getAlphabet().find(std::string(1, regex[currentPos + 2]))
+              != automaton.getAlphabet().end()))) {
+            return true;
+        }
+
+    }
+
+    return false;
+}
+
+std::tuple<State *, State *> RegToeNFA::OperatorPlus(ENFA &automaton, bool &regOR,
+                                                     State *firstState, State *lastState,
+                                                     State *currentFirstState, State *currentLastState) {
     //If this is the first + in the current parentheses
 
 
     //Create new firststate, connect previous firststate to that new state
     //Create new laststate, connect previous laststate to that new state
     //Connect first and last to currentStates
-    if (regOR /*&& !regORHappened*/) {
+    if (regOR) {
         //Store first and last state in temp
         //Change properties to false of those states
         State* previousfirst = firstState;
@@ -264,8 +336,6 @@ std::tuple<State*, State*> RegToeNFA::OperatorPlus(eNFA& automaton, bool& regORH
         automaton.addTransition(firstState, automaton.getEpsilon(), currentFirstState);
         automaton.addTransition(currentLastState, automaton.getEpsilon(), lastState);
 
-        //regORHappened moet nog gekeken worden hoe de + moet werken
-        regORHappened = true;
 
         regOR = false;
     }
@@ -273,7 +343,7 @@ std::tuple<State*, State*> RegToeNFA::OperatorPlus(eNFA& automaton, bool& regORH
     return std::make_tuple(firstState, lastState);
 };
 
-std::tuple<State*, State*> RegToeNFA::OperatorStar(eNFA& automaton, State* currentFirstState,
+std::tuple<State*, State*> RegToeNFA::OperatorStar(ENFA& automaton, State* currentFirstState,
                                                    State* currentLastState) {
 
     //2 new states to be able to skip currentFirst -> currentLast

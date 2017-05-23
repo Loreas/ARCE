@@ -8,7 +8,7 @@
 
 int main(){
 
-    //// DEBUG & TESTING ZONE ////
+     //// DEBUG & TESTING ZONE ////
     std::string dfaString = "a+b+c";
     std::string test = "ab";
     Bot bot;
@@ -20,7 +20,6 @@ int main(){
     Parser parser = Parser();
     DFA dfa = parser.parseDFA("DFA.json");
     DFA lol = tfa(dfa);
-
 
     return 0;
 }

@@ -12,7 +12,7 @@ std::string getSSname(std::vector<const State*> ss){
     return name;
 }
 
-void MSSC(eNFA& enfa, DFA& dfa){
+void MSSC(ENFA& enfa, DFA& dfa){
 
     typedef std::vector<const State*> subset;
     typedef std::tuple<std::string, std::string, std::string> transInfo;

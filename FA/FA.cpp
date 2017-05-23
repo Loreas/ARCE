@@ -96,7 +96,7 @@ void FA::FAtoJSON() {
     }
     j << "  ]," << std::endl;
 
-    if (this->getTypeFA() == "eNFA")
+    if (this->getTypeFA() == "ENFA")
         j << "  \"eps\": \"" + this->getEpsilon() << "\"," << std::endl;
 
     j << "  \"states\": [" << std::endl;
