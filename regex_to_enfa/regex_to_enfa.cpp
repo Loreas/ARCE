@@ -54,11 +54,11 @@ std::tuple<State*, State*> RegToeNFA::buildeNFA(std::string &regex, ENFA &automa
         }
         else if (regex[currentPos] == '(') {
             if (skipParenthesis != 0) {
-                posParenthesis = currentPos;
                 ++skipParenthesis;
                 continue;
             }
 
+            posParenthesis = currentPos;
             currentFirstLastStates = this->buildeNFA(regex, automaton, currentPos + 1);
             currentFirstState = std::get<0>(currentFirstLastStates);
             currentLastState = std::get<1>(currentFirstLastStates);
