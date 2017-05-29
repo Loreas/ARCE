@@ -55,10 +55,6 @@ void MSSC(ENFA& enfa, DFA& dfa){
                     std::set<const State*> noDupes(newSubset.begin(), newSubset.end());
                     newSubset.assign(noDupes.begin(), noDupes.end()); // Remove duplicates
 
-                    for (const State* state : noDupes) {
-                        newSubset.push_back(state);
-                    }
-
                     // Check if this subset is new (it's not found in 'allSubsets')
                     if (find(allSubsetNames.begin(), allSubsetNames.end(), getSSname(newSubset)) == allSubsetNames.end()) {
                         // If so, add to found subsets
