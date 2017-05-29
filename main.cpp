@@ -6,23 +6,21 @@
 #include "Parser.h"
 #include "TFA/tfa.h"
 
-int main(){
-    // Parser parser = Parser();
-    // DFA dfa = parser.parseDFA("DFA.json");
+int main(unsigned int argc, char* argv[]){
 
     //// DEBUG & TESTING ZONE ////
     Parser parser;
     std::string dfaString = parser.parseRegex("./customCommands.json");
-    std::string test = "a+ab";
+    std::string test;
+    if(argc == 1) test = "a";
+    else if(argc == 2){
+        ///// TEMP: Grab the first argument as testing regex
+        test = argv[1];
+    }
 
     Bot bot;
     bot.buildDFA(dfaString, true);
     bot.parseCommand(test);
-
-    /*
-    DFA dfa = parser.parseDFA("DFA.json");
-    DFA lol = tfa(dfa);
-     */
 
     return 0;
 }
