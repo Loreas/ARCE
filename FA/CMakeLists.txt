@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(FA_SOURCE_FILES
         DFA.cpp
         DFA.h
-        eNFA.cpp
-        eNFA.h
+        ENFA.cpp
+        ENFA.h
         FA.cpp
         FA.h
         NFA.cpp

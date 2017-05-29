@@ -17,21 +17,22 @@ void Bot::setPath(std::string path) {
 }
 
 void Bot::buildDFA(std::string regex) {
-    eNFA ENFA;
+    ENFA enfa;
     RegToeNFA converter;
 
     // Use algorithm implemented by D. Miroyan to convert regex to e-NFA
-    converter.ConvertReTo_eNfa(regex, ENFA);
+    converter.ConvertReTo_eNfa(regex, enfa);
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
     DFA* dfaRaw = new DFA;
-    MSSC(ENFA, *dfaRaw);
+    MSSC(enfa, *dfaRaw);
 
     // TODO: Use TFA algorithm implemented by S. Fenoll to optimise DFA
 
     // Assign DFA to bot
     dfa = dfaRaw;
 
+    // delete dfaRaw;
 }
 
 void Bot::evaluateCommand() {

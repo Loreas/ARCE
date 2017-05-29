@@ -8,7 +8,7 @@
 #include "json.hpp"
 #include "FA/FA.h"
 #include "FA/DFA.h"
-#include "FA/eNFA.h"
+#include "FA/ENFA.h"
 
 class Parser {
 private:

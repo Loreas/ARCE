@@ -7,7 +7,7 @@
 
 #include <string>
 #include "FA/DFA.h"
-#include "FA/eNFA.h"
+#include "FA/ENFA.h"
 #include "MSSC/MSSC.h"
 #include "regex_to_enfa/regex_to_enfa.h"
 
