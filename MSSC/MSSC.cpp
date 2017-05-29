@@ -41,41 +41,44 @@ void MSSC(ENFA& enfa, DFA& dfa){
             // Go over every character in the alphabet
             for (std::string c : alph) {
                 // Go over every state in the ss
-                subset newSubset = {};
-                for (const State* s : ss) {
+                std::vector<const State *> newSubset = {};
+                for (const State *s : ss) {
                     // Collect all states accessible from this state with c
-                    std::pair<const State*, std::string> arg = std::make_pair(s, c);
+                    std::pair<const State *, std::string> arg = std::make_pair(s, c);
 
                     // Take the eclose of this ss
                     if (transtable.find(arg) == transtable.end()) continue;
-                    std::vector<const State*> tabel;
+                    std::vector<const State *> tabel;
                     std::copy(transtable[arg].begin(), transtable[arg].end(), std::back_inserter(tabel));
-                    std::set<const State*> ecl = enfa.ecloseSubset(tabel);
+                    std::set<const State *> ecl = enfa.ecloseSubset(tabel);
+                    // Add the eclose to found states (current newSubset)
                     std::copy(ecl.begin(), ecl.end(), std::back_inserter(newSubset));
-                    std::set<const State*> noDupes(newSubset.begin(), newSubset.end());
-                    newSubset.assign(noDupes.begin(), noDupes.end()); // Remove duplicates
+                }
+                // If the 'found subset-state' is empty, just continue; a transition to garbage is added later
+                if(newSubset.size() == 0) continue;
+                std::set<const State *> noDupes(newSubset.begin(), newSubset.end());
+                newSubset.assign(noDupes.begin(), noDupes.end()); // Remove duplicates
+                std::string ssName = getSSname(newSubset);
 
-                    // Check if this subset is new (it's not found in 'allSubsets')
-                    if (find(allSubsetNames.begin(), allSubsetNames.end(), getSSname(newSubset)) == allSubsetNames.end()) {
-                        // If so, add to found subsets
-                        allSubsetNames.push_back(getSSname(newSubset));
-                        allSubsets.push_back(newSubset);
-                        finished = false;
-                        // Save the transition info
-                        std::string ssName = getSSname(ss);
-                        std::string newSSName = getSSname(newSubset);
-                        transInfo trans = std::make_tuple(ssName, newSSName, c);
-                        transitions.push_back(trans);
-                    }
-                    else if(find(allSubsetNames.begin(), allSubsetNames.end(), getSSname(newSubset)) != allSubsetNames.end()){
-                        // The subset is already in there, but a transition might be needed still
-                        transInfo trans = std::make_tuple(getSSname(ss), getSSname(newSubset), c);
-                        transitions.push_back(trans);
-                    }
+                // Check if this subset is new (it's not found in 'allSubsets')
+                if (find(allSubsetNames.begin(), allSubsetNames.end(), ssName) == allSubsetNames.end()) {
+                    // If so, add to found subsets
+                    allSubsetNames.push_back(ssName);
+                    allSubsets.push_back(newSubset);
+                    finished = false;
+                    // Save the transition info
+                    std::string ssNameOld = getSSname(ss);
+                    transInfo trans = std::make_tuple(ssNameOld, ssName, c);
+                    transitions.push_back(trans);
+                } else if (find(allSubsetNames.begin(), allSubsetNames.end(), ssName) != allSubsetNames.end()) {
+                    // The subset is already in there, but a transition might be needed still
+                    transInfo trans = std::make_tuple(getSSname(ss), ssName, c);
+                    transitions.push_back(trans);
                 }
             }
         }
     }
+
     // Create states out of all subsets
     bool startingFound = false;
     for(subset ss : allSubsets){

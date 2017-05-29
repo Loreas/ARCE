@@ -13,7 +13,7 @@ int main(){
     //// DEBUG & TESTING ZONE ////
     Parser parser;
     std::string dfaString = parser.parseRegex("./customCommands.json");
-    std::string test = "a";
+    std::string test = "a+ab";
 
     Bot bot;
     bot.buildDFA(dfaString, true);
