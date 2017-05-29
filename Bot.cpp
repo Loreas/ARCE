@@ -13,15 +13,16 @@ DFA* Bot::getDFA() {
 }
 
 void Bot::setPath(std::string path) {
-
+    JSONpath = path;
 }
 
-void Bot::buildDFA(std::string regex) {
+void Bot::buildDFA(std::string regex, bool FAout) {
     ENFA enfa;
     RegToeNFA converter;
 
     // Use algorithm implemented by D. Miroyan to convert regex to e-NFA
     converter.ConvertReTo_eNfa(regex, enfa);
+    if(FAout) enfa.FAtoDot();
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
     DFA* dfaRaw = new DFA;
@@ -31,12 +32,16 @@ void Bot::buildDFA(std::string regex) {
 
     // Assign DFA to bot
     dfa = dfaRaw;
+    if(FAout) dfa->FAtoDot();
 
     // delete dfaRaw;
 }
 
-void Bot::evaluateCommand() {
+void Bot::parseCommand(std::string command) {
+    // First, check if the command is valid
+    if(!dfa->checkString(command)) return;
 
+    std::cout << "GG!\n";
 }
 
 void Bot::runScript() {

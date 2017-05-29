@@ -39,14 +39,15 @@ public:
 
     /**
      * @brief Makes the given regex into an eNFA, which is then used to build a DFA that is saved by the bot
-     * @param regex
+     * @param regex The regex to be used
+     * @param FAout Boolean whether or not the ENFA and DFA should be outputted as dotfiles
      */
-    void buildDFA(std::string regex);
+    void buildDFA(std::string regex, bool FAout = false);
 
     /**
-     * @brief Check if a string is accepted by the DFA
+     * @brief Checks if a command is valid and if so, executes it correctly
      */
-    void evaluateCommand();
+    void parseCommand(std::string command);
 
     void runScript();
 

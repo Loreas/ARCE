@@ -12,17 +12,17 @@ int main(){
 
     //// DEBUG & TESTING ZONE ////
     Parser parser;
-    std::string dfaString = parser.parseRegex("./commands.json");
-    std::string test = "add";
-    Bot bot;
-    bot.buildDFA(dfaString);
-    DFA* botDfa = bot.getDFA();
-    botDfa->FAtoDot();
-    std::cout << botDfa->checkString(test);
+    std::string dfaString = parser.parseRegex("./customCommands.json");
+    std::string test = "a";
 
-    Parser parser = Parser();
+    Bot bot;
+    bot.buildDFA(dfaString, true);
+    bot.parseCommand(test);
+
+    /*
     DFA dfa = parser.parseDFA("DFA.json");
     DFA lol = tfa(dfa);
+     */
 
     return 0;
 }
