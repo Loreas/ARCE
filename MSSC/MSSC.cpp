@@ -2,7 +2,7 @@
 
 using namespace std;
 
-std::string getSSname(std::vector<const State*> ss){
+std::string getSSname(std::vector<const State*>& ss){
     std::string name = "{";
     for(const State* s : ss){
         name += s->getName() + ", ";
@@ -55,10 +55,6 @@ void MSSC(eNFA& enfa, DFA& dfa){
                     std::set<const State*> noDupes(newSubset.begin(), newSubset.end());
                     newSubset.assign(noDupes.begin(), noDupes.end()); // Remove duplicates
 
-                    for (const State* state : noDupes) {
-                        newSubset.push_back(state);
-                    }
-
                     // Check if this subset is new (it's not found in 'allSubsets')
                     if (find(allSubsetNames.begin(), allSubsetNames.end(), getSSname(newSubset)) == allSubsetNames.end()) {
                         // If so, add to found subsets
@@ -97,7 +93,7 @@ void MSSC(eNFA& enfa, DFA& dfa){
     }
 
     // Create DFA with states and alphabet
-    State* deadState = new State("Garbage", false, false); // Garbage state for later
+    State* deadState = new State("{Garbage}", false, false); // Garbage state for later
     states.push_back(deadState);
 
 

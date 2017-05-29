@@ -17,7 +17,7 @@
 #include "../FA/DFA.h"
 #include "../FA/eNFA.h"
 
-std::string getSSname(std::vector<const State*> ss);
+std::string getSSname(std::vector<const State*>& ss);
 
 void MSSC(eNFA& enfa, DFA& dfa);
 
