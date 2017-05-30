@@ -22,7 +22,7 @@ void MSSC(ENFA& enfa, DFA& dfa){
     map<tuple<const State*, string>, set<const State*>> transtable = enfa.getTransitions();
     std::vector<transInfo> transitions;
     std::vector<State*> states;
-    std::vector<subset> allSubsets;
+    std::vector<std::vector<const State*>> allSubsets;
     std::vector<std::string> allSubsetNames; // For comparing purposes
     bool finished = false;
 
@@ -37,7 +37,9 @@ void MSSC(ENFA& enfa, DFA& dfa){
     // Go over all newfound subsets
     while(!finished) {
         finished = true;
-        for (subset ss : allSubsets) {
+        for (int i = 0; i < allSubsets.size(); i++) {
+            std::vector<const State*> ss = allSubsets.at(i);
+            std::string ssNameOld = getSSname(ss);
             // Go over every character in the alphabet
             for (std::string c : alph) {
                 // Go over every state in the ss
@@ -67,12 +69,11 @@ void MSSC(ENFA& enfa, DFA& dfa){
                     allSubsets.push_back(newSubset);
                     finished = false;
                     // Save the transition info
-                    std::string ssNameOld = getSSname(ss);
                     transInfo trans = std::make_tuple(ssNameOld, ssName, c);
                     transitions.push_back(trans);
                 } else if (find(allSubsetNames.begin(), allSubsetNames.end(), ssName) != allSubsetNames.end()) {
                     // The subset is already in there, but a transition might be needed still
-                    transInfo trans = std::make_tuple(getSSname(ss), ssName, c);
+                    transInfo trans = std::make_tuple(ssNameOld, ssName, c);
                     transitions.push_back(trans);
                 }
             }
