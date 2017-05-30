@@ -8,6 +8,8 @@
 #include <fstream>
 #include "Bot.h"
 #include "Parser.h"
+#include "Levenshtein/Levenshtein.h"
+#include "MSSC/MSSC.h"
 #include "TFA/tfa.h"
 
 void bulkTest(std::string fileName, DFA& dfa){
@@ -40,6 +42,8 @@ int main(unsigned int argc, char* argv[]){
     bot.buildDFA(dfaString, true);
 
     bulkTest("./testInput.txt", *bot.getDFA());
+
+    ENFA lev = levenshteinAutomaton("food", 3);
 
     ////newline zeer belangrijk anders delay voor de cout gebeurt!!!
     std::cout<<"tel tot 5\n";
