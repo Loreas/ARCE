@@ -1,6 +1,9 @@
 //
 // Created by sergio on 11/05/17.
 //
+#include <iostream>
+#include <thread>
+#include <chrono>
 
 #include <fstream>
 #include "Bot.h"
@@ -38,5 +41,9 @@ int main(unsigned int argc, char* argv[]){
 
     bulkTest("./testInput.txt", *bot.getDFA());
 
+    ////newline zeer belangrijk anders delay voor de cout gebeurt!!!
+    std::cout<<"tel tot 5\n";
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::cout << "Done";
     return 0;
 }
