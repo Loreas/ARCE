@@ -41,7 +41,6 @@ void Bot::parseCommand(std::string command) {
     // First, check if the command is valid
     if(!dfa->checkString(command)) return;
 
-    std::cout << "GG!\n";
 }
 
 void Bot::runScript() {

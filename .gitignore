@@ -1,6 +1,5 @@
 .idea/
 cmake-build-debug/
 CMakeList.txt
-customCommands.json
 *.dot
 ARCE
