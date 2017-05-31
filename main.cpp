@@ -2,8 +2,8 @@
 // Created by sergio on 11/05/17.
 //
 #include <iostream>
-#include <thread>
-#include <chrono>
+#include <stdio.h>
+#include <iostream>
 
 #include <fstream>
 #include "Bot.h"
@@ -39,11 +39,19 @@ int main(unsigned int argc, char* argv[]){
     }
 
     Bot bot;
-    bot.buildDFA(dfaString, true);
+    bot.buildDFA(dfaString);
 
-    bulkTest("./testInput.txt", *bot.getDFA());
+    ENFA lev = levenshteinAutomaton("food", 1);
+    DFA testDFA;
+    MSSC(lev, testDFA);
+    lev.FAtoDot();
+    testDFA.FAtoDot();
 
-    ENFA lev = levenshteinAutomaton("food", 3);
+    std::cout << testDFA.checkString("fod");
+
+    bot.run();
+
+
 
     return 0;
 }
