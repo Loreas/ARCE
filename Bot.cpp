@@ -2,7 +2,11 @@
 // Created by jonathan on 11.05.17.
 //
 
+#include <unistd.h>
+#include <chrono>
+#include <thread>
 #include "Bot.h"
+
 
 std::string Bot::getPath() {
     return JSONpath;
@@ -44,7 +48,7 @@ void Bot::parseCommand(std::string command) {
 }
 
 void Bot::runScript() {
-
+    std::system("python bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375");
 }
 
 void Bot::receiveMsg() {
@@ -52,5 +56,43 @@ void Bot::receiveMsg() {
 }
 
 void Bot::sendMsg() {
+
+}
+
+void Bot::checkforupdates() {
+    std::ifstream file;
+
+    while(true){
+        file.open("link/link.txt");
+        if(isEmpty(file)) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            file.close();
+        }
+        else{
+            file.close();
+            return;
+        }
+    }
+
+}
+
+bool Bot::isEmpty(std::ifstream &file) {
+    return file.peek() == std::ifstream::traits_type::eof();
+}
+
+std::vector Bot::parseLink() {
+    std::ifstream file;
+    file.open("link/link.txt");
+    std::string line;
+    std::vector<std::string> result;
+    while (getline(file,line)) {
+        result.push_back(line);
+    }
+    file.close();
+    std::ofstream ofs;
+    ////clears content of the file
+    ofs.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
+    ofs.close();
+    return result;
 
 }

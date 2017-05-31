@@ -12,6 +12,14 @@ class bot(fbchat.Client):
 
         f = open("../link/link.txt", 'w')
         f.write(message)
+        f.close()
+        """Checkfile for updates."""
+        with open("../../link/linkToPython.txt") as f:
+            content = f.readline()
+        for i in content:
+            self.send(sys.argv[2], i, False)
+
+
 
 b = bot(sys.argv[0], sys.argv[1])
 b.listen()

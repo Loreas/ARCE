@@ -10,6 +10,7 @@
 #include "FA/ENFA.h"
 #include "MSSC/MSSC.h"
 #include "regex_to_enfa/regex_to_enfa.h"
+#include <fstream>
 
 class Bot {
 private:
@@ -54,6 +55,27 @@ public:
     void receiveMsg();
 
     void sendMsg();
+
+    /**
+     * @brief Checks for updates in the link.txt after x amount of seconds.
+     *
+     */
+
+    void checkforupdates();
+
+    /**
+     * @brief Checks if the file is empty.
+     * @param ifstream file.
+     * @return bool whether or not the file file is empty.
+     */
+    bool isEmpty(std::ifstream &file);
+
+    /**
+     * @brief Parses every command in the txt file.
+     * @return vector van commands
+     */
+    std::vector<std::string> parseLink();
+
 
 };
 
