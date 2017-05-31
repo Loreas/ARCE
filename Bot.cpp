@@ -2,8 +2,8 @@
 // Created by jonathan on 11.05.17.
 //
 
-#include <thread>
 #include <chrono>
+#include <thread>
 #include <stdlib.h>
 #include "Bot.h"
 
@@ -80,7 +80,7 @@ bool Bot::isEmpty(std::ifstream &file) {
     return file.peek() == std::ifstream::traits_type::eof();
 }
 
-std::vector Bot::parseLink() {
+std::vector<std::string> Bot::parseLink() {
     std::ifstream file;
     file.open("link/link.txt");
     std::string line;
