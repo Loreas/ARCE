@@ -48,8 +48,9 @@ void Bot::parseCommand(std::string command) {
 }
 
 void Bot::runScript() {
-    std::system("python bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375");
+
 }
+
 
 void Bot::receiveMsg() {
 
@@ -60,19 +61,6 @@ void Bot::sendMsg() {
 }
 
 void Bot::checkforupdates() {
-    std::ifstream file;
-
-    while(true){
-        file.open("link/link.txt");
-        if(isEmpty(file)) {
-            std::this_thread::sleep_for(std::chrono::seconds(5));
-            file.close();
-        }
-        else{
-            file.close();
-            return;
-        }
-    }
 
 }
 
@@ -95,4 +83,29 @@ std::vector<std::string> Bot::parseLink() {
     ofs.close();
     return result;
 
+}
+
+void Bot::run(){
+    std::ifstream file;
+    bool go = true;
+    int c = 0;
+
+    std::system("python bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375");
+
+    while(go){
+        file.open("link/link.txt");
+        if(isEmpty(file)) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            file.close();
+        }
+        else{
+            file.close();
+            c++;
+            if(c > 1000000) go = false;
+            std::string line;
+            while(getline(file, line)){
+                std::cout << line << std::endl;
+            }
+        }
+    }
 }

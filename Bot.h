@@ -76,6 +76,11 @@ public:
      */
     std::vector<std::string> parseLink();
 
+    /**
+     *  @brief The 'main loop' for the bot (will constantly check for messages and parse them
+     */
+     void run();
+
 
 };
 

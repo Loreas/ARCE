@@ -39,9 +39,7 @@ int main(unsigned int argc, char* argv[]){
     }
 
     Bot bot;
-    bot.buildDFA(dfaString, true);
-
-    bulkTest("./testInput.txt", *bot.getDFA());
+    bot.buildDFA(dfaString);
 
     ENFA lev = levenshteinAutomaton("food", 1);
     DFA testDFA;
@@ -50,6 +48,8 @@ int main(unsigned int argc, char* argv[]){
     testDFA.FAtoDot();
 
     std::cout << testDFA.checkString("fod");
+
+    bot.run();
 
 
 
