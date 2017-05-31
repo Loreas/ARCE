@@ -2,8 +2,6 @@
 // Created by sergio on 11/05/17.
 //
 #include <iostream>
-#include <thread>
-#include <chrono>
 #include <stdio.h>
 #include <iostream>
 
