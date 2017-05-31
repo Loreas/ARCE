@@ -14,12 +14,17 @@ class bot(fbchat.Client):
         f = open("./link/link.txt", 'w')
         f.write(message)
         f.close()
+
+        if message == "exit":
+            sys.exit();
+
         # Checkfile for updates
+        """
         with open("./link/linkToPython.txt") as f:
             content = f.readline()
         for i in content:
             self.send(sys.argv[3], i, False)
-
+        """
 
 
 print(sys.argv[2])

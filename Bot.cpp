@@ -5,6 +5,8 @@
 #include <chrono>
 #include <thread>
 #include <stdlib.h>
+#include <stdio.h>
+#include <iostream>
 #include "Bot.h"
 
 
@@ -93,10 +95,10 @@ void Bot::run(){
     credentials = parseCredentials();
     std::string command = "python bot/fb_bot.py ";
     command += credentials[0];
-    command += credentials[1];
-    command += credentials[2];
-    std::system(command.c_str());
-
+    command += " " + credentials[1];
+    command += " " + credentials[2];
+    FILE *in;
+    in = popen(command.c_str(), "r");
 
     while(go){
         file.open("link/link.txt");
@@ -105,15 +107,29 @@ void Bot::run(){
             file.close();
         }
         else{
-            file.close();
             c++;
-            if(c > 1000000) go = false;
+            if(c > 1000) go = false;
             std::string line;
             while(getline(file, line)){
-                std::cout << line << std::endl;
+                std::cout << line << "\n";
+                if(line == "exit"){
+                    std::cout << "Exiting\n";
+                    // Clear the file (overwrite with empty file)
+                    file.close();
+                    file.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
+                    file.close();
+                    std::exit(0);
+                }
             }
+
+            file.close();
+            // Clear the file (overwrite with empty file)
+            file.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
+            file.close();
         }
     }
+
+    pclose(in);
 }
 
 std::vector<std::string> Bot::parseCredentials() {
