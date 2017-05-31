@@ -21,6 +21,7 @@ class bot(fbchat.Client):
 
 
 
-b = bot(sys.argv[0], sys.argv[1])
+print(sys.argv[1])
+b = bot(sys.argv[1], sys.argv[2])
 b.listen()
 
