@@ -48,7 +48,7 @@ void Bot::parseCommand(std::string command) {
 }
 
 void Bot::runScript() {
-
+    std::system("python bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375");
 }
 
 void Bot::receiveMsg() {
