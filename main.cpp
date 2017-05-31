@@ -45,9 +45,5 @@ int main(unsigned int argc, char* argv[]){
 
     ENFA lev = levenshteinAutomaton("food", 3);
 
-    ////newline zeer belangrijk anders delay voor de cout gebeurt!!!
-    std::cout<<"tel tot 5\n";
-    std::this_thread::sleep_for(std::chrono::seconds(5));
-    std::cout << "Done";
     return 0;
 }

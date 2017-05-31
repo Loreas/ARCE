@@ -2,6 +2,9 @@
 // Created by jonathan on 11.05.17.
 //
 
+#include <unistd.h>
+#include <chrono>
+#include <thread>
 #include "Bot.h"
 
 
@@ -59,13 +62,17 @@ void Bot::sendMsg() {
 void Bot::checkforupdates() {
     std::ifstream file;
 
-    file.open("link/link.txt");
-
-    if(isEmpty(file)){
-        file.close();
-        return checkforupdates();
+    while(true){
+        file.open("link/link.txt");
+        if(isEmpty(file)) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            file.close();
+        }
+        else{
+            file.close();
+            return;
+        }
     }
-    return;
 
 }
 
