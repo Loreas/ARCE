@@ -4,6 +4,8 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <stdio.h>
+#include <iostream>
 
 #include <fstream>
 #include "Bot.h"
@@ -43,11 +45,15 @@ int main(unsigned int argc, char* argv[]){
 
     bulkTest("./testInput.txt", *bot.getDFA());
 
-    ENFA lev = levenshteinAutomaton("food", 3);
+    ENFA lev = levenshteinAutomaton("food", 1);
+    DFA testDFA;
+    MSSC(lev, testDFA);
+    lev.FAtoDot();
+    testDFA.FAtoDot();
 
-    ////newline zeer belangrijk anders delay voor de cout gebeurt!!!
-    std::cout<<"tel tot 5\n";
-    std::this_thread::sleep_for(std::chrono::seconds(5));
-    std::cout << "Done";
+    std::cout << testDFA.checkString("fod");
+
+
+
     return 0;
 }
