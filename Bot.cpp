@@ -89,8 +89,14 @@ void Bot::run(){
     std::ifstream file;
     bool go = true;
     int c = 0;
+    std::vector<std::string> credentials;
+    credentials = parseCredentials();
+    std::string command = "python bot/fb_bot.py ";
+    command += credentials[0];
+    command += credentials[1];
+    command += credentials[2];
+    std::system(command.c_str());
 
-    std::system("python bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375");
 
     while(go){
         file.open("link/link.txt");
@@ -108,4 +114,17 @@ void Bot::run(){
             }
         }
     }
+}
+
+std::vector<std::string> Bot::parseCredentials() {
+    std::ifstream file;
+    std::string line;
+    std::vector<std::string> result;
+    file.open("./bot/credentials.txt");
+    while(!file.eof()){
+        getline(file, line);
+        result.push_back(line);
+
+    }
+    return result;
 }

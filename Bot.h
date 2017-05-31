@@ -77,6 +77,13 @@ public:
     std::vector<std::string> parseLink();
 
     /**
+     * @brief Parses the credentials of a bot
+     * @return vector of strings with the credentials
+     */
+    std::vector<std::string> parseCredentials();
+
+
+    /**
      *  @brief The 'main loop' for the bot (will constantly check for messages and parse them
      */
      void run();
