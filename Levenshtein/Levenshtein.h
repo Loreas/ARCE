@@ -5,13 +5,25 @@
 #ifndef ARCE_LEVENSHTEIN_H
 #define ARCE_LEVENSHTEIN_H
 
+#include <cmath>
+
+#include "../MSSC/MSSC.h"
 #include "../FA/FA.h"
 #include "../FA/ENFA.h"
+#include "../FA/DFA.h"
 
-bool fuzzy(std::string term);
 
-void setupFuzzySearch(std::vector<std::string> terms, bool upToDate);
+class Fuzzy {
+private:
 
-ENFA levenshteinAutomaton(std::string word, int k);
+    std::map<std::string, DFA> automata;
+
+    void setupFuzzySearch(std::vector<std::string> terms, bool upToDate);
+
+    ENFA levenshteinAutomaton(std::string word, int k);
+public:
+
+    std::vector<std::string> fuzzy(std::string term);
+};
 
 #endif //ARCE_LEVENSHTEIN_H
