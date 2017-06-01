@@ -28,3 +28,8 @@ bool DFA::checkString(std::string s) {
     }
     return curState->isAccepting();
 }
+
+DFA& DFA::operator=(const DFA& otherDFA) {
+    FA::operator=(otherDFA);
+    return (*this);
+}

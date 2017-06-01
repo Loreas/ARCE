@@ -40,11 +40,12 @@ public:
     const std::string& getTypeFA() const {return this->type;}
     const State* getStartstate() const {return this->startstate;}
 
-    void FAtoDot() const;
+    void FAtoDot(std::string name = "") const;
     void FAtoJSON();
 
     virtual bool checkString(std::string s) {return false;}
 
+    virtual FA& operator=(const FA& otherFA);
 protected:
     void setTypeFA(std::string type) {this->type = type;}
 };

@@ -13,6 +13,8 @@ public:
     DFA(const DFA& otherDFA);
     virtual bool Validate() {return true;}
     virtual bool checkString(std::string s);
+
+    DFA& operator=(const DFA& otherDFA);
 };
 
 
