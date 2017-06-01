@@ -18,10 +18,10 @@ private:
 
     std::map<std::string, DFA> automata;
 
-    void setupFuzzySearch(std::vector<std::string>& terms, bool upToDate);
-
     ENFA levenshteinAutomaton(std::string& word, int& k);
+
 public:
+    void setupFuzzySearch(std::vector<std::string>& terms, bool upToDate);
 
     std::vector<std::string> fuzzy(std::string& term);
 };
