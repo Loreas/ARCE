@@ -32,6 +32,8 @@ int main(unsigned int argc, char* argv[]){
     Bot bot;
     Parser parser;
     parser.parseCommands("./customCommands.json", bot);
+    bot.setup();
+
     std::string test;
     if(argc == 1) test = "List1";
     else if(argc == 2){
@@ -45,14 +47,7 @@ int main(unsigned int argc, char* argv[]){
     MSSC(lev, testDFA);
     lev.FAtoDot();
     testDFA.FAtoDot();
-
-    std::cout << testDFA.checkString("foodo");
      */
-
-
-    //bot.run();
-
-
 
     return 0;
 }

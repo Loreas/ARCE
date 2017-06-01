@@ -32,6 +32,24 @@ void Bot::addCommand(Command *command) {
     commands[command->getName()] = command;
 }
 
+void Bot::setup(){
+    std::vector<std::string> cmdNames;
+    std::string cmdRegex;
+    for(auto p : commands){
+        cmdNames.push_back(p.second->getCommand());
+        cmdRegex += p.second->getCommand() + "+";
+    }
+    cmdRegex.pop_back();
+
+    // Build complete DFA
+    buildDFA(cmdRegex);
+
+    // Build Fuzzy
+    Fuzzy* f = new Fuzzy();
+    f->setupFuzzySearch(cmdNames, true);
+    this->fuzzy = f;
+}
+
 void Bot::buildDFA(std::string regex, bool FAout) {
     ENFA enfa;
     RegToeNFA converter;
@@ -62,7 +80,6 @@ void Bot::parseCommand(std::string command) {
 void Bot::runScript() {
 
 }
-
 
 void Bot::receiveMsg() {
 
