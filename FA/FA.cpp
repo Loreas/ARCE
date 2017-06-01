@@ -73,7 +73,15 @@ void FA::addState(const State *state) {
 }
 
 void FA::addTransition(const State *stateFrom, std::string character, const State *stateTo) {
-    transitions[std::make_tuple(stateFrom, character)].insert(stateTo);
+    if (character != "*") transitions[std::make_tuple(stateFrom, character)].insert(stateTo);
+    else {
+        std::set<std::string> alph = {"a", "b", "c", "d", "e", "f", "g", "h", "i",
+                                      "j", "k", "l", "m", "n", "o", "p", "q", "r",
+                                      "s", "t", "u", "v", "w", "x", "y", "z"};
+        for (auto ch : alph) {
+            transitions[std::make_tuple(stateFrom, ch)].insert(stateTo);
+        }
+    }
 }
 
 std::ostream& operator<<(std::ostream& os, const FA& Fa) {
@@ -137,7 +145,7 @@ void FA::FAtoJSON() {
 
 void FA::FAtoDot(std::string name) const {
     std::ofstream dot;
-    if (name == "") std::string name = this->getTypeFA()+".dot";
+    if (name == "") name = this->getTypeFA()+".dot";
     dot.open(name);
     std::string startingState;
 

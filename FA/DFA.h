@@ -11,6 +11,7 @@ class DFA: public FA{
 public:
     DFA();
     DFA(const DFA& otherDFA);
+    const State* delta(const State* from, std::string c);
     virtual bool Validate() {return true;}
     virtual bool checkString(std::string s);
 

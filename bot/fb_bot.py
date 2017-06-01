@@ -10,9 +10,25 @@ class bot(fbchat.Client):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
 
-        f = open("../link/link.txt", 'w')
+        print(message)
+        f = open("./link/link.txt", 'w')
         f.write(message)
+        f.close()
 
-b = bot(sys.argv[0], sys.argv[1])
+        if message == "exit":
+            sys.exit();
+
+        # Checkfile for updates
+        """
+        with open("./link/linkToPython.txt") as f:
+            content = f.readline()
+        for i in content:
+            self.send(sys.argv[3], i, False)
+        """
+
+
+print(sys.argv[2])
+b = bot(str(sys.argv[1]), str(sys.argv[2]), False)
+
 b.listen()
 

@@ -2,27 +2,27 @@
 "commands": [
 	{
 	  "name" : "Template",
-	  "regex" : "a+ab",
+	  "description" : "A template description",
+	  "command" : "TemplateCommand",
+	  "arguments" : "(a(0+1)*)+(b(2+3)*)",
 	  "language" : "bash",
-	  "filename" : "echo 'temp'"
-	},
+	  "execute" : "echo 'Template'"
+	},	
 	{
-	  "name" : "Swag",
-	  "regex" : "(sw+ig)(1+2)",
+	  "name" : "Addition",
+	  "description" : "A template addition command",
+	  "command" : "add",
+	  "arguments" : "(a0+b0)(b1+a1)",
 	  "language" : "bash",
-	  "filename" : "echo 'swag'"
+	  "execute" : "echo 'adding'"
 	},
 	{
 	  "name" : "List",
-	  "regex" : "List(1+2)",
+	  "description" : "A template list command",
+	  "command" : "list",
+	  "arguments" : "all+hidden",
 	  "language" : "bash",
-	  "filename" : "echo 'temp'"
-	},
-	{
-	  "name" : "Add",
-	  "regex" : "add+a",
-	  "language" : "bash",
-	  "filename" : "echo 'swag'"
+	  "execute" : "ls"
 	}
 ]
 }

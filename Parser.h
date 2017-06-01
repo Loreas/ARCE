@@ -9,6 +9,8 @@
 #include "FA/FA.h"
 #include "FA/DFA.h"
 #include "FA/ENFA.h"
+#include "Bot.h"
+#include "Command.h"
 
 class Parser {
 private:
@@ -21,7 +23,7 @@ public:
      *  @param The filename of the file to be parsed
      *  @return The regex (string)
      */
-     std::string parseRegex(std::string filename);
+     std::vector<std::string> parseCommands(std::string filename, Bot& bot);
 
 
     /**

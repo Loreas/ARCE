@@ -855,6 +855,7 @@ class Client(object):
         """Does one cycle of the listening loop.
         This method is only useful if you want to control fbchat from an
         external event loop."""
+
         try:
             if markAlive: self.ping(self.sticky)
             try:
@@ -866,6 +867,9 @@ class Client(object):
             self.listening = False
         except requests.exceptions.Timeout:
             pass
+
+
+
 
 
     def stop_listening(self):
