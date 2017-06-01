@@ -29,8 +29,9 @@ void bulkTest(std::string fileName, DFA& dfa){
 int main(unsigned int argc, char* argv[]){
 
     //// DEBUG & TESTING ZONE ////
+    Bot bot;
     Parser parser;
-    std::string dfaString = parser.parseRegex("./customCommands.json");
+    parser.parseCommands("./customCommands.json", bot);
     std::string test;
     if(argc == 1) test = "List1";
     else if(argc == 2){
@@ -38,16 +39,15 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
-    //Bot bot;
-    //bot.buildDFA(dfaString);
-
+    /*
     ENFA lev = levenshteinAutomaton("food", 1);
     DFA testDFA;
     MSSC(lev, testDFA);
     lev.FAtoDot();
     testDFA.FAtoDot();
 
-    std::cout << testDFA.checkString("fod");
+    std::cout << testDFA.checkString("foodo");
+     */
 
 
     //bot.run();

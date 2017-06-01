@@ -28,3 +28,8 @@ bool DFA::checkString(std::string s) {
     }
     return curState->isAccepting();
 }
+
+const State* DFA::delta(const State *from, std::string c) {
+    // The point of this function is to return the correct transition,
+    // and if
+}

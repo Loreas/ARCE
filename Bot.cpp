@@ -9,6 +9,12 @@
 #include <iostream>
 #include "Bot.h"
 
+Bot::~Bot() {
+    delete dfa;
+    for(auto p : commands){
+        delete p.second;
+    }
+}
 
 std::string Bot::getPath() {
     return JSONpath;
@@ -20,6 +26,10 @@ DFA* Bot::getDFA() {
 
 void Bot::setPath(std::string path) {
     JSONpath = path;
+}
+
+void Bot::addCommand(Command *command) {
+    commands[command->getName()] = command;
 }
 
 void Bot::buildDFA(std::string regex, bool FAout) {

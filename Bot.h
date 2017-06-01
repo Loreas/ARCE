@@ -10,12 +10,15 @@
 #include "FA/ENFA.h"
 #include "MSSC/MSSC.h"
 #include "regex_to_enfa/regex_to_enfa.h"
+#include "Command.h"
 #include <fstream>
+
 
 class Bot {
 private:
     std::string JSONpath;
     DFA* dfa;
+    std::map<std::string, Command*> commands;
 
 public:
 
@@ -23,6 +26,8 @@ public:
      * @brief Constructor
      */
     Bot() {};
+
+    ~Bot();
 
     /**
      *
@@ -37,6 +42,8 @@ public:
      * @param path The path to the JSON file linking commands to their scripts
      */
     void setPath(std::string path);
+
+    void addCommand(Command* command);
 
     /**
      * @brief Makes the given regex into an eNFA, which is then used to build a DFA that is saved by the bot
