@@ -32,14 +32,16 @@ int main(unsigned int argc, char* argv[]){
     Bot bot;
     Parser parser;
     parser.parseCommands("./customCommands.json", bot);
-    bot.setup();
+    bot.setup(true);
 
     std::string test;
-    if(argc == 1) test = "List1";
+    if(argc == 1) test = "TemplateCommand";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
+
+    bot.parseCommand(test);
 
     /*
     ENFA lev = levenshteinAutomaton("food", 1);

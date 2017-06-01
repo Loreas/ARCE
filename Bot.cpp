@@ -32,7 +32,7 @@ void Bot::addCommand(Command *command) {
     commands[command->getName()] = command;
 }
 
-void Bot::setup(){
+void Bot::setup(bool output){
     std::vector<std::string> cmdNames;
     std::string cmdRegex;
     for(auto p : commands){
@@ -42,7 +42,7 @@ void Bot::setup(){
     cmdRegex.pop_back();
 
     // Build complete DFA
-    buildDFA(cmdRegex);
+    buildDFA(cmdRegex, output);
 
     // Build Fuzzy
     Fuzzy* f = new Fuzzy();
@@ -74,7 +74,6 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 void Bot::parseCommand(std::string command) {
     // First, check if the command is valid
     if(!dfa->checkString(command)) return;
-
 }
 
 void Bot::runScript() {

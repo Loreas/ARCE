@@ -7,6 +7,22 @@
 	  "arguments" : "(a(0+1)*)+(b(2+3)*)",
 	  "language" : "bash",
 	  "execute" : "echo 'Template'"
+	},	
+	{
+	  "name" : "Addition",
+	  "description" : "A template addition command",
+	  "command" : "add",
+	  "arguments" : "(a0+b0)(b1+a1)",
+	  "language" : "bash",
+	  "execute" : "echo 'adding'"
+	},
+	{
+	  "name" : "List",
+	  "description" : "A template list command",
+	  "command" : "list",
+	  "arguments" : "all+hidden",
+	  "language" : "bash",
+	  "execute" : "ls"
 	}
 ]
 }
