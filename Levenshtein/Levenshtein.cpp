@@ -6,7 +6,7 @@
 
 std::vector<std::string> Fuzzy::fuzzy(std::string& term){
     std::vector<std::string> possibleTerms;
-    for (auto pair : automata) {
+    for (auto& pair : automata) {
         if (pair.second.checkString(term)) possibleTerms.push_back(pair.first);
     }
     return possibleTerms;
@@ -14,7 +14,7 @@ std::vector<std::string> Fuzzy::fuzzy(std::string& term){
 
 void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
     if (upToDate) return;
-    for (std::string term : terms) {
+    for (std::string& term : terms) {
         int maxDistance = std::ceil(term.size() / 5.0);
         ENFA lev = levenshteinAutomaton(term, maxDistance);
         DFA dfa;
