@@ -38,8 +38,8 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
-    Bot bot;
-    bot.buildDFA(dfaString);
+    //Bot bot;
+    //bot.buildDFA(dfaString);
 
     ENFA lev = levenshteinAutomaton("food", 1);
     DFA testDFA;
@@ -49,7 +49,8 @@ int main(unsigned int argc, char* argv[]){
 
     std::cout << testDFA.checkString("fod");
 
-    bot.run();
+
+    //bot.run();
 
 
 
