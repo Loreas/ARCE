@@ -18,12 +18,12 @@ private:
 
     std::map<std::string, DFA> automata;
 
-    void setupFuzzySearch(std::vector<std::string> terms, bool upToDate);
+    void setupFuzzySearch(std::vector<std::string>& terms, bool upToDate);
 
-    ENFA levenshteinAutomaton(std::string word, int k);
+    ENFA levenshteinAutomaton(std::string& word, int& k);
 public:
 
-    std::vector<std::string> fuzzy(std::string term);
+    std::vector<std::string> fuzzy(std::string& term);
 };
 
 #endif //ARCE_LEVENSHTEIN_H
