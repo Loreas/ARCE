@@ -8,6 +8,10 @@
 #include "../FA/FA.h"
 #include "../FA/ENFA.h"
 
+bool fuzzy(std::string term);
+
+void setupFuzzySearch(std::vector<std::string> terms, bool upToDate);
+
 ENFA levenshteinAutomaton(std::string word, int k);
 
 #endif //ARCE_LEVENSHTEIN_H
