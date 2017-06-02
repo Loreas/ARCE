@@ -48,65 +48,31 @@ DFA tfa(DFA& dfa) {
         newDist = false;
         for (int r = 0; r <= table_size - 1; r++) {
             for (int c = 0; c <= r; c++) {
-                if (std::get<2>(statePairs[c][r]) == lastDist) {
+                if (std::get<2>(statePairs[r][c]) == lastDist) {
                     obj_state first = std::get<0>(statePairs[r][c]);
                     obj_state second = std::get<1>(statePairs[r][c]);
-                    int newR, newC; // column/row of newly found distinguishable state
                     for (auto& ch: dfa.getAlphabet()) {
-                        /*
-                        bool fstUsed = false;
-                        bool sndUsed = false;
-                        for (auto it = states.begin(); it != states.end(); it++) {
-                            set_state transition = transitions[std::make_tuple(*it, ch)];
-                            if (transition.find(first) != transition.end() and !fstUsed) {
-                                fstUsed = true;
-                                int temp = it - states.begin();
-                                if (temp != state_amount - 1) {
-                                    newC = temp;
-                                }
-                                else {
-                                    newC = newR;
-                                    newR = temp - 1;
-                                }
-                            }
-                            else if (transition.find(second) != transition.end() and !sndUsed) {
-                                sndUsed = true;
-                                int temp = it - states.begin();
-                                if (temp != 0) {
-                                    newR = temp - 1;
-                                }
-                                else {
-                                    newR = newC;
-                                    newC = temp;
-                                }
-                            }
-                        }
-                        if (fstUsed and sndUsed) {
-                            std::get<2>(statePairs[newR][newC]) = lastDist + 1;
-                            newDist = true;
-                        }
-                         */
                         for (int i = 0; i < state_amount - 1; i++) {
                             bool checkFirst ;
 
-                            set_state transition1 = transitions[std::make_tuple(states[i+1], ch)];
+                            set_state transition1 = transitions[std::make_tuple(states[i], ch)];
                             if (transition1.find(first) != transition1.end()) checkFirst = false;
                             else if (transition1.find(second) != transition1.end()) checkFirst = true;
                                 // No valid transition for current cell
                             else continue;
 
-                            for (int j = 0; j <= i; j++) {
+                            for (int j = i+1; j < state_amount; j++) {
                                 set_state transition2 = transitions[std::make_tuple(states[j], ch)];
                                 if (checkFirst) {
                                     if (transition2.find(first) != transition2.end()) {
-                                        if (std::get<2>(statePairs[i][j]) == -1) {
-                                            std::get<2>(statePairs[i][j]) = lastDist + 1;
+                                        if (std::get<2>(statePairs[j-1][i]) == -1) {
+                                            std::get<2>(statePairs[j-1][i]) = lastDist + 1;
                                             newDist = true;
                                         }
                                     }
                                 } else if (transition2.find(second) != transition2.end()) {
-                                    if (std::get<2>(statePairs[i][j]) == -1) {
-                                        std::get<2>(statePairs[i][j]) = lastDist + 1;
+                                    if (std::get<2>(statePairs[j-1][i]) == -1) {
+                                        std::get<2>(statePairs[j-1][i]) = lastDist + 1;
                                         newDist = true;
                                     }
                                 }
@@ -254,90 +220,5 @@ DFA tfa(DFA& dfa) {
         }
      }
 
-
-    /*
-     * for (int r = 0; r <= table_size - 1; r++) {
-        for (int c = 0; c <= r; c++) {
-            auto tup = statePairs[r][c];
-            auto first = std::get<0>(tup);
-            auto second = std::get<1>(tup);
-            // Equivalent states
-            if (std::get<2>(statePairs[r][c]) == -1) {
-                std::string name = "";
-                bool starting = false;
-                bool accepting = false;
-                auto fst_name = first->getName();
-                auto snd_name = second->getName();
-                fst_name.pop_back();
-                snd_name.erase(0, 1);
-                name = fst_name + ", " + snd_name;
-                if (first->isStarting() or second->isStarting())
-                    starting = true;
-                if (first->isAccepting() or second->isAccepting())
-                    accepting = true;
-                obj_state eq_state = new State(name, starting, accepting);
-                return_dfa.addState(eq_state);
-                if (starting) return_dfa.setStartstate(eq_state);
-                temp_trans[name] = eq_state;
-            }
-            // Distinguishable states
-            else {
-                return_dfa.addState(first);
-                if (first->isStarting()) return_dfa.setStartstate(first);
-                temp_trans[first->getName()] = first;
-                return_dfa.addState(second);
-                if (second->isStarting()) return_dfa.setStartstate(second);
-                temp_trans[second->getName()] = second;
-            }
-        }
-    }
-
-    for (int r = 0; r <= table_size - 1; r++) {
-        for (int c = 0; c <= r; c++) {
-            auto tup = statePairs[r][c];
-            auto first = std::get<0>(tup);
-            auto second = std::get<1>(tup);
-            for (auto& ch : dfa.getAlphabet()) {
-                // Equivalent states
-                if (std::get<2>(statePairs[r][c]) == -1) {
-                    std::string name = "";
-                    bool starting = false;
-                    bool accepting = false;
-                    auto fst_name = first->getName();
-                    auto snd_name = second->getName();
-                    fst_name.pop_back();
-                    snd_name.erase(0, 1);
-                    // name = fst_name + ", " + snd_name;
-                    name.append(fst_name);
-                    name.append(", ");
-                    name.append(snd_name);
-                    std::string to_name = "";
-                    auto fst_trans = (transitions[std::make_tuple(first, ch)].begin());
-                    auto snd_trans = (transitions[std::make_tuple(second, ch)].begin());
-                    auto fst_to_name = (*fst_trans)->getName();
-                    auto snd_to_name = (*snd_trans)->getName();
-                    fst_to_name.pop_back();
-                    snd_to_name.erase(0, 1);
-                    to_name = fst_to_name + ", " + snd_to_name;
-                    return_dfa.addTransition(temp_trans[name], ch, temp_trans[to_name]);
-                }
-                // Distinguishable states
-                else {
-                    return_dfa.addTransition(first, ch, (*transitions[std::make_tuple(first, ch)].begin()));
-                    return_dfa.addTransition(second, ch, (*transitions[std::make_tuple(second, ch)].begin()));
-                }
-            }
-        }
-    }
-    // TODO: Remove testing below
-    for (int r = 0; r <= table_size - 1; r++) {
-        for (int c = 0; c <= r; c++) {
-            std::cout << std::get<2>(statePairs[r][c]);
-            if (c != r) std::cout << ", ";
-        }
-        std::cout << std::endl;
-    }
-    */
-
-    return return_dfa;
+     return return_dfa;
 }
