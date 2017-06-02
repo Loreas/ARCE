@@ -1,6 +1,7 @@
 import fbchat
 import sys
 import datetime
+import os.path
 from subprocess import call
 
 class bot(fbchat.Client):
@@ -9,11 +10,27 @@ class bot(fbchat.Client):
         self.logging = logging
         self.message_done=message_done
 
-    def logmessage(self, message):
-        call(["mkdir","log"])
+    def startlogging(self, author_name, message):
+        call(["mkdir", "log"])
         c = datetime
-        new = open(str(c.date.today()), "a")
-        new.write(message)
+        new = open("log/" + str(c.date.today()), "a")
+        timestamp = datetime.datetime.now().time().strftime("%H:%M")
+        new.write(str(timestamp+ " - " + author_name+ ": " + message))
+
+    def log(self,arg,  message):
+
+        if(arg == "start"):
+            self.logging = True
+        elif(arg == 'stop'):
+            self.logging = False
+        else:
+            if(os.path.isfile("log/"+arg+".txt")):
+                self.sendLocalImage(sys.argv[3],None, False,"log/"+arg+".txt")
+            else:
+                self.send(sys.argv[3], "logfile doesn't exist",False)
+        
+
+
 
 
     def on_message(self, mid, author_id, author_name, message, metadata):
@@ -28,16 +45,19 @@ class bot(fbchat.Client):
         if message == "!exit":
             self.stop_listening()
 
+        if(self.logging):
+            self.startlogging(author_name, message)
+
+
 
         # Checkfile for updates
 
         with open("./link/linkToPython.txt") as f:
             content = f.readline()
         for i in content:
-            if(i == "start_logging"):
-                self.logging = True
-            elif(i == "stop_logging == false"):
-                self.logging = False
+            if(i[0:3] == "log"):
+                arg= i[3:]
+                self.log(arg, message)
             else:
                 self.send(sys.argv[3], i, False)
 
@@ -48,8 +68,7 @@ class bot(fbchat.Client):
         f.close()
 
 
-        if(self.logging == True):
-            self.logmessage(message)
+
 
 
 

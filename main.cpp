@@ -29,28 +29,27 @@ void bulkTest(std::string fileName, DFA& dfa){
 int main(unsigned int argc, char* argv[]){
 
     //// DEBUG & TESTING ZONE ////
+    Bot bot;
     Parser parser;
-    std::string dfaString = parser.parseRegex("./customCommands.json");
+    parser.parseCommands("./customCommands.json", bot);
+    bot.setup(true);
+
     std::string test;
-    if(argc == 1) test = "List1";
+    if(argc == 1) test = "TemplateCommand";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
-    Bot bot;
-    bot.buildDFA(dfaString);
-
-    ENFA lev = levenshteinAutomaton("food", 1);
-    DFA testDFA;
-    MSSC(lev, testDFA);
-    lev.FAtoDot();
-    testDFA.FAtoDot();
-
-    std::cout << testDFA.checkString("fod");
-
-    bot.run();
-
+    bot.parseCommand(test);
+    Fuzzy* f = bot.getFuzzy();
+    //f->printAutomata();
+    std::string fuzzyTest = "templade";
+    std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
+    for(std::string s : suggestions){
+        std::cout << s << ", ";
+    }
+    std::cout << std::endl;
 
 
     return 0;

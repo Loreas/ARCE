@@ -8,25 +8,30 @@
 
 using json = nlohmann::json;
 
-std::string Parser::parseRegex(std::string filename) {
+std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot) {
     std::ifstream is(filename);
     json j;
-    std::string resultRegex = "";
+    std::vector<std::string> names;
 
     if(!is.is_open()){
         std::cout << "Failed to open file '" << filename << "'.\n";
-        return "";
+        return names;
     }
     is >> j;
 
     for(auto& command : j["commands"]){
-        std::string r = command["regex"];
-        resultRegex += r + "+";
+        std::string name = command["name"];
+        std::string desc = command["description"];
+        std::string cmd = command["command"];
+        std::string arg = command["arguments"];
+        std::string lang = command["language"];
+        std::string exec = command["execute"];
+        Command* c = new Command(name, desc, cmd, arg, lang, exec);
+        bot.addCommand(c);
+        names.push_back(name);
     }
-    // Remove last '+'
-    resultRegex.pop_back();
 
-    return resultRegex;
+    return names;
 }
 
 DFA Parser::parseDFA(std::string filename) {

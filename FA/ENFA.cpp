@@ -9,6 +9,11 @@ ENFA::ENFA() {
     this->setTypeFA("ENFA");
 }
 
+ENFA::ENFA(const ENFA& otherENFA)
+    : FA(otherENFA) {
+    this->epsilon = otherENFA.epsilon;
+}
+
 void ENFA::setEpsilon(std::string epsilon) {
     if (this->getEpsilon() == "ε")
         this->epsilon = epsilon;
@@ -78,4 +83,10 @@ std::set<const State*> ENFA::eclose(const State* state) const{
     }
 
     return ecl;
+}
+
+ENFA& ENFA::operator=(const ENFA& otherENFA) {
+    FA::operator=(otherENFA);
+    this->epsilon = otherENFA.epsilon;
+    return (*this);
 }

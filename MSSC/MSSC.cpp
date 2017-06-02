@@ -140,5 +140,4 @@ void MSSC(ENFA& enfa, DFA& dfa){
             }
         }
     }
-
 }

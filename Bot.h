@@ -10,12 +10,17 @@
 #include "FA/ENFA.h"
 #include "MSSC/MSSC.h"
 #include "regex_to_enfa/regex_to_enfa.h"
+#include "Command.h"
+#include "./Levenshtein/Levenshtein.h"
 #include <fstream>
+
 
 class Bot {
 private:
     std::string JSONpath;
     DFA* dfa;
+    Fuzzy* fuzzy;
+    std::map<std::string, Command*> commands;
 
 public:
 
@@ -23,6 +28,8 @@ public:
      * @brief Constructor
      */
     Bot() {};
+
+    ~Bot();
 
     /**
      *
@@ -32,11 +39,20 @@ public:
 
     DFA* getDFA();
 
+    Fuzzy* getFuzzy();
+
     /**
      *
      * @param path The path to the JSON file linking commands to their scripts
      */
     void setPath(std::string path);
+
+    void addCommand(Command* command);
+
+    /**
+     * @brief This function will set the bot up for use; preparing the DFA etc, FuzzySearch etc.
+     */
+    void setup(bool output = false);
 
     /**
      * @brief Makes the given regex into an eNFA, which is then used to build a DFA that is saved by the bot
