@@ -32,8 +32,8 @@ FA::FA(const FA &otherFA) {
         for (const State* state: std::get<1>(trans)) {
             std::string to = state->getName();
 
-            transInfo trans = std::make_tuple(from, to, c);
-            transitions.push_back(trans);
+            transInfo newTrans = std::make_tuple(from, to, c);
+            transitions.push_back(newTrans);
         }
     }
 
@@ -148,6 +148,7 @@ void FA::FAtoDot(std::string filename) const {
     std::string name;
     if(filename == "") name = this->getTypeFA()+".dot";
     else name = filename + ".dot";
+
     dot.open(name);
     std::string startingState;
 
@@ -185,4 +186,52 @@ void FA::FAtoDot(std::string filename) const {
 
     dot << "}";
     dot.close();
+}
+
+FA& FA::operator=(const FA& otherFA) {
+    this->type = otherFA.type;
+    this->alphabet = otherFA.alphabet;
+
+    // Deep copy al states
+
+    for (const State* state: otherFA.states) {
+        State* newState = new State(state->getName(), state->isStarting(), state->isAccepting());
+        this->addState(newState);
+        if (newState->isStarting())
+            this->startstate = newState;
+    }
+
+    // Copy all transitions
+    typedef std::tuple<std::string, std::string, std::string> transInfo;
+    std::vector<transInfo> transitions;
+
+    for (auto trans: otherFA.transitions) {
+        std::string from = std::get<0>(std::get<0>(trans))->getName();
+        std::string c = std::get<1>(std::get<0>(trans));
+
+        for (const State* state: std::get<1>(trans)) {
+            std::string to = state->getName();
+
+            transInfo newTrans = std::make_tuple(from, to, c);
+            transitions.push_back(newTrans);
+        }
+    }
+
+    // Add transitions
+    for(transInfo trans : transitions){
+        std::string fromName = std::get<0>(trans);
+        std::string toName = std::get<1>(trans);
+        const State* from = nullptr;
+        const State* to = nullptr;
+        // TODO: temp fix
+        for(const State* s : this->getStates()){
+            if(s->getName() == fromName) from = s;
+            if(s->getName() == toName) to = s;
+            if(to != nullptr and from != nullptr) break;
+        }
+        std::string c = std::get<2>(trans);
+        this->addTransition(from, c ,to);
+    }
+
+    return (*this);
 }

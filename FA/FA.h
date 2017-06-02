@@ -45,6 +45,7 @@ public:
 
     virtual bool checkString(std::string s) {return false;}
 
+    virtual FA& operator=(const FA& otherFA);
 protected:
     void setTypeFA(std::string type) {this->type = type;}
 };
