@@ -143,9 +143,11 @@ void FA::FAtoJSON() {
     j.close();
 }
 
-void FA::FAtoDot() const {
+void FA::FAtoDot(std::string filename) const {
     std::ofstream dot;
-    std::string name = this->getTypeFA()+".dot";
+    std::string name;
+    if(filename == "") name = this->getTypeFA()+".dot";
+    else name = filename + ".dot";
     dot.open(name);
     std::string startingState;
 

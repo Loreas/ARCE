@@ -24,6 +24,10 @@ DFA* Bot::getDFA() {
     return dfa;
 }
 
+Fuzzy* Bot::getFuzzy() {
+    return fuzzy;
+}
+
 void Bot::setPath(std::string path) {
     JSONpath = path;
 }
@@ -33,6 +37,11 @@ void Bot::addCommand(Command *command) {
 }
 
 void Bot::setup(bool output){
+
+    // Checking if the json has been updated
+    bool upToDate = false; // TODO: Fix this
+
+    // Setting up DFA and FuzzySearch
     std::vector<std::string> cmdNames;
     std::string cmdRegex;
     for(auto p : commands){
@@ -46,7 +55,7 @@ void Bot::setup(bool output){
 
     // Build Fuzzy
     Fuzzy* f = new Fuzzy();
-    f->setupFuzzySearch(cmdNames, true);
+    f->setupFuzzySearch(cmdNames, upToDate);
     this->fuzzy = f;
 }
 
@@ -56,7 +65,7 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use algorithm implemented by D. Miroyan to convert regex to e-NFA
     converter.ConvertReTo_eNfa(regex, enfa);
-    if(FAout) enfa.FAtoDot();
+    if(FAout) enfa.FAtoDot("BotENFA");
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
     DFA* dfaRaw = new DFA;
@@ -66,7 +75,7 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Assign DFA to bot
     dfa = dfaRaw;
-    if(FAout) dfa->FAtoDot();
+    if(FAout) dfa->FAtoDot("BotDFA");
 
     // delete dfaRaw;
 }

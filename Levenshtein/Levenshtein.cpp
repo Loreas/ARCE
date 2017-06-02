@@ -113,3 +113,10 @@ ENFA Fuzzy::levenshteinAutomaton(std::string& word, int& k) {
     }
     return lev;
 }
+
+void Fuzzy::printAutomata() const {
+    for(auto& p : automata){
+        std::string fn = p.first;
+        p.second.FAtoDot(fn);
+    }
+}

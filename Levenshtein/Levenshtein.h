@@ -24,6 +24,8 @@ public:
     void setupFuzzySearch(std::vector<std::string>& terms, bool upToDate);
 
     std::vector<std::string> fuzzy(std::string& term);
+
+    void printAutomata() const;
 };
 
 #endif //ARCE_LEVENSHTEIN_H

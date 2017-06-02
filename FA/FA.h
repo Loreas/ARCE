@@ -40,7 +40,7 @@ public:
     const std::string& getTypeFA() const {return this->type;}
     const State* getStartstate() const {return this->startstate;}
 
-    void FAtoDot() const;
+    void FAtoDot(std::string filename = "") const;
     void FAtoJSON();
 
     virtual bool checkString(std::string s) {return false;}

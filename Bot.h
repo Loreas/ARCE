@@ -39,6 +39,8 @@ public:
 
     DFA* getDFA();
 
+    Fuzzy* getFuzzy();
+
     /**
      *
      * @param path The path to the JSON file linking commands to their scripts
