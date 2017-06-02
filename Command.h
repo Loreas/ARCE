@@ -5,6 +5,7 @@
 #ifndef ARCE_COMMAND_H
 #define ARCE_COMMAND_H
 
+#include <algorithm>
 #include "./FA/DFA.h"
 #include "./FA/ENFA.h"
 #include "./TFA/tfa.h"
@@ -21,6 +22,7 @@ private:
     DFA* arg_dfa;
     std::string language;
     std::string execute;
+    std::string end_message;
 public:
     Command() {};
     Command(std::string name, std::string desc, std::string cmd, std::string arg_regex, std::string lang, std::string exec);
@@ -33,6 +35,7 @@ public:
     DFA* getDFA() const;
     std::string getLanguage() const;
     std::string getExecute() const;
+    std::string getEndMessage() const;
 
     void buildDFA();
 
