@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <sstream>
 #include "Bot.h"
 
 Bot::~Bot() {
@@ -33,7 +34,11 @@ void Bot::setPath(std::string path) {
 }
 
 void Bot::addCommand(Command *command) {
+<<<<<<< HEAD
     commands[command->getName()] = command;
+=======
+    commands[command->getCommand()] = command;
+>>>>>>> 8514dbbdbdd2039f2cdc1077ae0d6edf4fa79862
 }
 
 void Bot::setup(bool output){
@@ -80,9 +85,21 @@ void Bot::buildDFA(std::string regex, bool FAout) {
     // delete dfaRaw;
 }
 
-void Bot::parseCommand(std::string command) {
-    // First, check if the command is valid
-    if(!dfa->checkString(command)) return;
+
+bool Bot::checkCommand(std::string& command) const {
+    return dfa->checkString(command);
+}
+
+std::string Bot::executeCommand(std::vector<std::string> command) {
+    Command* com = commands[command[0]];
+    for (int i = 1; i < command.size(); i++) {
+        if (!com->getDFA()->checkString(command[i])) {
+            return "Argument \"" + command[i] + "\" is not of the right form.\n";
+        }
+    }
+    system(com->getExecute());
+    return com->getEndMessage();
+
 }
 
 void Bot::runScript() {
@@ -125,7 +142,6 @@ std::vector<std::string> Bot::parseLink() {
 void Bot::run(){
     std::ifstream file;
     bool go = true;
-    int c = 0;
     std::vector<std::string> credentials;
     credentials = parseCredentials();
     std::string command = "python bot/fb_bot.py ";
@@ -134,6 +150,7 @@ void Bot::run(){
     command += " " + credentials[2];
     FILE *in;
     in = popen(command.c_str(), "r");
+    std::string output;
 
     while(go){
         file.open("link/link.txt");
@@ -142,27 +159,61 @@ void Bot::run(){
             file.close();
         }
         else{
-            c++;
-            if(c > 1000) go = false;
-            std::string line;
-            while(getline(file, line)){
-                std::cout << line << "\n";
-                if(line == "exit"){
-                    std::cout << "Exiting\n";
-                    // Clear the file (overwrite with empty file)
-                    file.close();
-                    file.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
-                    file.close();
-                    std::exit(0);
-                }
-            }
+             std::vector<std::string> commands = parseLink();
+             for(std::string c : commands) {
+                 // Check if command is valid
+                 std::stringstream ss(c);
+                 std::string word;
+                 std::vector<std::string> words;
+                 while(ss >> word){
+                     words.push_back(word);
+                 }
+                 if(!checkCommand(words[0])) {
+                     std::vector<std::string> typos = fuzzy->fuzzy(c);
+                     if (typos.size() != 0) {
+                         output = "Did you mean:\n";
+                         for (auto typo : typos) {
+                             output += typo + "\n";
+                         }
+                     }
+                     else {
+                         output = "Cannot find command.\n";
+                     }
+                 }
+                 else {
+                    if (words[0] == "adduser") {
+                        if (c.size() == 3)
+                            output = c + "\n";
+                        else
+                            output = "addUser command expects following arguments: addUser name surname\n";
+                    }
+                    else if (words[0] == "removeuser") {
+                        if (c.size() == 3)
+                            output = c + "\n";
+                        else
+                            output = "removeUser command expects following arguments: removeUser name surname\n";
+                    }
+                    else if (words[0] == "log"){
+                        if (c.size() == 2)
+                            output = c;
+                        else
+                            output = "log command expects following arguments: log start/stop/date";
+                    }
+                    else {
+                        output = executeCommand(words) + "\n";
+                    }
+                 }
+                 std::ofstream link("link/linkToPython.txt");
+                 link << output;
+                 link.close();
+             }
+        }
 
             file.close();
             // Clear the file (overwrite with empty file)
             file.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
             file.close();
         }
-    }
 
     pclose(in);
 }
