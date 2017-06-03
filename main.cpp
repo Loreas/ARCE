@@ -28,6 +28,7 @@ void bulkTest(std::string fileName, DFA& dfa){
 
 int main(unsigned int argc, char* argv[]){
 
+    /*
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
@@ -53,7 +54,20 @@ int main(unsigned int argc, char* argv[]){
         std::cout << s << ", ";
     }
     std::cout << std::endl;
+    */
 
+    /*
+    std::string regex;
+    ENFA enfa;
+    DFA dfa1;
+    DFA dfa2;
+    RegToeNFA regToeNFA;
+
+    regToeNFA.ConvertReTo_eNfa(regex, enfa);
+    MSSC(enfa, dfa1);
+    dfa2 = tfa(dfa1);
+    dfa2.FAtoDot();
+    */
 
     return 0;
 }
