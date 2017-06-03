@@ -11,6 +11,7 @@
 #include "../FA/FA.h"
 #include "../FA/ENFA.h"
 #include "../FA/DFA.h"
+#include "../TFA/tfa.h"
 
 
 class Fuzzy {

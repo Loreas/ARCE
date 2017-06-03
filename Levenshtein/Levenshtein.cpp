@@ -19,7 +19,9 @@ void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
         ENFA lev = levenshteinAutomaton(term, maxDistance);
         DFA dfa;
         MSSC(lev, dfa);
-        automata[term] = dfa;
+        DFA smallDFA;
+        tfa(dfa, &smallDFA);
+        automata[term] = smallDFA;
     }
 }
 

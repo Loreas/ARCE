@@ -68,16 +68,17 @@ void Bot::buildDFA(std::string regex, bool FAout) {
     if(FAout) enfa.FAtoDot("BotENFA");
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
-    DFA* dfaRaw = new DFA;
-    MSSC(enfa, *dfaRaw);
+    DFA dfaRaw;
+    MSSC(enfa, dfaRaw);
 
-    // TODO: Use TFA algorithm implemented by S. Fenoll to optimise DFA
+    // Use TFA algorithm implemented by S. Fenoll to optimise DFA
+    DFA* dfa = new DFA;
+    tfa(dfaRaw, dfa);
 
     // Assign DFA to bot
-    dfa = dfaRaw;
+    this->dfa = dfa;
     if(FAout) dfa->FAtoDot("BotDFA");
 
-    // delete dfaRaw;
 }
 
 void Bot::parseCommand(std::string command) {
