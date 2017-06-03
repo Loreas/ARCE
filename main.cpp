@@ -42,14 +42,15 @@ int main(unsigned int argc, char* argv[]){
     }
 
     bot.parseCommand(test);
+    Fuzzy* f = bot.getFuzzy();
+    //f->printAutomata();
+    std::string fuzzyTest = "templade";
+    std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
+    for(std::string s : suggestions){
+        std::cout << s << ", ";
+    }
+    std::cout << std::endl;
 
-    /*
-    ENFA lev = levenshteinAutomaton("food", 1);
-    DFA testDFA;
-    MSSC(lev, testDFA);
-    lev.FAtoDot();
-    testDFA.FAtoDot();
-     */
 
     return 0;
 }

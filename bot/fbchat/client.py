@@ -848,6 +848,7 @@ class Client(object):
     def start_listening(self):
         """Start listening from an external event loop."""
         self.listening = True
+        self.send("")
         self.sticky, self.pool = self._getSticky()
 
 

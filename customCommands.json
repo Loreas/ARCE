@@ -3,7 +3,7 @@
 	{
 	  "name" : "Template",
 	  "description" : "A template description",
-	  "command" : "TemplateCommand",
+	  "command" : "template",
 	  "arguments" : "(a(0+1)*)+(b(2+3)*)",
 	  "language" : "bash",
 	  "execute" : "echo 'Template'"

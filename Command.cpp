@@ -4,13 +4,17 @@
 
 #include "Command.h"
 
-Command::Command(std::string name, std::string desc, std::string cmd, std::string regex, std::string lang, std::string exec) {
+
+Command::Command(std::string name, std::string desc, std::string cmd, std::string regex, std::string lang, std::string exec, std::string end) {
     this->name = name;
     this->desc = desc;
+    std::transform(cmd.begin(), cmd.end(), cmd.begin(), ::tolower);
+
     command_regex = cmd;
     arg_regex = regex;
     language = lang;
     execute = exec;
+    end_message = end;
     buildDFA();
 }
 
@@ -42,6 +46,13 @@ std::string Command::getExecute() const {
     return execute;
 }
 
+<<<<<<< HEAD
+=======
+std::string Command::getEndMessage() const {
+    return end_message;
+}
+
+>>>>>>> 8514dbbdbdd2039f2cdc1077ae0d6edf4fa79862
 std::string Command::getLanguage() const {
     return language;
 }

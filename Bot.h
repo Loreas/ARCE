@@ -39,6 +39,8 @@ public:
 
     DFA* getDFA();
 
+    Fuzzy* getFuzzy();
+
     /**
      *
      * @param path The path to the JSON file linking commands to their scripts
@@ -62,7 +64,7 @@ public:
     /**
      * @brief Checks if a command is valid and if so, executes it correctly
      */
-    void parseCommand(std::string command);
+    std::string executeCommand(std::vector<std::string> command);
 
     void runScript();
 
@@ -89,6 +91,8 @@ public:
      * @return vector van commands
      */
     std::vector<std::string> parseLink();
+
+    bool checkCommand(std::string& command) const;
 
     /**
      * @brief Parses the credentials of a bot
