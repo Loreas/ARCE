@@ -46,13 +46,10 @@ std::string Command::getExecute() const {
     return execute;
 }
 
-<<<<<<< HEAD
-=======
 std::string Command::getEndMessage() const {
     return end_message;
 }
 
->>>>>>> 8514dbbdbdd2039f2cdc1077ae0d6edf4fa79862
 std::string Command::getLanguage() const {
     return language;
 }

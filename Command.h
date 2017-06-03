@@ -25,7 +25,7 @@ private:
 
 public:
     Command() {};
-    Command(std::string name, std::string desc, std::string cmd, std::string arg_regex, std::string lang, std::string exec);
+    Command(std::string name, std::string desc, std::string cmd, std::string regex, std::string lang, std::string exec, std::string end);
     ~Command();
 
     std::string getName() const;
@@ -35,10 +35,8 @@ public:
     DFA* getDFA() const;
     std::string getLanguage() const;
     std::string getExecute() const;
-<<<<<<< HEAD
-=======
+
     std::string getEndMessage() const;
->>>>>>> 8514dbbdbdd2039f2cdc1077ae0d6edf4fa79862
 
     void buildDFA();
 

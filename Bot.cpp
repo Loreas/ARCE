@@ -34,11 +34,7 @@ void Bot::setPath(std::string path) {
 }
 
 void Bot::addCommand(Command *command) {
-<<<<<<< HEAD
-    commands[command->getName()] = command;
-=======
     commands[command->getCommand()] = command;
->>>>>>> 8514dbbdbdd2039f2cdc1077ae0d6edf4fa79862
 }
 
 void Bot::setup(bool output){
@@ -97,7 +93,7 @@ std::string Bot::executeCommand(std::vector<std::string> command) {
             return "Argument \"" + command[i] + "\" is not of the right form.\n";
         }
     }
-    system(com->getExecute());
+    system(com->getExecute().c_str());
     return com->getEndMessage();
 
 }

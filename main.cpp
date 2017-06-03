@@ -41,10 +41,13 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
-    bot.parseCommand(test);
+    std::vector<std::string> command;
+    command.push_back(test);
+
+    bot.executeCommand(command);
     Fuzzy* f = bot.getFuzzy();
     //f->printAutomata();
-    std::string fuzzyTest = "templade";
+    std::string fuzzyTest = "template";
     std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
     for(std::string s : suggestions){
         std::cout << s << ", ";
