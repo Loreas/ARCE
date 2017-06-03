@@ -28,7 +28,7 @@ class bot(fbchat.Client):
                 self.sendLocalImage(sys.argv[3],None, False,"log/"+arg+".txt")
             else:
                 self.send(sys.argv[3], "logfile doesn't exist",False)
-        
+
 
 
 
@@ -39,7 +39,7 @@ class bot(fbchat.Client):
 
         print(message)
         f = open("./link/link.txt", 'a')
-        f.write(message)
+        f.write(message[0:])
         f.close()
 
         if message == "!exit":
@@ -55,9 +55,19 @@ class bot(fbchat.Client):
         with open("./link/linkToPython.txt") as f:
             content = f.readline()
         for i in content:
-            if(i[0:3] == "log"):
+            if(i[:3] == "log"):
                 arg= i[3:]
                 self.log(arg, message)
+            elif(i[:7] == "adduser"):
+                arg = i[8:]
+                id = self.getUsers(arg)[0]
+                self.add_users_to_chat(sys.argv[3], id)
+
+            elif(i[:10] == "removeuser"):
+                arg = i[10:]
+                id = self.getUsers(arg)
+                self.remove_user_from_chat(id)
+
             else:
                 self.send(sys.argv[3], i, False)
 
