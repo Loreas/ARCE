@@ -26,7 +26,8 @@ std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot) {
         std::string arg = command["arguments"];
         std::string lang = command["language"];
         std::string exec = command["execute"];
-        Command* c = new Command(name, desc, cmd, arg, lang, exec);
+        std::string end = "temp";
+        Command* c = new Command(name, desc, cmd, arg, lang, exec, end);
         bot.addCommand(c);
         names.push_back(name);
     }
