@@ -5,14 +5,13 @@
 #include "tfa.h"
 #include <algorithm>
 
-DFA tfa(DFA& dfa) {
+void tfa(DFA& dfa, DFA* return_dfa) {
     typedef const State* obj_state;
     typedef std::vector<State*> vec_state;
     typedef std::set<const State*> set_state;
     typedef std::map<std::tuple<const State*, std::string>, std::set<const State*>> map_trans;
 
-    DFA return_dfa;
-    return_dfa.setAlphabet(dfa.getAlphabet());
+    return_dfa->setAlphabet(dfa.getAlphabet());
     map_trans transitions = dfa.getTransitions();
 
     std::vector<const State*> states;
@@ -173,10 +172,10 @@ DFA tfa(DFA& dfa) {
         newName.pop_back(); newName.pop_back();
         newName += "}";
         const State* newState = new State(newName, starting, accepting);
-        return_dfa.addState(newState);
+        return_dfa->addState(newState);
         newStates.insert(newState);
 
-        if (starting) return_dfa.setStartstate(newState);
+        if (starting) return_dfa->setStartstate(newState);
     }
 
     // Create the new transitions
@@ -203,7 +202,7 @@ DFA tfa(DFA& dfa) {
             }
         }
 
-        for (auto& ch: return_dfa.getAlphabet()) {
+        for (auto& ch: return_dfa->getAlphabet()) {
             const State* state = (*transitions[std::make_tuple(firstState, ch)].begin());
             std::string name = state->getName();
             name.erase(0, 1);
@@ -213,12 +212,11 @@ DFA tfa(DFA& dfa) {
             for (const State* newState2: newStates) {
                 // If found add transion from newState to newState2
                 if (newState2->getName().find(name) != std::string::npos) {
-                    return_dfa.addTransition(newState, ch, newState2);
+                    return_dfa->addTransition(newState, ch, newState2);
                     break;
                 }
             }
         }
      }
-
-     return return_dfa;
+    
 }

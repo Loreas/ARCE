@@ -3,4 +3,4 @@
 #include "../FA/State.h"
 #include <vector>
 
-DFA tfa(DFA& dfa);
+void tfa(DFA& dfa, DFA* return_dfa);

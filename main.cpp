@@ -47,8 +47,8 @@ int main(unsigned int argc, char* argv[]){
 
     bot.executeCommand(command);
     Fuzzy* f = bot.getFuzzy();
-    //f->printAutomata();
-    std::string fuzzyTest = "template";
+    f->printAutomata();
+    std::string fuzzyTest = "templade";
     std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
     for(std::string s : suggestions){
         std::cout << s << ", ";
