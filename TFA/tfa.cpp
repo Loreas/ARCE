@@ -218,5 +218,5 @@ void tfa(DFA& dfa, DFA* return_dfa) {
             }
         }
      }
-    
+
 }

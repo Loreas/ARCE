@@ -74,9 +74,8 @@ class bot(fbchat.Client):
 
 
 
-
-print(sys.argv[2])
-b = bot(str(sys.argv[1]), str(sys.argv[2]), False)
+print(sys.argv[1], sys.argv[2])
+b = bot("c588808@mvrht.net", "ARCE123", False)
 
 b.listen()
 

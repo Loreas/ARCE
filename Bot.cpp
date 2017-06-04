@@ -69,32 +69,35 @@ void Bot::buildDFA(std::string regex, bool FAout) {
     if(FAout) enfa.FAtoDot("BotENFA");
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
-    DFA dfaRaw;
-    MSSC(enfa, dfaRaw);
+    DFA* dfaRaw = new DFA;
+    MSSC(enfa, *dfaRaw);
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    tfa(dfaRaw, dfa);
+    //tfa(dfaRaw, dfa);
 
     // Assign DFA to bot
-    this->dfa = dfa;
-    if(FAout) dfa->FAtoDot("BotDFA");
+    this->dfa = dfaRaw;
+    if(FAout) dfaRaw->FAtoDot("BotDFA");
 
 }
-
 
 bool Bot::checkCommand(std::string& command) const {
     return dfa->checkString(command);
 }
 
-std::string Bot::executeCommand(std::vector<std::string> command) {
-    Command* com = commands[command[0]];
+std::string Bot::executeCommand(std::vector<std::string>& command) {
+    Command* com = commands.at(command.at(0)); // The vector contains: {command, arg1, arg2...}
+    std::string arguments;
     for (int i = 1; i < command.size(); i++) {
         if (!com->getDFA()->checkString(command[i])) {
             return "Argument \"" + command[i] + "\" is not of the right form.\n";
         }
+        arguments += " " + command[i];
     }
-    system(com->getExecute().c_str());
+
+    std::string exec = com->getExecute() + arguments;
+    system(exec.c_str());
     return com->getEndMessage();
 
 }
@@ -108,10 +111,6 @@ void Bot::receiveMsg() {
 }
 
 void Bot::sendMsg() {
-
-}
-
-void Bot::checkforupdates() {
 
 }
 
@@ -141,6 +140,8 @@ void Bot::run(){
     bool go = true;
     std::vector<std::string> credentials;
     credentials = parseCredentials();
+
+    // Starting up FBChat as a subprocess
     std::string command = "python bot/fb_bot.py ";
     command += credentials[0];
     command += " " + credentials[1];
@@ -149,10 +150,11 @@ void Bot::run(){
     in = popen(command.c_str(), "r");
     std::string output;
 
+    // Main loop
     while(go){
         file.open("link/link.txt");
         if(isEmpty(file)) {
-            std::this_thread::sleep_for(std::chrono::seconds(5));
+            std::this_thread::sleep_for(std::chrono::seconds(3));
             file.close();
         }
         else{
