@@ -112,7 +112,7 @@ void FA::FAtoJSON(std::string filename) {
     j << "  \"states\": [" << std::endl;
     for (const State* state: this->states) {
         std::string starting = "false"; std::string accepting = "false";
-        if(state->isAccepting()) starting = "true";
+        if(state->isStarting()) starting = "true";
         if(state->isAccepting()) accepting = "true";
         j << "    {" << std::endl;
         j << "      \"name\": \"" + state->getName() << "\"," << std::endl;

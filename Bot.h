@@ -52,7 +52,7 @@ public:
     /**
      * @brief This function will set the bot up for use; preparing the DFA etc, FuzzySearch etc.
      */
-    void setup(bool output = false);
+    void setup(bool upToDate = false, bool output = false);
 
     /**
      * @brief Makes the given regex into an eNFA, which is then used to build a DFA that is saved by the bot
@@ -97,7 +97,7 @@ public:
     /**
      *  @brief The 'main loop' for the bot (will constantly check for messages and parse them
      */
-     void run();
+     void run(bool output = false);
 
 
 };

@@ -40,7 +40,7 @@ class bot(fbchat.Client):
 
         print(message)
         if message[0] == '!':
-            f = open("./../link/link.txt", 'a')
+            f = open("./link/link.txt", 'a')
             f.write(message[1:])
             f.write("\n")
             f.close()
@@ -56,28 +56,27 @@ class bot(fbchat.Client):
 
         # Checkfile for updates
 
-        with open("./../link/linkToPython.txt") as f:
-            content = f.readline()
-        for i in content:
-            if(i[:3] == "log"):
-                arg= i[3:]
-                self.log(arg, message)
-            elif(i[:7] == "adduser"):
-                arg = i[8:]
-                id = self.getUsers(arg)[0]
-                self.add_users_to_chat(sys.argv[3], id)
+        with open("./link/linkToPython.txt") as f:
+         	for line in f:
+	            if(line[:3] == "log"):
+	                arg= line[3:]
+	                self.log(arg, message)
+	            elif(line[:7] == "adduser"):
+	                arg = line[8:]
+	                id = self.getUsers(arg)[0]
+	                self.add_users_to_chat(sys.argv[3], id)
 
-            elif(i[:10] == "removeuser"):
-                arg = i[10:]
-                id = self.getUsers(arg)
-                self.remove_user_from_chat(id)
+	            elif(line[:10] == "removeuser"):
+	                arg = line[10:]
+	                id = self.getUsers(arg)
+	                self.remove_user_from_chat(id)
 
-            else:
-                self.send(sys.argv[3], i, False)
+	            else:
+	                self.send(sys.argv[3], line, False)
 
 
         #clear file
-        f = open("./../link/linkToPython.txt", 'w')
+        f = open("./link/linkToPython.txt", 'w')
         f.write("")
         f.close()
 

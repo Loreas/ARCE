@@ -38,15 +38,9 @@ void Bot::addCommand(Command *command) {
     commands[command->getCommand()] = command;
 }
 
-void Bot::setup(bool output){
+void Bot::setup(bool upToDate, bool output){
 
     if(output) std::cout << "Setting up bot...\n";
-
-    // Make directory '.config' if it doesn't yet exists
-    system("mkdir .config");
-
-    // Checking if the json has been updated
-    bool upToDate = true; // TODO: Fix this
 
     std::vector<std::string> cmdNames;
     if(upToDate){
@@ -94,7 +88,8 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    tfa(dfaRaw, dfa);
+    //TODO: tfa(dfaRaw, dfa);
+    *dfa = dfaRaw;
 
     // Assign DFA to bot
     this->dfa = dfa;
@@ -156,7 +151,9 @@ std::vector<std::string> Bot::parseLink(bool output) {
 
 }
 
-void Bot::run(){
+void Bot::run(bool CMIoutput){
+    if (CMIoutput) std::cout << "Starting ARCE\n";
+
     std::ifstream file;
     bool go = true;
     std::vector<std::string> credentials;
@@ -169,7 +166,7 @@ void Bot::run(){
     command += " " + credentials[2];
     FILE *in;
     in = popen(command.c_str(), "r");
-    std::cout << "Subprocess started.\n";
+    if (CMIoutput) std::cout << "Subprocess started.\n";
     std::string output;
 
     // Main loop
@@ -178,10 +175,13 @@ void Bot::run(){
         if(isEmpty(file)) {
             std::this_thread::sleep_for(std::chrono::seconds(3));
             file.close();
+            continue;
         }
         else{
              std::vector<std::string> commands = parseLink(true);
              for(std::string c : commands) {
+                 // Transform string into lowercase
+                 std::transform(c.begin(), c.end(), c.begin(), ::tolower);
                  // Check if command is valid
                  std::stringstream ss(c);
                  std::string word;
@@ -207,19 +207,19 @@ void Bot::run(){
                         go = false;
                     }
                     else if (words[0] == "adduser") {
-                        if (c.size() == 3)
+                        if (words.size() == 3)
                             output = c + "\n";
                         else
                             output = "addUser command expects following arguments: addUser name surname\n";
                     }
                     else if (words[0] == "removeuser") {
-                        if (c.size() == 3)
+                        if (words.size() == 3)
                             output = c + "\n";
                         else
                             output = "removeUser command expects following arguments: removeUser name surname\n";
                     }
                     else if (words[0] == "log"){
-                        if (c.size() == 2)
+                        if (words.size() == 2)
                             output = c;
                         else
                             output = "log command expects following arguments: log start/stop/date";
@@ -241,6 +241,7 @@ void Bot::run(){
         }
 
     pclose(in);
+    if (CMIoutput) std::cout << "Exiting main loop\n";
 }
 
 std::vector<std::string> Bot::parseCredentials() {

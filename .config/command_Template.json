@@ -16,17 +16,17 @@
     },
     {
       "name": "{1}",
-      "starting": true,
+      "starting": false,
       "accepting": true
     },
     {
       "name": "{2}",
-      "starting": false,
+      "starting": true,
       "accepting": false
     },
     {
       "name": "{3}",
-      "starting": true,
+      "starting": false,
       "accepting": true
     }
   ],

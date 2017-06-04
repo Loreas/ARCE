@@ -30,26 +30,37 @@ int main(unsigned int argc, char* argv[]){
 
     
     //// DEBUG & TESTING ZONE ////
+    system("mkdir .config");
+    std::cout << std::flush;
+    bool botUpToDate = true;
+    bool commandsUpToDate = true;
+    bool output = true;
+
     Bot bot;
     Parser parser;
-    parser.parseCommands("./customCommands.json", bot, true, true);
-    bot.setup(true);
+    parser.parseCommands("./customCommands.json", bot, commandsUpToDate, output);
+    bot.setup(botUpToDate, output);
 
     std::string test;
-    if(argc == 1) test = "addnote";
+    if(argc == 1) test = "adduser";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
+
     /*
     std::string arg1 = "test";
     std::string arg2 = "testingnote";
-    std::vector<std::string> commands = {test, arg1, arg2};
-    std::cout << bot.executeCommand(commands) << std::endl;
+    std::vector<std::string> commands = {test, arg1};
+    std::cout << bot.checkCommand(commands[0]) << std::endl;
      */
 
-    bot.run();
+
+
+    bot.run(output);
+
+    if (output) std::cout << "Exiting ARCE." << std::flush;
 
     return 0;
 }

@@ -86,7 +86,7 @@ void Command::buildDFA(bool upToDate, bool output) {
         // Read DFA from json in .config
         Parser parser;
         DFA* dfa = new DFA;
-        *dfa = parser.parseDFA(filename);
+        *dfa = parser.parseDFA(filename + ".json");
         this->arg_dfa = dfa;
     }
 }
