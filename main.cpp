@@ -36,24 +36,30 @@ int main(unsigned int argc, char* argv[]){
     bot.setup(true);
 
     std::string test;
-    if(argc == 1) test = "TemplateCommand";
+    if(argc == 1) test = "template";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
-    std::vector<std::string> command;
-    command.push_back(test);
+    /*
+    std::string arg = "a0";
+    std::vector<std::string> commands = {test, arg};
+    std::cout << bot.executeCommand(commands) << std::endl;
+     */
 
-    bot.executeCommand(command);
+    bot.run();
+
+    /*
     Fuzzy* f = bot.getFuzzy();
-    f->printAutomata();
+    //f->printAutomata();
     std::string fuzzyTest = "templade";
     std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
     for(std::string s : suggestions){
         std::cout << s << ", ";
     }
     std::cout << std::endl;
+    */
 
 
     //// TFA tests ////

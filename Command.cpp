@@ -14,7 +14,7 @@ Command::Command(std::string name, std::string desc, std::string cmd, std::strin
     arg_regex = regex;
     language = lang;
     execute = exec;
-    end_message = end;
+    end_message = "Command '" + cmd + "' finished.\n"; // TODO: implement this?
     buildDFA();
 }
 

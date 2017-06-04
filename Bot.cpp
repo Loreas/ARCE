@@ -41,6 +41,10 @@ void Bot::setup(bool output){
 
     // Checking if the json has been updated
     bool upToDate = false; // TODO: Fix this
+    if(!upToDate){
+        // Delete all previous dotfiles
+        system("rm ./*.dot");
+    }
 
     // Setting up DFA and FuzzySearch
     std::vector<std::string> cmdNames;
@@ -82,19 +86,22 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
 }
 
-
 bool Bot::checkCommand(std::string& command) const {
     return dfa->checkString(command);
 }
 
-std::string Bot::executeCommand(std::vector<std::string> command) {
-    Command* com = commands[command[0]];
+std::string Bot::executeCommand(std::vector<std::string>& command) {
+    Command* com = commands.at(command.at(0)); // The vector contains: {command, arg1, arg2...}
+    std::string arguments;
     for (int i = 1; i < command.size(); i++) {
         if (!com->getDFA()->checkString(command[i])) {
             return "Argument \"" + command[i] + "\" is not of the right form.\n";
         }
+        arguments += " " + command[i];
     }
-    system(com->getExecute().c_str());
+
+    std::string exec = com->getExecute() + arguments;
+    system(exec.c_str());
     return com->getEndMessage();
 
 }
@@ -111,20 +118,17 @@ void Bot::sendMsg() {
 
 }
 
-void Bot::checkforupdates() {
-
-}
-
 bool Bot::isEmpty(std::ifstream &file) {
     return file.peek() == std::ifstream::traits_type::eof();
 }
 
-std::vector<std::string> Bot::parseLink() {
+std::vector<std::string> Bot::parseLink(bool output) {
     std::ifstream file;
     file.open("link/link.txt");
     std::string line;
     std::vector<std::string> result;
     while (getline(file,line)) {
+        if(output) std::cout << line << std::endl;
         result.push_back(line);
     }
     file.close();
@@ -141,22 +145,26 @@ void Bot::run(){
     bool go = true;
     std::vector<std::string> credentials;
     credentials = parseCredentials();
+
+    // Starting up FBChat as a subprocess
     std::string command = "python bot/fb_bot.py ";
     command += credentials[0];
     command += " " + credentials[1];
     command += " " + credentials[2];
     FILE *in;
     in = popen(command.c_str(), "r");
+    std::cout << "Subprocess started.\n";
     std::string output;
 
+    // Main loop
     while(go){
         file.open("link/link.txt");
         if(isEmpty(file)) {
-            std::this_thread::sleep_for(std::chrono::seconds(5));
+            std::this_thread::sleep_for(std::chrono::seconds(3));
             file.close();
         }
         else{
-             std::vector<std::string> commands = parseLink();
+             std::vector<std::string> commands = parseLink(true);
              for(std::string c : commands) {
                  // Check if command is valid
                  std::stringstream ss(c);
@@ -178,7 +186,11 @@ void Bot::run(){
                      }
                  }
                  else {
-                    if (words[0] == "adduser") {
+                    if (words[0] == "exit"){
+                        output = "Exiting.\n";
+                        go = false;
+                    }
+                    else if (words[0] == "adduser") {
                         if (c.size() == 3)
                             output = c + "\n";
                         else

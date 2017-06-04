@@ -64,20 +64,13 @@ public:
     /**
      * @brief Checks if a command is valid and if so, executes it correctly
      */
-    std::string executeCommand(std::vector<std::string> command);
+    std::string executeCommand(std::vector<std::string>& command);
 
     void runScript();
 
     void receiveMsg();
 
     void sendMsg();
-
-    /**
-     * @brief Checks for updates in the link.txt after x amount of seconds.
-     *
-     */
-
-    void checkforupdates();
 
     /**
      * @brief Checks if the file is empty.
@@ -90,7 +83,7 @@ public:
      * @brief Parses every command in the txt file.
      * @return vector van commands
      */
-    std::vector<std::string> parseLink();
+    std::vector<std::string> parseLink(bool output = false);
 
     bool checkCommand(std::string& command) const;
 

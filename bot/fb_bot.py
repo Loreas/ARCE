@@ -1,3 +1,4 @@
+
 import fbchat
 import sys
 import datetime
@@ -5,8 +6,8 @@ import os.path
 from subprocess import call
 
 class bot(fbchat.Client):
-    def __init__(self,email, password,debug=True, user_agent=False,message_done=False, logging = False):
-        fbchat.Client.__init__(self,email, password,debug,user_agent)
+    def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
+        fbchat.Client.__init__(self, email, password, debug, info_log, user_agent)
         self.logging = logging
         self.message_done=message_done
 
@@ -28,7 +29,7 @@ class bot(fbchat.Client):
                 self.sendLocalImage(sys.argv[3],None, False,"log/"+arg+".txt")
             else:
                 self.send(sys.argv[3], "logfile doesn't exist",False)
-        
+
 
 
 
@@ -39,7 +40,8 @@ class bot(fbchat.Client):
 
         print(message)
         f = open("./link/link.txt", 'a')
-        f.write(message)
+        if message[0] == '!':
+        	f.write(message[1:])
         f.close()
 
         if message == "!exit":
@@ -55,9 +57,19 @@ class bot(fbchat.Client):
         with open("./link/linkToPython.txt") as f:
             content = f.readline()
         for i in content:
-            if(i[0:3] == "log"):
+            if(i[:3] == "log"):
                 arg= i[3:]
                 self.log(arg, message)
+            elif(i[:7] == "adduser"):
+                arg = i[8:]
+                id = self.getUsers(arg)[0]
+                self.add_users_to_chat(sys.argv[3], id)
+
+            elif(i[:10] == "removeuser"):
+                arg = i[10:]
+                id = self.getUsers(arg)
+                self.remove_user_from_chat(id)
+
             else:
                 self.send(sys.argv[3], i, False)
 
@@ -73,10 +85,12 @@ class bot(fbchat.Client):
 
 
 
+username = sys.argv[1]
+password = sys.argv[2]
+groupID = sys.argv[3]
 
+# "python3 bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375"
 
-print(sys.argv[2])
-b = bot(str(sys.argv[1]), str(sys.argv[2]), False)
+b = bot(username, password, False)
 
 b.listen()
-
