@@ -28,7 +28,7 @@ void bulkTest(std::string fileName, DFA& dfa){
 
 int main(unsigned int argc, char* argv[]){
 
-
+    
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
@@ -54,7 +54,7 @@ int main(unsigned int argc, char* argv[]){
         std::cout << s << ", ";
     }
     std::cout << std::endl;
-    
+
 
     //// TFA tests ////
     /*

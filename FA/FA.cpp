@@ -193,7 +193,7 @@ void FA::renameStates() {
 
     for (const State* state: this->states) {
         std::set<std::string> name;
-        name.insert(std::to_string(stateName));
+        name.insert("{" + std::to_string(stateName) + "}");
         const_cast<State*>(state)->setName(name);
         stateName++;
     }
