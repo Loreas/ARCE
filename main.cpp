@@ -28,7 +28,7 @@ void bulkTest(std::string fileName, DFA& dfa){
 
 int main(unsigned int argc, char* argv[]){
 
-
+    
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
@@ -64,11 +64,16 @@ int main(unsigned int argc, char* argv[]){
 
     //// TFA tests ////
     /*
+    ENFA enfa;
     DFA dfa1;
     DFA dfa2;
     Parser parser;
+    RegToeNFA regToeNFA;
+    std::string regex = "(abc)*+(def)*";
 
-    dfa1 = parser.parseDFA("tfaTest/DFA(boek).json");
+    regToeNFA.ConvertReTo_eNfa(regex, enfa);
+    MSSC(enfa, dfa1);
+
     dfa1.FAtoDot("dfa1");
 
     tfa(dfa1, &dfa2);
