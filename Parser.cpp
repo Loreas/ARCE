@@ -8,7 +8,9 @@
 
 using json = nlohmann::json;
 
-std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot, bool upToDate) {
+std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot, bool upToDate, bool output) {
+    if(output) std::cout << "Parsing commands...\n";
+
     std::ifstream is(filename);
     json j;
     std::vector<std::string> names;
@@ -32,6 +34,7 @@ std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot, b
         names.push_back(name);
     }
 
+    std::cout << "Parsing finished.\n";
     return names;
 }
 

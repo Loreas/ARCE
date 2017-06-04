@@ -32,7 +32,7 @@ int main(unsigned int argc, char* argv[]){
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
-    parser.parseCommands("./customCommands.json", bot, true);
+    parser.parseCommands("./customCommands.json", bot, true, true);
     bot.setup(true);
 
     std::string test;
@@ -42,10 +42,14 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
+    /*
     std::string arg1 = "test";
     std::string arg2 = "testingnote";
     std::vector<std::string> commands = {test, arg1, arg2};
     std::cout << bot.executeCommand(commands) << std::endl;
+     */
+
+    bot.run();
 
     return 0;
 }
