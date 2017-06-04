@@ -28,6 +28,7 @@ void bulkTest(std::string fileName, DFA& dfa){
 
 int main(unsigned int argc, char* argv[]){
 
+
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
@@ -61,5 +62,17 @@ int main(unsigned int argc, char* argv[]){
     */
 
 
+    //// TFA tests ////
+    /*
+    DFA dfa1;
+    DFA dfa2;
+    Parser parser;
+
+    dfa1 = parser.parseDFA("tfaTest/DFA(boek).json");
+    dfa1.FAtoDot("dfa1");
+
+    tfa(dfa1, &dfa2);
+    dfa2.FAtoDot("dfa2");
+    */
     return 0;
 }

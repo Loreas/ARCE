@@ -113,9 +113,7 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         if (equivalentFound) {
             // this state is used, no longer to be added as single state
             unusedStates.erase(std::get<1>(statePairs[r][0]));
-            if (newStatesGrouped.find(newStateGroup) == newStatesGrouped.end()) {
-                newStatesGrouped.insert(newStateGroup);
-            }
+            addNewGroup(newStateGroup, newStatesGrouped);
         }
     }
 
@@ -125,9 +123,9 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         std::set<const State*> newStateGroup;
 
         // First state is same one for whole collumn
-        const State* fst_state = std::get<0>(statePairs[0][c]);
+        const State* fst_state = std::get<0>(statePairs[table_size-1][c]);
         newStateGroup.insert(fst_state);
-        for (int r = c; r < table_size ; r++) {
+        for (int r = 0; r <= c; r++) {
             // Equivalent states
             if (std::get<2>(statePairs[r][c]) == -1) {
                 equivalentFound = true;
@@ -140,10 +138,8 @@ void tfa(DFA& dfa, DFA* return_dfa) {
 
         if (equivalentFound) {
             // this state is used, no longer to be added as single state
-            unusedStates.erase(std::get<0>(statePairs[0][c]));
-            if (newStatesGrouped.find(newStateGroup) == newStatesGrouped.end()) {
-                newStatesGrouped.insert(newStateGroup);
-            }
+            unusedStates.erase(std::get<0>(statePairs[table_size-1][c]));
+            addNewGroup(newStateGroup, newStatesGrouped);
         }
     }
 
@@ -161,8 +157,8 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         bool accepting = false;
         for (const State* state : stateGroup) {
             std::string name = state->getName();
-            name.erase(0, 1);
-            name.pop_back();
+            if (name.front() == '{') name.erase(0, 1);
+            if (name.back() == '}') name.pop_back();
             newName += name + ", ";
 
             if (state->isStarting()) starting = true;
@@ -193,8 +189,8 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         // Find an original state of this one
         for (const State* state: states) {
             std::string name = state->getName();
-            name.erase(0, 1);
-            name.pop_back();
+            if (name.front() == '{') name.erase(0, 1);
+            if (name.back() == '}') name.pop_back();
 
             if (newState->getName().find(name) != std::string::npos) {
                 firstState = state;
@@ -205,8 +201,8 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         for (auto& ch: return_dfa->getAlphabet()) {
             const State* state = (*transitions[std::make_tuple(firstState, ch)].begin());
             std::string name = state->getName();
-            name.erase(0, 1);
-            name.pop_back();
+            if (name.front() == '{') name.erase(0, 1);
+            if (name.back() == '}') name.pop_back();
 
             // Find new state containing the found name
             for (const State* newState2: newStates) {
@@ -219,4 +215,25 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         }
      }
 
+}
+
+void addNewGroup(std::set<const State *> &newStateGroup, std::set<std::set<const State *>> &newStatesGrouped) {
+    // Check if grouping exist that contains some elements of the new group
+    // if true, add to that group
+    // else add as new group
+
+    for (const std::set<const State*>& existingStateGroup: newStatesGrouped) {
+        // Check if a grouping exist that contains some of the newly grouped states
+        std::set<const State*> set_intersection;
+        std::set_intersection(existingStateGroup.begin(), existingStateGroup.end(), newStateGroup.begin(), newStateGroup.end(), std::inserter(set_intersection, set_intersection.begin()));
+        if (set_intersection.size() > 0){
+            for (const State* state: existingStateGroup) {
+                newStateGroup.insert(state);
+            }
+            newStatesGrouped.erase(existingStateGroup);
+            break;
+        }
+    }
+
+    newStatesGrouped.insert(newStateGroup);
 }
