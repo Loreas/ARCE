@@ -3,6 +3,7 @@
 //
 
 #include "Levenshtein.h"
+#include "../Parser.h"
 
 std::vector<std::string> Fuzzy::fuzzy(std::string& term){
     std::vector<std::string> possibleTerms;
@@ -13,15 +14,28 @@ std::vector<std::string> Fuzzy::fuzzy(std::string& term){
 }
 
 void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
-    if (upToDate) return;
-    for (std::string& term : terms) {
-        int maxDistance = std::ceil(term.size() / 5.0);
-        ENFA lev = levenshteinAutomaton(term, maxDistance);
-        DFA dfa;
-        MSSC(lev, dfa);
-        DFA smallDFA;
-        //tfa(dfa, &smallDFA);
-        automata[term] = smallDFA;
+    if (upToDate){
+        // Read all DFA's from the .config folder
+        for (std::string& term : terms){
+            Parser parser;
+            std::string filename = "../.config/" + term + ".json";
+            DFA dfa = parser.parseDFA(filename);
+            automata[term] = dfa;
+        }
+    }
+    else {
+        for (std::string &term : terms) {
+            int maxDistance = std::ceil(term.size() / 5.0);
+            ENFA lev = levenshteinAutomaton(term, maxDistance);
+            DFA dfa;
+            MSSC(lev, dfa);
+            DFA smallDFA;
+            tfa(dfa, &smallDFA);
+            automata[term] = smallDFA;
+            // Write to .config folder
+            std::string filename = "./.config/" + term;
+            smallDFA.FAtoJSON(filename);
+        }
     }
 }
 

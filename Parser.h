@@ -23,7 +23,7 @@ public:
      *  @param The filename of the file to be parsed
      *  @return The regex (string)
      */
-     std::vector<std::string> parseCommands(std::string filename, Bot& bot);
+     std::vector<std::string> parseCommands(std::string filename, Bot& bot, bool upToDate = false);
 
 
     /**

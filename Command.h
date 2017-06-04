@@ -25,7 +25,8 @@ private:
 
 public:
     Command() {};
-    Command(std::string name, std::string desc, std::string cmd, std::string regex, std::string lang, std::string exec, std::string end);
+    Command(std::string name, std::string desc, std::string cmd, std::string regex,
+            std::string lang, std::string exec, std::string end, bool upToDate = false);
     ~Command();
 
     std::string getName() const;
@@ -38,7 +39,7 @@ public:
 
     std::string getEndMessage() const;
 
-    void buildDFA();
+    void buildDFA(bool upToDate = false, bool output = false);
 
 };
 

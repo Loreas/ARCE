@@ -8,7 +8,7 @@
 
 using json = nlohmann::json;
 
-std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot) {
+std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot, bool upToDate) {
     std::ifstream is(filename);
     json j;
     std::vector<std::string> names;
@@ -27,7 +27,7 @@ std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot) {
         std::string lang = command["language"];
         std::string exec = command["execute"];
         std::string end = "temp";
-        Command* c = new Command(name, desc, cmd, arg, lang, exec, end);
+        Command* c = new Command(name, desc, cmd, arg, lang, exec, end, upToDate);
         bot.addCommand(c);
         names.push_back(name);
     }

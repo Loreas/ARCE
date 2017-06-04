@@ -32,47 +32,20 @@ int main(unsigned int argc, char* argv[]){
     //// DEBUG & TESTING ZONE ////
     Bot bot;
     Parser parser;
-    parser.parseCommands("./customCommands.json", bot);
+    parser.parseCommands("./customCommands.json", bot, true);
     bot.setup(true);
 
     std::string test;
-    if(argc == 1) test = "template";
+    if(argc == 1) test = "addnote";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
-    /*
-    std::string arg = "a0";
-    std::vector<std::string> commands = {test, arg};
+    std::string arg1 = "test";
+    std::string arg2 = "testingnote";
+    std::vector<std::string> commands = {test, arg1, arg2};
     std::cout << bot.executeCommand(commands) << std::endl;
-     */
 
-    bot.run();
-
-    /*
-    Fuzzy* f = bot.getFuzzy();
-    //f->printAutomata();
-    std::string fuzzyTest = "templade";
-    std::vector<std::string> suggestions = f->fuzzy(fuzzyTest);
-    for(std::string s : suggestions){
-        std::cout << s << ", ";
-    }
-    std::cout << std::endl;
-    */
-
-
-    //// TFA tests ////
-    /*
-    DFA dfa1;
-    DFA dfa2;
-    Parser parser;
-
-    dfa1 = parser.parseDFA("tfaTest/DFA(boek).json");
-    dfa1.FAtoDot("dfa1");
-
-    tfa(dfa1, &dfa2);
-    dfa2.FAtoDot("dfa2");
-    */
     return 0;
 }

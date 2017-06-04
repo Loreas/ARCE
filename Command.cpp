@@ -3,9 +3,11 @@
 //
 
 #include "Command.h"
+#include "Parser.h"
 
 
-Command::Command(std::string name, std::string desc, std::string cmd, std::string regex, std::string lang, std::string exec, std::string end) {
+Command::Command(std::string name, std::string desc, std::string cmd, std::string regex,
+                 std::string lang, std::string exec, std::string end, bool upToDate) {
     this->name = name;
     this->desc = desc;
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), ::tolower);
@@ -15,7 +17,7 @@ Command::Command(std::string name, std::string desc, std::string cmd, std::strin
     language = lang;
     execute = exec;
     end_message = "Command '" + cmd + "' finished.\n"; // TODO: implement this?
-    buildDFA();
+    buildDFA(upToDate);
 }
 
 Command::~Command() {
@@ -54,21 +56,37 @@ std::string Command::getLanguage() const {
     return language;
 }
 
-void Command::buildDFA() {
-    // Make ENFA out of the regex
-    ENFA enfa;
-    RegToeNFA converter;
-    std::string regex = getArgRegex();
-    converter.ConvertReTo_eNfa(regex, enfa);
+void Command::buildDFA(bool upToDate, bool output) {
 
-    // Use MSSC to make DFA
-    DFA* dfa_raw = new DFA();
-    MSSC(enfa, *dfa_raw);
+    std::string filename = "./.config/command_" + getName();
+    if(!upToDate) {
+        // Make ENFA out of the regex
+        ENFA enfa;
+        RegToeNFA converter;
+        std::string regex = getArgRegex();
+        converter.ConvertReTo_eNfa(regex, enfa);
+        if (output) enfa.FAtoDot((getName() + "_enfa"));
 
-    // TODO: Use TFA on DFA
+        // Use MSSC to make DFA
+        DFA dfa_raw;
+        MSSC(enfa, dfa_raw);
+        if (output) dfa_raw.FAtoDot((getName() + "_dfaRaw"));
 
-    // Set dfa
-    this->arg_dfa = dfa_raw;
+        // Use TFA on DFA
+        DFA *dfa = new DFA;
+        tfa(dfa_raw, dfa);
+        if (output) dfa->FAtoDot((getName() + "_dfa"));
+        // Write DFA to json
+        dfa->FAtoJSON(filename);
 
-    // TODO: Delete dfa_raw!!
+        // Set dfa
+        this->arg_dfa = dfa;
+    }
+    else{
+        // Read DFA from json in .config
+        Parser parser;
+        DFA* dfa = new DFA;
+        *dfa = parser.parseDFA(filename);
+        this->arg_dfa = dfa;
+    }
 }

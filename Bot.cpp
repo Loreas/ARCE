@@ -9,6 +9,7 @@
 #include <iostream>
 #include <sstream>
 #include "Bot.h"
+#include "Parser.h"
 
 Bot::~Bot() {
     delete dfa;
@@ -39,29 +40,44 @@ void Bot::addCommand(Command *command) {
 
 void Bot::setup(bool output){
 
+    if(output) std::cout << "Setting up bot...\n";
+
+    // Make directory '.config' if it doesn't yet exists
+    system("mkdir .config");
+
     // Checking if the json has been updated
-    bool upToDate = false; // TODO: Fix this
-    if(!upToDate){
-        // Delete all previous dotfiles
-        system("rm ./*.dot");
-    }
+    bool upToDate = true; // TODO: Fix this
 
-    // Setting up DFA and FuzzySearch
     std::vector<std::string> cmdNames;
-    std::string cmdRegex;
-    for(auto p : commands){
-        cmdNames.push_back(p.second->getCommand());
-        cmdRegex += p.second->getCommand() + "+";
+    if(upToDate){
+        // Read the bot DFA from json
+        Parser parser;
+        DFA* dfa = new DFA;
+        *dfa = parser.parseDFA("./.config/botDFA.json");
+        this->dfa = dfa;
     }
-    cmdRegex.pop_back();
+    else {
+        // Setting up DFA
+        std::string cmdRegex;
+        for (auto p : commands) {
+            cmdNames.push_back(p.second->getCommand());
+            cmdRegex += p.second->getCommand() + "+";
+        }
+        cmdRegex.pop_back();
 
-    // Build complete DFA
-    buildDFA(cmdRegex, output);
+        // Build complete DFA
+        buildDFA(cmdRegex, output);
+
+        // Save DFA to json
+        this->dfa->FAtoJSON("./.config/botDFA");
+    }
 
     // Build Fuzzy
     Fuzzy* f = new Fuzzy();
     f->setupFuzzySearch(cmdNames, upToDate);
     this->fuzzy = f;
+
+    if(output) std::cout << "Setup complete.\n";
 }
 
 void Bot::buildDFA(std::string regex, bool FAout) {

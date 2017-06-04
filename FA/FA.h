@@ -41,7 +41,7 @@ public:
     const State* getStartstate() const {return this->startstate;}
 
     void FAtoDot(std::string filename = "") const;
-    void FAtoJSON();
+    void FAtoJSON(std::string filename = "");
 
     virtual bool checkString(std::string s) {return false;}
 

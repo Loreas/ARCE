@@ -88,18 +88,20 @@ std::ostream& operator<<(std::ostream& os, const FA& Fa) {
     return os;
 }
 
-void FA::FAtoJSON() {
+void FA::FAtoJSON(std::string filename) {
     std::ofstream j;
-    j.open(this->getTypeFA()+".json");
+    std::string name;
+    if(filename == "") j.open(this->getTypeFA()+".json");
+    else j.open(filename + ".json");
 
     j << "{" << std::endl;
     j << "  \"type\": \"" + this->getTypeFA() << "\", " << std::endl;
 
     j << "  \"alphabet\": [" << std::endl;
     for (const std::string& character: this->getAlphabet()) {
-        j << "    \"" + character;
+        j << "    \"" + character + "\"";
         if (this->getAlphabet().find(character) != --this->getAlphabet().end())
-            j << "\",";
+            j << ",";
         j << std::endl;
     }
     j << "  ]," << std::endl;
@@ -109,10 +111,13 @@ void FA::FAtoJSON() {
 
     j << "  \"states\": [" << std::endl;
     for (const State* state: this->states) {
+        std::string starting = "false"; std::string accepting = "false";
+        if(state->isAccepting()) starting = "true";
+        if(state->isAccepting()) accepting = "true";
         j << "    {" << std::endl;
         j << "      \"name\": \"" + state->getName() << "\"," << std::endl;
-        j << "      \"starting\": " << state->isStarting() << "," << std::endl;
-        j << "      \"accepting\": " << state->isAccepting() << std::endl;
+        j << "      \"starting\": " + starting << "," << std::endl;
+        j << "      \"accepting\": " + accepting  + ""<< std::endl;
         j << "    }";
         if (this->states.find(state) != --this->states.end()) {
             j << ",";
@@ -123,20 +128,19 @@ void FA::FAtoJSON() {
 
 
     j << "  \"transitions\": [" << std::endl;
+    std::string transition_string; // This makes it somewhat easier to fix a problem -kusjes, Jona
     for (auto transition: transitions) {
         for (const State* arrivingState: transition.second) {
-            j << "    {" << std::endl;
-            j << "      \"from\": \"" + std::get<0>(transition.first)->getName() << "\"," << std::endl;
-            j << "      \"to\": \"" + arrivingState->getName() << "\"," << std::endl;
-            j << "      \"input\": \"" + std::get<1>(transition.first) << "\"";
-            if ((transition.second.find(arrivingState) != --transition.second.end()) &&
-                transitions.find(transition.first) != --transitions.end()) {
-                j << ","; }
-            j << std::endl;
-            j << "    }" << std::endl;
+            transition_string += "    {\n";
+            transition_string += "      \"from\": \"" + std::get<0>(transition.first)->getName() + "\",\n";
+            transition_string += "      \"to\": \"" + arrivingState->getName() + "\",\n";
+            transition_string += "      \"input\": \"" + std::get<1>(transition.first) + "\"\n";
+            transition_string += "    },\n";
         }
 
     }
+    transition_string.pop_back(); transition_string.pop_back(); // Remove last ',' -kusjes, Jona
+    j << transition_string << std::endl;
     j << "  ]" << std::endl;
 
     j << "}";
