@@ -6,8 +6,8 @@ import os.path
 from subprocess import call
 
 class bot(fbchat.Client):
-    def __init__(self, email, password, debug=True, user_agent=None, message_done=False, logging = False):
-        fbchat.Client.__init__(self, email, password, debug, user_agent)
+    def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
+        fbchat.Client.__init__(self, email, password, debug, info_log, user_agent)
         self.logging = logging
         self.message_done=message_done
 

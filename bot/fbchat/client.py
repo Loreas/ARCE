@@ -187,7 +187,7 @@ class Client(object):
         self.fb_h = soup.find("input", {'name':'h'})['value']
         self._setttstamp()
         # Set default payload
-        self.payloadDefault['__rev'] = int(r.text.split('"revision":',1)[1].split(",",1)[0])
+        self.payloadDefault['__rev'] = int(r.text.split('"client_revision":',1)[1].split(",",1)[0])
         self.payloadDefault['__user'] = self.uid
         self.payloadDefault['__a'] = '1'
         self.payloadDefault['ttstamp'] = self.ttstamp
@@ -308,7 +308,7 @@ class Client(object):
         # Quick check to see if session_cookies is formatted properly
         if not session_cookies or 'c_user' not in session_cookies:
             return False
-        
+
         # Load cookies into current session
         self._session.cookies = requests.cookies.merge_cookies(self._session.cookies, session_cookies)
         self._post_login()
@@ -317,7 +317,7 @@ class Client(object):
     def login(self, email, password, max_retries=5):
         # Logging in
         log.info("Logging in {}...".format(email))
-        
+
         if not (email and password):
             raise Exception("Email and password not set.")
 
@@ -352,7 +352,7 @@ class Client(object):
 
     def setDefaultRecipient(self, recipient_id, is_user=True):
         """Sets default recipient to send messages and images to.
-        
+
         :param recipient_id: the user id or thread id that you want to send a message to
         :param is_user: determines if the recipient_id is for user or thread
         """
@@ -451,7 +451,7 @@ class Client(object):
         :param like: size of the like sticker you want to send
         :param image_id: id for the image to send, gotten from the UploadURL
         :param add_user_ids: a list of user ids to add to a chat
-        
+
         returns a list of message ids of the sent message(s)
         """
 
@@ -523,7 +523,7 @@ class Client(object):
             data["sticker_id"] = sticker
 
         r = self._post(SendURL, data)
-        
+
         if not r.ok:
             log.warning('Error when sending message: Got {} response'.format(r.status_code))
             return False
@@ -535,7 +535,7 @@ class Client(object):
             # 'errorDescription' is in the users own language!
             log.warning('Error #{} when sending message: {}'.format(j['error'], j['errorDescription']))
             return False
-        
+
         message_ids = []
         try:
             message_ids += [action['message_id'] for action in j['payload']['actions'] if 'message_id' in action]
@@ -621,7 +621,7 @@ class Client(object):
             return None
 
         messages = []
-        for message in j['payload']['actions']:
+        for message in j['payload'].get('actions', []):
             messages.append(Message(**message))
         return list(reversed(messages))
 
@@ -848,7 +848,6 @@ class Client(object):
     def start_listening(self):
         """Start listening from an external event loop."""
         self.listening = True
-        self.send("")
         self.sticky, self.pool = self._getSticky()
 
 
@@ -856,7 +855,6 @@ class Client(object):
         """Does one cycle of the listening loop.
         This method is only useful if you want to control fbchat from an
         external event loop."""
-
         try:
             if markAlive: self.ping(self.sticky)
             try:
@@ -868,9 +866,6 @@ class Client(object):
             self.listening = False
         except requests.exceptions.Timeout:
             pass
-
-
-
 
 
     def stop_listening(self):
@@ -897,11 +892,11 @@ class Client(object):
 
         def fbidStrip(_fbid):
             # Stripping of `fbid:` from author_id
-            if type(_fbid) == int:
-                return _fbid
-
-            if type(_fbid) in [str, unicode] and 'fbid:' in _fbid:
-                return int(_fbid[5:])
+            try:
+                return int(_fbid)
+            except:
+                if type(_fbid) in [str, unicode] and 'fbid:' in _fbid:
+                    return int(_fbid[5:])
 
         user_ids = [fbidStrip(uid) for uid in user_ids]
 
@@ -1041,4 +1036,3 @@ class Client(object):
     def on_unknown_type(self, m):
         """subclass Client and override this method to add custom behavior on event"""
         log.debug("Unknown type {}".format(m))
-
