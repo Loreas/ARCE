@@ -69,16 +69,16 @@ void Bot::buildDFA(std::string regex, bool FAout) {
     if(FAout) enfa.FAtoDot("BotENFA");
 
     // Use MSSC algorithm implemented by J. Meyer to convert e-NFA to DFA
-    DFA* dfaRaw = new DFA;
-    MSSC(enfa, *dfaRaw);
+    DFA dfaRaw;
+    MSSC(enfa, dfaRaw);
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    //tfa(dfaRaw, dfa);
+    tfa(dfaRaw, dfa);
 
     // Assign DFA to bot
-    this->dfa = dfaRaw;
-    if(FAout) dfaRaw->FAtoDot("BotDFA");
+    this->dfa = dfa;
+    if(FAout) dfa->FAtoDot("BotDFA");
 
 }
 
@@ -118,12 +118,13 @@ bool Bot::isEmpty(std::ifstream &file) {
     return file.peek() == std::ifstream::traits_type::eof();
 }
 
-std::vector<std::string> Bot::parseLink() {
+std::vector<std::string> Bot::parseLink(bool output) {
     std::ifstream file;
     file.open("link/link.txt");
     std::string line;
     std::vector<std::string> result;
     while (getline(file,line)) {
+        if(output) std::cout << line << std::endl;
         result.push_back(line);
     }
     file.close();
@@ -158,7 +159,7 @@ void Bot::run(){
             file.close();
         }
         else{
-             std::vector<std::string> commands = parseLink();
+             std::vector<std::string> commands = parseLink(true);
              for(std::string c : commands) {
                  // Check if command is valid
                  std::stringstream ss(c);

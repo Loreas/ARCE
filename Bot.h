@@ -83,7 +83,7 @@ public:
      * @brief Parses every command in the txt file.
      * @return vector van commands
      */
-    std::vector<std::string> parseLink();
+    std::vector<std::string> parseLink(bool output = false);
 
     bool checkCommand(std::string& command) const;
 

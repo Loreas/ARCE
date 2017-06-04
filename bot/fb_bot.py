@@ -1,3 +1,4 @@
+
 import fbchat
 import sys
 import datetime
@@ -5,8 +6,8 @@ import os.path
 from subprocess import call
 
 class bot(fbchat.Client):
-    def __init__(self,email, password,debug=True, user_agent=False,message_done=False, logging = False):
-        fbchat.Client.__init__(self,email, password,debug,user_agent)
+    def __init__(self, email, password, debug=True, user_agent=None, message_done=False, logging = False):
+        fbchat.Client.__init__(self, email, password, debug, user_agent)
         self.logging = logging
         self.message_done=message_done
 
@@ -83,9 +84,12 @@ class bot(fbchat.Client):
 
 
 
+username = sys.argv[1]
+password = sys.argv[2]
+groupID = sys.argv[3]
 
-print(sys.argv[1], sys.argv[2])
-b = bot("c588808@mvrht.net", "ARCE123", False)
+# "python3 bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375"
 
-b.listen()
+b = bot(username, password, False)
 
+# b.listen()
