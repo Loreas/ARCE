@@ -6,8 +6,8 @@ import os.path
 from subprocess import call
 
 class bot(fbchat.Client):
-    def __init__(self, email, password, debug=True, user_agent=None, message_done=False, logging = False):
-        fbchat.Client.__init__(self, email, password, debug, user_agent)
+    def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
+        fbchat.Client.__init__(self, email, password, debug, info_log, user_agent)
         self.logging = logging
         self.message_done=message_done
 
@@ -39,12 +39,14 @@ class bot(fbchat.Client):
         self.markAsRead(author_id)
 
         print(message)
-        f = open("./link/link.txt", 'a')
         if message[0] == '!':
-        	f.write(message[1:])
-        f.close()
+            f = open("./../link/link.txt", 'a')
+            f.write(message[1:])
+            f.write("\n")
+            f.close()
 
         if message == "!exit":
+            self.send(sys.argv[3], "System shutting down, goodbye!", False)
             self.stop_listening()
 
         if(self.logging):
@@ -54,7 +56,7 @@ class bot(fbchat.Client):
 
         # Checkfile for updates
 
-        with open("./link/linkToPython.txt") as f:
+        with open("./../link/linkToPython.txt") as f:
             content = f.readline()
         for i in content:
             if(i[:3] == "log"):
@@ -75,7 +77,7 @@ class bot(fbchat.Client):
 
 
         #clear file
-        f = open("./link/linkToPython.txt", 'w')
+        f = open("./../link/linkToPython.txt", 'w')
         f.write("")
         f.close()
 
@@ -92,5 +94,5 @@ groupID = sys.argv[3]
 # "python3 bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375"
 
 b = bot(username, password, False)
-
+b.send(groupID,"ARCE-bot at your service!",False)
 b.listen()

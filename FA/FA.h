@@ -44,6 +44,7 @@ public:
     void FAtoJSON(std::string filename = "");
 
     virtual bool checkString(std::string s) {return false;}
+    void renameStates();
 
     virtual FA& operator=(const FA& otherFA);
 protected:

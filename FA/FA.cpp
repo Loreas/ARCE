@@ -192,6 +192,17 @@ void FA::FAtoDot(std::string filename) const {
     dot.close();
 }
 
+void FA::renameStates() {
+    int stateName = 0;
+
+    for (const State* state: this->states) {
+        std::set<std::string> name;
+        name.insert("{" + std::to_string(stateName) + "}");
+        const_cast<State*>(state)->setName(name);
+        stateName++;
+    }
+}
+
 FA& FA::operator=(const FA& otherFA) {
     this->type = otherFA.type;
     this->alphabet = otherFA.alphabet;
