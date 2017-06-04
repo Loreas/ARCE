@@ -40,7 +40,8 @@ class bot(fbchat.Client):
 
         print(message)
         f = open("./link/link.txt", 'a')
-        f.write(message[0:])
+        if message[0] == '!':
+        	f.write(message[1:])
         f.close()
 
         if message == "!exit":
@@ -92,4 +93,4 @@ groupID = sys.argv[3]
 
 b = bot(username, password, False)
 
-# b.listen()
+b.listen()

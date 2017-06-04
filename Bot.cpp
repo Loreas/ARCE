@@ -41,6 +41,10 @@ void Bot::setup(bool output){
 
     // Checking if the json has been updated
     bool upToDate = false; // TODO: Fix this
+    if(!upToDate){
+        // Delete all previous dotfiles
+        system("rm ./*.dot");
+    }
 
     // Setting up DFA and FuzzySearch
     std::vector<std::string> cmdNames;
@@ -149,6 +153,7 @@ void Bot::run(){
     command += " " + credentials[2];
     FILE *in;
     in = popen(command.c_str(), "r");
+    std::cout << "Subprocess started.\n";
     std::string output;
 
     // Main loop
@@ -181,7 +186,11 @@ void Bot::run(){
                      }
                  }
                  else {
-                    if (words[0] == "adduser") {
+                    if (words[0] == "exit"){
+                        output = "Exiting.\n";
+                        go = false;
+                    }
+                    else if (words[0] == "adduser") {
                         if (c.size() == 3)
                             output = c + "\n";
                         else

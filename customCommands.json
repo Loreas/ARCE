@@ -9,20 +9,12 @@
 	  "execute" : "python3 ./Scripts/Template.py"
 	},	
 	{
-	  "name" : "Addition",
-	  "description" : "A template addition command",
-	  "command" : "add",
-	  "arguments" : "(a0+b0)(b1+a1)",
-	  "language" : "bash",
-	  "execute" : "echo 'adding'"
-	},
-	{
-	  "name" : "List",
-	  "description" : "A template list command",
-	  "command" : "list",
-	  "arguments" : "all+hidden",
-	  "language" : "bash",
-	  "execute" : "ls"
+	 "name": "Note",
+	 "description" : "Adds a note in a .txt file",
+	 "command" : "addNote",
+	 "arguments" : "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+	 "language" : "python3",
+	 "execute" : "python3 ./Scripts/addNote.py"
 	}
 ]
 }
