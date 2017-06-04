@@ -214,7 +214,8 @@ void tfa(DFA& dfa, DFA* return_dfa) {
             }
         }
      }
-    
+
+    return_dfa->renameStates();
 }
 
 void addNewGroup(std::set<const State *> &newStateGroup, std::set<std::set<const State *>> &newStatesGrouped) {
