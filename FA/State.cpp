@@ -28,6 +28,7 @@ const std::string State::getName() const {
         if (this->name.find(name) != (--this->name.end()))
             fullName += ", ";
     }
+
     return fullName;
 }
 

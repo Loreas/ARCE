@@ -49,6 +49,9 @@ void Bot::setup(bool upToDate, bool output){
         DFA* dfa = new DFA;
         *dfa = parser.parseDFA("./.config/botDFA.json");
         this->dfa = dfa;
+
+        for (auto p : commands)
+            cmdNames.push_back(p.second->getCommand());
     }
     else {
         // Setting up DFA
@@ -88,8 +91,8 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    //tfa(dfaRaw, dfa);
-    *dfa = dfaRaw;
+    tfa(dfaRaw, dfa);
+    //*dfa = dfaRaw;
 
     // Assign DFA to bot
     this->dfa = dfa;

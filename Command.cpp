@@ -74,8 +74,8 @@ void Command::buildDFA(bool upToDate, bool output) {
 
         // Use TFA on DFA
         DFA *dfa = new DFA;
-        //tfa(dfa_raw, dfa);
-        *dfa = dfa_raw;
+        tfa(dfa_raw, dfa);
+        //*dfa = dfa_raw;
         if (output) dfa->FAtoDot((getName() + "_dfa"));
         // Write DFA to json
         dfa->FAtoJSON(filename);

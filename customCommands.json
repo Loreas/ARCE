@@ -12,7 +12,7 @@
       "name": "Add User",
       "description": "Adds a user to the group chat",
       "command": "adduser",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
       "language": "bash",
       "execute": "echo 'Trying to add user.'"
     },
@@ -20,7 +20,7 @@
       "name": "Remove User",
       "description": "Adds a user to the group chat",
       "command": "removeuser",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
       "language": "bash",
       "execute": "echo 'Trying to remove user.'"
     },
@@ -28,7 +28,7 @@
       "name": "Log",
       "description": "Adds functionality of logging the chat",
       "command": "log",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
       "language": "bash",
       "execute": "echo 'Trying to log.'"
     },
