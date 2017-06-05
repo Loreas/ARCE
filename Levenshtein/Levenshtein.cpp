@@ -18,7 +18,7 @@ void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
         // Read all DFA's from the .config folder
         for (std::string& term : terms){
             Parser parser;
-            std::string filename = "../.config/" + term + ".json";
+            std::string filename = "./.config/" + term + ".json";
             DFA dfa = parser.parseDFA(filename);
             automata[term] = dfa;
         }
@@ -31,7 +31,7 @@ void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
             MSSC(lev, dfa);
             DFA smallDFA;
             tfa(dfa, &smallDFA);
-            automata[term] = dfa; // TODO: apply TFA
+            automata[term] = smallDFA;
             // Write to .config folder
             std::string filename = "./.config/" + term;
             smallDFA.FAtoJSON(filename);

@@ -104,12 +104,18 @@ bool Bot::checkCommand(std::string& command) const {
 std::string Bot::executeCommand(std::vector<std::string>& command) {
     Command* com = commands.at(command.at(0)); // The vector contains: {command, arg1, arg2...}
     std::string arguments;
+    bool errorFound = false;
+    std::string errorMessage = "";
+
     for (int i = 1; i < command.size(); i++) {
         if (!com->getDFA()->checkString(command[i])) {
-            return "Argument \"" + command[i] + "\" is not of the right form.\n";
+            errorMessage += "Argument \"" + command[i] + "\" is not of the right form.\n";
+            errorFound = true;
         }
         arguments += " " + command[i];
     }
+
+    if (errorFound) return errorMessage;
 
     std::string exec = com->getExecute() + arguments;
     system(exec.c_str());
