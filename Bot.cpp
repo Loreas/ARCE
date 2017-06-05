@@ -203,14 +203,14 @@ void Bot::run(bool CMIoutput){
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "Exiting.\n";
+                        output = "exit\n";
                         go = false;
                     }
                     else if (words[0] == "adduser") {
                         if (words.size() == 3)
                             output = c + "\n";
                         else
-                            output = "addUser command expects following arguments: addUser name surname\n";
+                           output = "addUser command expects following arguments: addUser name surname\n";
                     }
                     else if (words[0] == "removeuser") {
                         if (words.size() == 3)
