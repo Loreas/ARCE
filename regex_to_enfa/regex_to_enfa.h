@@ -17,10 +17,6 @@
 class RegToeNFA {
 private:
     int stateCounter;
-public:
-    RegToeNFA();
-
-    void ConvertReTo_eNfa(std::string& regex, ENFA& automaton);
 
     std::tuple<State*, State*> buildeNFA(std::string &regex, ENFA &automaton, int currentPos = 0);
 
@@ -33,9 +29,14 @@ public:
     bool PeekNextCharStar(std::string regex, int currentPos);
 
     std::tuple<State *, State *> OperatorPlus(ENFA &automaton, bool &regOR, State *firstState, State *lastState, State *currentFirst,
-                                                  State *currentLast);
+                                              State *currentLast);
 
     std::tuple<State*, State*> OperatorStar(ENFA& automation, State* currentFirstState,
                                             State* currentLastState);
+public:
+    RegToeNFA();
+
+    void ConvertReTo_eNfa(std::string& regex, ENFA& automaton);
+
 };
 #endif //AUTOMATATHEORY_RE_TO_ENFA_H

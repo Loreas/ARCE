@@ -39,6 +39,12 @@ bool State::isAccepting() const {
     return accepting;
 }
 
+bool State::containsName(const std::string name) const{
+    if (this->name.find(name) != this->name.end())
+        return true;
+    else return false;
+}
+
 void State::setName(const std::set<std::string> &name) {
     this->name = name;
 }
