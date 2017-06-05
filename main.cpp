@@ -4,8 +4,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <iostream>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
 
 #include <fstream>
+#include "json.hpp"
 #include "Bot.h"
 #include "Parser.h"
 #include "Levenshtein/Levenshtein.h"
@@ -26,20 +30,70 @@ void bulkTest(std::string fileName, DFA& dfa){
 
 }
 
+void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string& command_path){
+    using json = nlohmann::json;
+
+    system("mkdir .config");
+
+    std::ifstream file(configFile);
+    json config;
+    file >> config;
+
+    // Checking whether if update is needed
+    std::string cmd_file_path = config["commands_file"];
+    if (config["ignore_update"]) upToDate = false;
+    else if (config["force_update"]) upToDate = true;
+    else{
+        // Getting last modified time from OS (Linux only)
+        struct stat fbuf;
+        stat(cmd_file_path.c_str(), &fbuf);
+        time_t cur_mod_time = fbuf.st_mtime;
+
+        /*
+         * DO NOT DELETE: This code is used to convert "Y-M-D-h-m-s" timestamp into time_t
+         * (which is a long that represents seconds in UNIX time. Should the config file ever get fucked,
+         * use this code to manually fix it. Otherwise, don't touch anything. -kusjes, Jona
+        std::tm tm;
+        std::istringstream ss(lastUpdate);
+        ss >> std::get_time(&tm, "%Y-%m-%d-%H-%M-%S");
+        std::time_t cur_mod_time = mktime(&tm);
+         */
+
+        std::time_t last_mod = config["last_updated"];
+
+        upToDate = (cur_mod_time <= last_mod);
+
+        if(!upToDate){
+            config["last_updated"] = cur_mod_time;
+        }
+    }
+
+    output = config["output"];
+    command_path = cmd_file_path;
+
+    // Re-writing the file
+    file.close();
+    std::ofstream outfile(configFile);
+    outfile << std::setw(4) << config << std::endl;
+}
+
 int main(unsigned int argc, char* argv[]){
 
     
     //// DEBUG & TESTING ZONE ////
-    system("mkdir .config");
     std::cout << std::flush;
-    bool botUpToDate = true;
-    bool commandsUpToDate = true;
+    bool upToDate;
     bool output = true;
+    std::string config_file = "ARCE_config.json";
+    std::string cmd_file;
 
+    setupARCE(config_file, upToDate, output, cmd_file);
+
+    /*
     Bot bot;
     Parser parser;
-    parser.parseCommands("./customCommands.json", bot, commandsUpToDate, output);
-    bot.setup(botUpToDate, output);
+    parser.parseCommands(cmd_file, bot, upToDate, output);
+    bot.setup(upToDate, output);
 
     std::string test;
     if(argc == 1) test = "adduser";
@@ -48,8 +102,6 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
-
-    /*
     std::string arg1 = "test";
     std::string arg2 = "testingnote";
     std::vector<std::string> commands = {test, arg1};
@@ -58,7 +110,7 @@ int main(unsigned int argc, char* argv[]){
 
 
 
-    bot.run(output);
+    //bot.run(output);
 
     if (output) std::cout << "Exiting ARCE." << std::flush;
 

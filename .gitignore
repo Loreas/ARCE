@@ -3,3 +3,4 @@ cmake-build-debug/
 CMakeList.txt
 *.dot
 ARCE
+bot/fbchat/__pycache__
