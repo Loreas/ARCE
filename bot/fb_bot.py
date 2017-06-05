@@ -15,7 +15,7 @@ class bot(fbchat.Client):
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()), "a")
+        new = open("log/" + str(c.date.today()) ".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
         new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
 
