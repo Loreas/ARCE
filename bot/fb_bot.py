@@ -10,25 +10,32 @@ class bot(fbchat.Client):
         fbchat.Client.__init__(self, email, password, debug, info_log, user_agent)
         self.logging = logging
         self.message_done=message_done
+        self.groupID = sys.argv[3]
 
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()), "a")
+        new = open("log/" + str(c.date.today()) ".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
-        new.write(str(timestamp+ " - " + author_name+ ": " + message))
+        new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
 
-    def log(self,arg,  message):
+    def log(self, arg,  message, author_name):
+
+        print(arg)
+        logPath = "../log/" + arg + ".txt"
 
         if(arg == "start"):
             self.logging = True
+            self.startlogging(author_name, message)
+            self.send(groupID, "Alright, logging all messages.", False)
         elif(arg == 'stop'):
             self.logging = False
+            self.send(groupID, "No longer keeping a log.", False)
         else:
-            if(os.path.isfile("log/"+arg+".txt")):
-                self.sendLocalImage(sys.argv[3],None, False,"log/"+arg+".txt")
+            if(os.path.isfile(logPath)):
+                self.sendLocalImage(sys.argv[3], None, False, logPath)
             else:
-                self.send(sys.argv[3], "logfile doesn't exist",False)
+                self.send(groupID, ("Logfile '" + logPath + "' doesn't exist."), False)
 
 
 
@@ -38,9 +45,12 @@ class bot(fbchat.Client):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
 
-        print(message)
+        if(author_name == None):
+            author_name = self.getUserInfo(author_id)['name']
+
+        print(">", author_name, ":", message)
         if message[0] == '!':
-            f = open("./link/link.txt", 'a')
+            f = open("../link/link.txt", 'a')
             f.write(message[1:])
             f.write("\n")
             f.close()
@@ -56,31 +66,30 @@ class bot(fbchat.Client):
 
         # Checkfile for updates
 
-        with open("./link/linkToPython.txt") as f:
-         	for line in f:
-	            if(line[:3] == "log"):
-	                arg= line[3:]
-	                self.log(arg, message)
-	            elif(line[:7] == "adduser"):
-	                arg = line[8:]
-	                id = self.getUsers(arg)[0]
-	                self.add_users_to_chat(sys.argv[3], id)
-
-	            elif(line[:10] == "removeuser"):
-	                arg = line[10:]
-	                id = self.getUsers(arg)
-	                self.remove_user_from_chat(id)
-
-	            else:
-	                self.send(sys.argv[3], line, False)
+        with open("../link/linkToPython.txt") as f:
+            for line in f:
+                if(line[:3] == "log"):
+                    arg = line[4:-1]
+                    self.log(arg, message, author_name)
+                    print("Log", arg)
+                elif(line[:7] == "adduser"):
+                    arg = line[8:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.add_users_to_chat(groupID, userId)
+                    print("Adding user", arg)
+                elif(line[:10] == "removeuser"):
+                    arg = line[11:-1]
+                    userId = self.getUsers(arg)
+                    self.remove_user_from_chat(groupID, userId)
+                    print("Removing user", arg)
+                else:
+                    self.send(sys.argv[3], line, False)
 
 
         #clear file
-        f = open("./link/linkToPython.txt", 'w')
+        f = open("../link/linkToPython.txt", 'w')
         f.write("")
         f.close()
-
-
 
 
 
