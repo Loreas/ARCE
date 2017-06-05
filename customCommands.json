@@ -1,36 +1,44 @@
 {
-"commands": [
-	{
-	  "name" : "Template",
-	  "description" : "A template description.",
-	  "command" : "template",
-	  "arguments" : "(a(0+1)*)+(b(2+3)*)",
-	  "language" : "python3",
-	  "execute" : "python3 ./Scripts/Template.py"
-	},	
-	{
-	 "name": "Note",
-	 "description" : "Adds a note in a .txt file",
-	 "command" : "addnote",
-	 "arguments" : "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
-	 "language" : "python3",
-	 "execute" : "python3 ./Scripts/addNote.py"
-	},
-	{
-	 "name": "Add User",
-	 "description" : "Adds a user to the group chat",
-	 "command" : "adduser",
-	 "arguments" : "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
-	 "language" : "bash",
-	 "execute" : "echo 'Trying to add user.'"
-	},
-	{
-	 "name": "Remove User",
-	 "description" : "Adds a user to the group chat",
-	 "command" : "removeuser",
-	 "arguments" : "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
-	 "language" : "bash",
-	 "execute" : "echo 'Trying to remove user.'"
-	}
-]
+  "commands": [
+    {
+      "name": "Template",
+      "description": "A template description",
+      "command": "template",
+      "arguments": "(a(0+1)*)+(b(2+3)*)",
+      "language": "python3",
+      "execute": "python3 ./Scripts/Template.py"
+    },
+    {
+      "name": "Note",
+      "description": "Adds a note in a .txt file",
+      "command": "addnote",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "language": "python3",
+      "execute": "python3 ./Scripts/addNote.py"
+    },
+    {
+      "name": "Add User",
+      "description": "Adds a user to the group chat",
+      "command": "adduser",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "language": "bash",
+      "execute": "echo 'Trying to add user.'"
+    },
+    {
+      "name": "Remove User",
+      "description": "Adds a user to the group chat",
+      "command": "removeuser",
+      "arguments": "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*",
+      "language": "bash",
+      "execute": "echo 'Trying to remove user.'"
+    },
+    {
+      "name": "Roll",
+      "description": "Picks a random number between one and a given number",
+      "command": "roll",
+      "arguments": "(0+1+2+3+4+5+6+7+8+9)*",
+      "language": "python3",
+      "execute": "python3 ./Scripts/roll.py"
+    }
+  ]
 }

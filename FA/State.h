@@ -21,6 +21,7 @@ public:
     const std::string getName() const;
     bool isStarting() const;
     bool isAccepting() const;
+    bool containsName(const std::string name) const;
 
     void setName(const std::set<std::string> &name);
     void setStarting(bool starting);

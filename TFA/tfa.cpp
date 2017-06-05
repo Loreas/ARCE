@@ -152,21 +152,18 @@ void tfa(DFA& dfa, DFA* return_dfa) {
 
     // Create new states from the created groups
     for (std::set<const State*> stateGroup : newStatesGrouped) {
-        std::string newName = "{";
+        std::set<std::string> newName;
         bool starting = false;
         bool accepting = false;
         for (const State* state : stateGroup) {
             std::string name = state->getName();
             if (name.front() == '{') name.erase(0, 1);
             if (name.back() == '}') name.pop_back();
-            newName += name + ", ";
+            newName.insert(name);
 
             if (state->isStarting()) starting = true;
             if (state->isAccepting()) accepting = true;
         }
-        // Remove last ", "
-        newName.pop_back(); newName.pop_back();
-        newName += "}";
         const State* newState = new State(newName, starting, accepting);
         return_dfa->addState(newState);
         newStates.insert(newState);
@@ -192,7 +189,7 @@ void tfa(DFA& dfa, DFA* return_dfa) {
             if (name.front() == '{') name.erase(0, 1);
             if (name.back() == '}') name.pop_back();
 
-            if (newState->getName().find(name) != std::string::npos) {
+            if (newState->containsName(name)) {
                 firstState = state;
                 break;
             }
