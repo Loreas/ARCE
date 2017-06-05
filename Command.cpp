@@ -16,7 +16,7 @@ Command::Command(std::string name, std::string desc, std::string cmd, std::strin
     arg_regex = regex;
     language = lang;
     execute = exec;
-    end_message = "Command '" + cmd + "' finished.\n"; // TODO: implement this?
+    end_message = "";
     buildDFA(upToDate);
 }
 
@@ -74,7 +74,8 @@ void Command::buildDFA(bool upToDate, bool output) {
 
         // Use TFA on DFA
         DFA *dfa = new DFA;
-        tfa(dfa_raw, dfa);
+        //tfa(dfa_raw, dfa);
+        *dfa = dfa_raw;
         if (output) dfa->FAtoDot((getName() + "_dfa"));
         // Write DFA to json
         dfa->FAtoJSON(filename);

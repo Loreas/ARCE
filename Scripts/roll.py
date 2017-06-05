@@ -1,9 +1,9 @@
 import random
 import sys
 
-int = random.randint(1,sys.argv[2])
+result = random.randint(1, int(sys.argv[1]))
 
-f = open("./../link/linkToPyhton.txt", 'a')
-f.write("rolled " + int)
+f = open("./link/linkToPython.txt", 'a')
+f.write("You rolled " + str(result) + "!\n")
 f.close()
 

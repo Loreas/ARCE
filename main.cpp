@@ -33,7 +33,11 @@ void bulkTest(std::string fileName, DFA& dfa){
 void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string& command_path){
     using json = nlohmann::json;
 
-    system("mkdir .config");
+    // Setting up directory and files
+    system("mkdir ./.config");
+    system("mkdir ./link");
+    system("touch ./link/link.txt");
+    system("touch ./link/linkToPython.txt");
 
     std::ifstream file(configFile);
     json config;
@@ -41,13 +45,15 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
 
     // Checking whether if update is needed
     std::string cmd_file_path = config["commands_file"];
-    if (config["ignore_update"]) upToDate = false;
-    else if (config["force_update"]) upToDate = true;
+    if (config["ignore_update"]) upToDate = true;
+    else if (config["force_update"]) upToDate = false;
     else{
+        // Getting the last modified time from the config file
+        std::time_t file_mod_time = config["last_updated"];
         // Getting last modified time from OS (Linux only)
         struct stat fbuf;
         stat(cmd_file_path.c_str(), &fbuf);
-        time_t cur_mod_time = fbuf.st_mtime;
+        time_t OS_mod_time = fbuf.st_mtime;
 
         /*
          * DO NOT DELETE: This code is used to convert "Y-M-D-h-m-s" timestamp into time_t
@@ -59,12 +65,10 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
         std::time_t cur_mod_time = mktime(&tm);
          */
 
-        std::time_t last_mod = config["last_updated"];
-
-        upToDate = (cur_mod_time <= last_mod);
+        upToDate = (OS_mod_time <= file_mod_time);
 
         if(!upToDate){
-            config["last_updated"] = cur_mod_time;
+            config["last_updated"] = OS_mod_time;
         }
     }
 
@@ -89,7 +93,11 @@ int main(unsigned int argc, char* argv[]){
 
     setupARCE(config_file, upToDate, output, cmd_file);
 
-    /*
+    if (output){
+        std::cout << "Starting up ARCE v1.0...\n" << "Files up to date: " << upToDate << std::endl;
+        std::cout << "Output enabled.\nReading commands from: " << cmd_file << std::endl;
+    }
+
     Bot bot;
     Parser parser;
     parser.parseCommands(cmd_file, bot, upToDate, output);
@@ -102,13 +110,10 @@ int main(unsigned int argc, char* argv[]){
         test = argv[1];
     }
 
-    std::string arg1 = "test";
-    std::string arg2 = "testingnote";
+    std::string arg1 = "5";
+    std::string arg2 = "4";
     std::vector<std::string> commands = {test, arg1};
     std::cout << bot.checkCommand(commands[0]) << std::endl;
-     */
-
-
 
     //bot.run(output);
 

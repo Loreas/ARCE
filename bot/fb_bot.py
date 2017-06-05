@@ -15,14 +15,14 @@ class bot(fbchat.Client):
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()) ".txt", "a")
+        new = open("log/" + str(c.date.today()) + ".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
         new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):
 
         print(arg)
-        logPath = "../log/" + arg + ".txt"
+        logPath = "./log/" + arg + ".txt"
 
         if(arg == "start"):
             self.logging = True
@@ -50,14 +50,10 @@ class bot(fbchat.Client):
 
         print(">", author_name, ":", message)
         if message[0] == '!':
-            f = open("../link/link.txt", 'a')
+            f = open("./link/link.txt", 'a')
             f.write(message[1:])
             f.write("\n")
             f.close()
-
-        if message == "!exit":
-            self.send(sys.argv[3], "System shutting down, goodbye!", False)
-            self.stop_listening()
 
         if(self.logging):
             self.startlogging(author_name, message)
@@ -65,31 +61,34 @@ class bot(fbchat.Client):
 
 
         # Checkfile for updates
-
-        with open("../link/linkToPython.txt") as f:
-            for line in f:
-                if(line[:3] == "log"):
-                    arg = line[4:-1]
-                    self.log(arg, message, author_name)
-                    print("Log", arg)
-                elif(line[:7] == "adduser"):
-                    arg = line[8:-1]
-                    userId = self.getUsers(arg)[0]
-                    self.add_users_to_chat(groupID, userId)
-                    print("Adding user", arg)
-                elif(line[:10] == "removeuser"):
-                    arg = line[11:-1]
-                    userId = self.getUsers(arg)
-                    self.remove_user_from_chat(groupID, userId)
-                    print("Removing user", arg)
-                else:
-                    self.send(sys.argv[3], line, False)
-
+        f = open("./link/linkToPython.txt")
+        for line in f:
+            if(line[:3] == "log"):
+                arg = line[4:-1]
+                self.log(arg, message, author_name)
+                print("Log", arg)
+            elif(line[:7] == "adduser"):
+                arg = line[8:-1]
+                userId = self.getUsers(arg)[0]
+                self.add_users_to_chat(groupID, userId)
+                print("Adding user", arg)
+            elif(line[:10] == "removeuser"):
+                arg = line[11:-1]
+                userId = self.getUsers(arg)
+                self.remove_user_from_chat(groupID, userId)
+                print("Removing user", arg)
+            else:
+                self.send(sys.argv[3], line, False)
+        f.close()
 
         #clear file
-        f = open("../link/linkToPython.txt", 'w')
+        f = open("./link/linkToPython.txt", 'w')
         f.write("")
         f.close()
+
+        if message == "!exit":
+            self.send(sys.argv[3], "System shutting down, goodbye!", False)
+            self.stop_listening()
 
 
 

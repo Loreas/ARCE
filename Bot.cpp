@@ -88,7 +88,7 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    //TODO: tfa(dfaRaw, dfa);
+    //tfa(dfaRaw, dfa);
     *dfa = dfaRaw;
 
     // Assign DFA to bot
@@ -204,12 +204,12 @@ void Bot::run(bool CMIoutput){
                          }
                      }
                      else {
-                         output = "Cannot find command.\n";
+                         output = "I don't know the command '" + words[0] + "'.\n";
                      }
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "exit\n";
+                        output = "exit";
                         go = false;
                     }
                     else if (words[0] == "adduser") {
@@ -234,7 +234,7 @@ void Bot::run(bool CMIoutput){
                         output = executeCommand(words) + "\n";
                     }
                  }
-                 std::ofstream link("link/linkToPython.txt");
+                 std::ofstream link("link/linkToPython.txt", std::ofstream::app);
                  link << output;
                  link.close();
              }
