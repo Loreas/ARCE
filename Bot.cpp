@@ -111,6 +111,10 @@ std::string Bot::executeCommand(std::vector<std::string>& command) {
 
     // Check if correct amount of arguments given
     if (com->getAmmountArgs() == -1) {
+        // Build arguments just in case
+        for(int i = 1; i < command.size(); i++){
+            arguments += " " + command[i];
+        }
     }
     else if (command.size()-1 < com->getAmmountArgs()) {
         errorMessage += "Command \"" + command[0] + "\" is missing " + std::to_string(std::abs((int)(com->getAmmountArgs() - command.size() - 1))) + " arguments\n";
@@ -135,6 +139,7 @@ std::string Bot::executeCommand(std::vector<std::string>& command) {
     if (errorFound) return errorMessage;
 
     std::string exec = com->getExecute() + arguments;
+    std::cout << exec << std::endl;
     system(exec.c_str());
     return "";
 }

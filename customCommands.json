@@ -59,6 +59,16 @@
       "form": "ball <question>",
       "language": "python3",
       "execute": "python3 ./Scripts/ball.py"     
+    },
+    {
+      "name": "Note",
+      "description": "Returns a note to the chat",
+      "command": "note",
+      "arguments": "",
+      "amountArgs": "-1",
+      "form": "note <name> <content>",
+      "language": "python",
+      "execute": "python ./Scripts/addNote.py"     
     }
   ]
 }	
