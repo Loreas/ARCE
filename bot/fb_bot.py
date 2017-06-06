@@ -24,25 +24,28 @@ class bot(fbchat.Client):
     def check_file(self, path):
         # check for udpdate in the file
         f = open(path)
-        for line in f:
-            content = line.split(' ', 1)
-            if (content[0] == "log"):
-                arg = content[1][:-1]
-                self.log(arg, self.message, self.authorname)
-                print("Log", arg)
-            elif (content[0] == "adduser"):
-                arg = content[1][:-1]
-                userId = self.getUsers(arg)[0]
-                self.add_users_to_chat(self.groupID, userId)
-                print("Adding user", arg)
-            elif (content[0] == "removeuser"):
-                arg = content[1][:-1]
-                userId = self.getUsers(arg)[0]
-                self.remove_user_from_chat(self.groupID, userId)
-                print("Removing user", arg)
-            else:
-                self.send(self.groupID, line, False)
-        f.close()
+        i = 0
+        while(i  == 0):
+           for line in f:
+                i += 1
+                content = line.split(' ', 1)
+                if (content[0] == "log"):
+                    arg = content[1][:-1]
+                    self.log(arg, self.message, self.authorname)
+                    print("Log", arg)
+                elif (content[0] == "adduser"):
+                    arg = content[1][:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.add_users_to_chat(self.groupID, userId)
+                    print("Adding user", arg)
+                elif (content[0] == "removeuser"):
+                    arg = content[1][:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.remove_user_from_chat(self.groupID, userId)
+                    print("Removing user", arg)
+                else:
+                    self.send(self.groupID, line, False)
+            f.close()
 
         # clear file
         f = open("./link/linkToPython.txt", 'w')
@@ -116,7 +119,7 @@ class bot(fbchat.Client):
         """Does one cycle of the listening loop.
         This method is only useful if you want to control fbchat from an
         external event loop."""
-        self.check_file("./link/linkToPython.txt")
+
         try:
             if markAlive: self.ping(self.sticky)
             try:
