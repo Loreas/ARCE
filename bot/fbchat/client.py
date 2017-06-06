@@ -866,7 +866,6 @@ class Client(object):
             self.listening = False
         except requests.exceptions.Timeout:
             pass
-        #check for udpdate in the file
 
 
     def stop_listening(self):

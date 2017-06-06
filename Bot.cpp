@@ -207,7 +207,7 @@ void Bot::run(bool CMIoutput){
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "exit";
+                        output = "";
                         go = false;
                     }
                     else if (words[0] == "adduser") {

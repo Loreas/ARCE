@@ -5,39 +5,71 @@ import datetime
 import os.path
 from subprocess import call
 import urllib
+import logging
 import requests
 
 
+log = logging.getLogger("client")
+log.setLevel(logging.DEBUG)
 
 class bot(fbchat.Client):
     def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
         fbchat.Client.__init__(self, email, password, debug, info_log, user_agent)
         self.logging = logging
         self.message_done=message_done
+        self.authorname = "Empty"
+        self.message = "Empty"
         self.groupID = sys.argv[3]
-        self.message = ""
-        self.authorname =""
+
+    def check_file(self, path):
+        # check for udpdate in the file
+        f = open(path)
+        for line in f:
+            content = line.split(' ', 1)
+            if (content[0] == "log"):
+                arg = content[1][:-1]
+                self.log(arg, self.message, self.authorname)
+                print("Log", arg)
+            elif (content[0] == "adduser"):
+                arg = content[1]
+                userId = self.getUsers(arg)[0]
+                self.add_users_to_chat(self.groupID, userId)
+                print("Adding user", arg)
+            elif (content[0] == "removeuser"):
+                arg = content[1]
+                userId = self.getUsers(arg)[0]
+                self.remove_user_from_chat(self.groupID, userId)
+                print("Removing user", arg)
+            else:
+                self.send(self.groupID, line, False)
+        f.close()
+
+        # clear file
+        f = open("./link/linkToPython.txt", 'w')
+        f.write("")
+        f.close()
+
 
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()), "a")
+        new = open("./log/" + str(c.date.today()) +".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
-        new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
+        new.write(str("\n" + timestamp + " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):
 
-        print(arg)
-        logPath = "./log/" + arg;
+        logPath = "./log/" + arg + ".txt";
 
-        if(arg == "start"):
+        if(str(arg) == "start"):
             self.logging = True
             self.startlogging(author_name, message)
             self.send(groupID, "Alright, logging all messages.", False)
-        elif(arg == 'stop'):
+        elif(str(arg) == 'stop'):
             self.logging = False
             self.send(groupID, "No longer keeping a log.", False)
         else:
+            logf = open(logPath, 'r')
             if(os.path.isfile(logPath)):
                 #self.sendLocalImage(self.groupID, None, False, logPath)
                 logf = open(logPath, 'r')
@@ -54,9 +86,9 @@ class bot(fbchat.Client):
     def on_message(self, mid, author_id, author_name, message, metadata):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
-        self.message = message
-        self.authorname = author_name
         author_name = self.getUserInfo(author_id)['name']
+        self.authorname = author_name
+        self.message = message
 
         print(">", author_name, ":", message)
         if message[0] == '!':
@@ -68,12 +100,17 @@ class bot(fbchat.Client):
         if(self.logging):
             self.startlogging(author_name, message)
 
+        if message == "!exit":
+            self.send(sys.argv[3], "System shutting down, goodbye!", False)
+            self.stop_listening()
 
+        self.check_file("./link/linkToPython.txt")
 
     def do_one_listen(self, markAlive=True):
         """Does one cycle of the listening loop.
         This method is only useful if you want to control fbchat from an
         external event loop."""
+        self.check_file("./link/linkToPython.txt")
         try:
             if markAlive: self.ping(self.sticky)
             try:
@@ -85,43 +122,26 @@ class bot(fbchat.Client):
             self.listening = False
         except requests.exceptions.Timeout:
             pass
-        #check for udpdate in the file
-        f = open("./link/linkToPython.txt")
-        for line in f:
-            if(line[:3] == "log"):
-                arg = line[4:-1]
-                self.log(arg, self.message, self.authorname)
-                print("Log", arg)
-            elif(line[:7] == "adduser"):
-                arg = line[8:-1]
-                userId = self.getUsers(arg)[0]
-                self.add_users_to_chat(self.groupID, userId)
-                print("Adding user", arg)
-            elif(line[:10] == "removeuser"):
-                arg = line[11:-1]
-                userId = self.getUsers(arg)[0]
-                self.remove_user_from_chat(self.groupID, userId)
-                print("Removing user", arg)
-            else:
-                self.send(sys.argv[3], line, False)
-        f.close()
 
-        #clear file
-        f = open("./link/linkToPython.txt", 'w')
-        f.write("")
-        f.close()
 
-        if self.message == "!exit":
-            self.send(sys.argv[3], "System shutting down, goodbye!", False)
-            self.stop_listening()
-        
+    def listen(self, markAlive=True):
+        self.start_listening()
+
+        log.info("Listening...")
+        # Listen loop & checking for commands in file
+        while self.listening:
+            self.do_one_listen(markAlive)
+            self.check_file("./link/linkToPython.txt")
+
+        self.stop_listening()
+
 
 
 username = sys.argv[1]
 password = sys.argv[2]
 groupID = sys.argv[3]
 
-# "python3 bot/fb_bot.py c588808@mvrht.net ARCE123 1230204977079375"
+# "python3 fb_bot.py c588808@mvrht.net ARCE123 1230204977079375"
 
 b = bot(username, password, False)
 b.send(groupID,"ARCE-bot at your service!",False)
