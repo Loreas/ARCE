@@ -68,6 +68,12 @@ class bot(fbchat.Client):
         elif(str(arg) == 'stop'):
             self.logging = False
             self.send(groupID, "No longer keeping a log.", False)
+        elif(str(arg) == "list"):
+            loglist = os.listdir("./log")
+            out = ""
+            for s in loglist:
+                out += s[:-4] + "\n"
+            self.send(self.groupID, out, False)
         else:
             logf = open(logPath, 'r')
             if(os.path.isfile(logPath)):

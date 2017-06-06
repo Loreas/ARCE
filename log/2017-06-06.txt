@@ -30,3 +30,11 @@
 13:02 - Willy Wapper: Did you mean:
 13:02 - Willy Wapper: log
 13:02 - Jonathan Meyer: !log stop
+13:07 - Jonathan Meyer: alles oke
+13:07 - Willy Wapper: Alright, logging all messages.
+13:08 - Jonathan Meyer: !log stop
+13:08 - Jonathan Meyer: alles ok
+13:32 - Loreas Clonen: !log start
+13:32 - Willy Wapper: Alright, logging all messages.
+13:32 - Loreas Clonen: Smooi
+13:33 - Loreas Clonen: !log stop

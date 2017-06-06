@@ -102,14 +102,14 @@ int main(unsigned int argc, char* argv[]){
     parser.parseCommands(cmd_file, bot, upToDate, output);
     bot.setup(upToDate, output);
 
-    /*
     std::string test;
-    if(argc == 1) test = "templatit";
+    if(argc == 1) test = "addussr";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
+    /*
     std::string arg1 = "5";
     std::string arg2 = "4";
     std::vector<std::string> commands = {test, arg1};
