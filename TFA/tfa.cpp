@@ -186,8 +186,6 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         // Find an original state of this one
         for (const State* state: states) {
             std::string name = state->getName();
-            if (name.front() == '{') name.erase(0, 1);
-            if (name.back() == '}') name.pop_back();
 
             if (newState->containsName(name)) {
                 firstState = state;
@@ -198,13 +196,11 @@ void tfa(DFA& dfa, DFA* return_dfa) {
         for (auto& ch: return_dfa->getAlphabet()) {
             const State* state = (*transitions[std::make_tuple(firstState, ch)].begin());
             std::string name = state->getName();
-            if (name.front() == '{') name.erase(0, 1);
-            if (name.back() == '}') name.pop_back();
 
             // Find new state containing the found name
             for (const State* newState2: newStates) {
                 // If found add transion from newState to newState2
-                if (newState2->getName().find(name) != std::string::npos) {
+                if (newState2->containsName(name)) {
                     return_dfa->addTransition(newState, ch, newState2);
                     break;
                 }

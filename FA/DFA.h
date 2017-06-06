@@ -13,7 +13,7 @@ public:
     DFA(const DFA& otherDFA);
     const State* delta(const State* from, std::string c);
     virtual bool Validate() {return true;}
-    virtual bool checkString(std::string s);
+    virtual bool checkString(std::string s) const;
 
     DFA& operator=(const DFA& otherDFA);
 };

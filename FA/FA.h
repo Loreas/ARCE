@@ -43,7 +43,7 @@ public:
     void FAtoDot(std::string filename = "") const;
     void FAtoJSON(std::string filename = "");
 
-    virtual bool checkString(std::string s) {return false;}
+    virtual bool checkString(std::string s) const {return false;}
     void renameStates();
 
     virtual FA& operator=(const FA& otherFA);

@@ -93,8 +93,9 @@ int main(unsigned int argc, char* argv[]){
     setupARCE(config_file, upToDate, output, cmd_file);
 
     if (output){
-        std::cout << "Starting up ARCE v1.0...\n" << "Files up to date: " << upToDate << std::endl;
-        std::cout << "Output enabled.\nReading commands from: " << cmd_file << std::endl;
+        std::cout << "Starting up ARCE v1.0...\n" << "Output enabled.\n"
+                  << "Files up to date: " << upToDate << std::endl
+                  << "Reading commands from: " << cmd_file << std::endl;
     }
 
     Bot bot;
@@ -104,7 +105,7 @@ int main(unsigned int argc, char* argv[]){
 
     /*
     std::string test;
-    if(argc == 1) test = "templatit";
+    if(argc == 1) test = "exit";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
@@ -119,7 +120,7 @@ int main(unsigned int argc, char* argv[]){
     for(std::string s : sug){
         std::cout << s << std::endl;
     }
-     */
+    */
 
     bot.run(output);
 

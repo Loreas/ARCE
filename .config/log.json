@@ -30,1760 +30,1760 @@
   ],
   "states": [
     {
-      "name": "{3^1, 2^1}",
+      "name": "{0}",
       "starting": false,
       "accepting": true
     },
     {
-      "name": "{2^1, 1^1, 0^1, 1^0}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{2^1}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{3^1, 3^0, 2^1}",
+      "name": "{1}",
       "starting": false,
       "accepting": true
     },
     {
-      "name": "{Garbage}",
+      "name": "{2}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{3^1}",
+      "name": "{3}",
       "starting": false,
       "accepting": true
     },
     {
-      "name": "{2^1, 1^1}",
+      "name": "{4}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{2^1, 1^1, 0^1}",
+      "name": "{5}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{1^1}",
+      "name": "{6}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{1^1, 0^0}",
+      "name": "{7}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{8}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{9}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{10}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{11}",
       "starting": true,
       "accepting": false
     },
     {
-      "name": "{1^1, 0^1}",
+      "name": "{12}",
       "starting": false,
       "accepting": false
-    },
-    {
-      "name": "{3^1, 2^1, 1^1}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{3^1, 2^1, 2^0, 1^1}",
-      "starting": false,
-      "accepting": true
     }
   ],
   "transitions": [
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{3^1}",
+      "from": "{0}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "o"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{3^1, 2^1}",
-      "to": "{Garbage}",
+      "from": "{0}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "a"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "b"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "c"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "d"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "e"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "f"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{3^1, 2^1, 1^1}",
+      "from": "{1}",
+      "to": "{3}",
       "input": "g"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "h"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "i"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "j"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "k"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "l"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "m"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "n"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{3^1, 2^1, 2^0, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "p"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "q"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "r"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "s"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "t"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "u"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "v"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "w"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "x"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "y"
     },
     {
-      "from": "{2^1, 1^1, 0^1, 1^0}",
-      "to": "{2^1, 1^1}",
+      "from": "{1}",
+      "to": "{0}",
       "input": "z"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "a"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "b"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "c"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "d"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "e"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "f"
     },
     {
-      "from": "{2^1}",
-      "to": "{3^1}",
+      "from": "{2}",
+      "to": "{7}",
       "input": "g"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "h"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "i"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "j"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "k"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "l"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "m"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "n"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{1}",
       "input": "o"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "p"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "q"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "r"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "s"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "t"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "u"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "v"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "w"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "x"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "y"
     },
     {
-      "from": "{2^1}",
-      "to": "{Garbage}",
+      "from": "{2}",
+      "to": "{2}",
       "input": "z"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "a"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "b"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "c"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "d"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "e"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "f"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "h"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "i"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "j"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "k"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "l"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "m"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "n"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "p"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "q"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "r"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "s"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "t"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "u"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "v"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "w"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "x"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "y"
     },
     {
-      "from": "{3^1, 3^0, 2^1}",
-      "to": "{3^1}",
+      "from": "{3}",
+      "to": "{0}",
       "input": "z"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{1}",
       "input": "l"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
+      "from": "{4}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "g"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{1}",
       "input": "l"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{3^1}",
-      "to": "{Garbage}",
+      "from": "{5}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{3^1}",
+      "from": "{6}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{2^1}",
+      "from": "{6}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{6}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{3^1}",
+      "from": "{7}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{1^1}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{2^1}",
+      "from": "{7}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{2^1, 1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{7}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "g"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{1^1}",
-      "to": "{2^1}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "o"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{1^1}",
-      "to": "{Garbage}",
+      "from": "{8}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{0}",
       "input": "g"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{2^1, 1^1, 0^1, 1^0}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{2^1, 1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "o"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{1^1, 0^0}",
-      "to": "{1^1, 0^1}",
+      "from": "{9}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "g"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{1^1}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{2^1}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "o"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{1^1, 0^1}",
-      "to": "{Garbage}",
+      "from": "{10}",
+      "to": "{8}",
       "input": "z"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "a"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "b"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "c"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "d"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "e"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "f"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{3^1}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "g"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "h"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "i"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "j"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "k"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "l"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "m"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "n"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{2^1}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "o"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "p"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "q"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "r"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "s"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "t"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "u"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "v"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "w"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "x"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "y"
     },
     {
-      "from": "{3^1, 2^1, 1^1}",
-      "to": "{Garbage}",
+      "from": "{11}",
+      "to": "{2}",
       "input": "z"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "a"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "b"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "c"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "d"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "e"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "f"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 3^0, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "g"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "h"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "i"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "j"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "k"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "l"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "m"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "n"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{0}",
       "input": "o"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "p"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "q"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "r"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "s"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "t"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "u"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "v"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "w"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "x"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "y"
     },
     {
-      "from": "{3^1, 2^1, 2^0, 1^1}",
-      "to": "{3^1, 2^1}",
+      "from": "{12}",
+      "to": "{8}",
       "input": "z"
     }
   ]

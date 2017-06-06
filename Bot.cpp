@@ -139,18 +139,6 @@ std::string Bot::executeCommand(std::vector<std::string>& command) {
     return "";
 }
 
-void Bot::runScript() {
-
-}
-
-void Bot::receiveMsg() {
-
-}
-
-void Bot::sendMsg() {
-
-}
-
 bool Bot::isEmpty(std::ifstream &file) {
     return file.peek() == std::ifstream::traits_type::eof();
 }
@@ -195,7 +183,7 @@ void Bot::run(bool CMIoutput){
     while(go){
         file.open("link/link.txt");
         if(isEmpty(file)) {
-            std::this_thread::sleep_for(std::chrono::seconds(3));
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             file.close();
             continue;
         }
@@ -225,7 +213,7 @@ void Bot::run(bool CMIoutput){
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "Exit";
+                        output = "";
                         go = false;
                     }
                     else if (words[0] == "adduser") {
