@@ -78,7 +78,6 @@ class bot(fbchat.Client):
                 out += s[:-4] + "\n"
             self.send(self.groupID, out, False)
         else:
-            logf = open(logPath, 'r')
             if(os.path.isfile(logPath)):
                 #self.sendLocalImage(self.groupID, None, False, logPath)
                 logf = open(logPath, 'r')

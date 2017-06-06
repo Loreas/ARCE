@@ -89,7 +89,7 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    //tfa(dfaRaw, dfa);
+    // TODO: tfa(dfaRaw, dfa);
     *dfa = dfaRaw;
 
     // Assign DFA to bot
