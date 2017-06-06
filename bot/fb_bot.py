@@ -70,7 +70,7 @@ class bot(fbchat.Client):
             elif(line[:7] == "adduser"):
                 arg = line[8:-1]
                 userId = self.getUsers(arg)[0]
-                self.add_users_to_chat(groupID, userId)
+                self.add_users_to_chat(self.groupID, userId)
                 print("Adding user", arg)
             elif(line[:10] == "removeuser"):
                 arg = line[11:-1]
