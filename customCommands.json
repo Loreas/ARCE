@@ -9,6 +9,14 @@
       "execute": "python3 ./Scripts/Template.py"
     },
     {
+      "name": "Exit",
+      "description": "Exits the systems",
+      "command": "exit",
+      "arguments": "a+b",
+      "language": "bash",
+      "execute": "echo 'Trying to exit.'"
+    },
+    {
       "name": "Add User",
       "description": "Adds a user to the group chat",
       "command": "adduser",

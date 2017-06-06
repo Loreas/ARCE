@@ -36,8 +36,8 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
     // Setting up directory and files
     system("mkdir ./.config");
     system("mkdir ./link");
-    system("touch ./link/link.txt");
-    system("touch ./link/linkToPython.txt");
+    std::ofstream("./link/link.txt", std::ofstream::out | std::ofstream::trunc);
+    std::ofstream("./link/linkToPython.txt", std::ofstream::out | std::ofstream::trunc);
 
     std::ifstream file(configFile);
     json config;
@@ -103,8 +103,9 @@ int main(unsigned int argc, char* argv[]){
     parser.parseCommands(cmd_file, bot, upToDate, output);
     bot.setup(upToDate, output);
 
+    /*
     std::string test;
-    if(argc == 1) test = "adduser";
+    if(argc == 1) test = "rol";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
@@ -114,8 +115,15 @@ int main(unsigned int argc, char* argv[]){
     std::string arg2 = "4";
     std::vector<std::string> commands = {test, arg1};
     std::cout << bot.checkCommand(commands[0]) << std::endl;
+    std::vector<std::string> sug = bot.getFuzzy()->fuzzy(test);
+    bot.getFuzzy()->printAutomata();
+    for(std::string s : sug){
+        std::cout << s << std::endl;
+    }
+     */
 
-    //bot.run(output);
+
+    bot.run(output);
 
     if (output) std::cout << "Exiting ARCE." << std::flush;
 
