@@ -11,7 +11,7 @@ DFA::DFA() {
 DFA::DFA(const DFA& otherDFA)
 : FA(otherDFA) {}
 
-bool DFA::checkString(std::string s) {
+bool DFA::checkString(std::string s) const{
 
     const std::set<std::string> alph = getAlphabet();
     const State* curState = getStartstate();
