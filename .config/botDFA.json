@@ -2,6 +2,7 @@
   "type": "DFA", 
   "alphabet": [
     "a",
+    "b",
     "d",
     "e",
     "g",
@@ -19,147 +20,12 @@
   ],
   "states": [
     {
-      "name": "{26, 25}",
+      "name": "{12, 11}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{60, 59}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{72, 71}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{44, 43}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{6, 5}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{36, 35}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{70, 69}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{34, 33, 55, 56}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{68, 67}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{46, 45}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{50, 49}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{2, 1}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{76, 75}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{66, 65}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{79, 81}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{11, 12}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{28, 27}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "starting": true,
-      "accepting": false
-    },
-    {
-      "name": "{81, 61, 63}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{74, 73}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{40, 39}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{4, 3}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{38, 37}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{Garbage}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{81, 31, 23, 21, 53, 63}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{42, 41}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{77, 78}",
-      "starting": false,
-      "accepting": false
-    },
-    {
-      "name": "{81, 31, 23, 13, 53, 63}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{81, 51, 53, 63}",
+      "name": "{91, 89}",
       "starting": false,
       "accepting": true
     },
@@ -169,32 +35,52 @@
       "accepting": false
     },
     {
+      "name": "{57, 58}",
+      "starting": false,
+      "accepting": false
+    },
+    {
       "name": "{18, 17}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{81, 31, 29, 53, 63}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{9, 10}",
+      "name": "{70, 69}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{8, 7}",
+      "name": "{1, 2}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{20, 19}",
+      "name": "{38, 37}",
       "starting": false,
       "accepting": false
     },
     {
-      "name": "{57, 58}",
+      "name": "{25, 26}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "starting": true,
+      "accepting": false
+    },
+    {
+      "name": "{46, 45}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{Garbage}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{30, 29}",
       "starting": false,
       "accepting": false
     },
@@ -202,2263 +88,473 @@
       "name": "{48, 47}",
       "starting": false,
       "accepting": false
+    },
+    {
+      "name": "{53, 54}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{85, 86}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{59, 60}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{91, 63, 61, 73}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{28, 27}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{67, 68}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{91, 71, 73}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{82, 81}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{10, 9}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{51, 52}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{84, 83}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{5, 6}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{19, 20}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{56, 55}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{91, 63, 41, 13, 23, 33, 73}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{87, 88}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{91, 63, 41, 39, 73}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{77, 78}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{35, 36}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{3, 4}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{76, 75}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{44, 43, 66, 65}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{79, 80}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{7, 8}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{50, 49}",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "{91, 63, 41, 23, 21, 33, 73}",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "{91, 63, 41, 33, 73, 31}",
+      "starting": false,
+      "accepting": true
     }
   ],
   "transitions": [
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{26, 25}",
-      "to": "{28, 27}",
+      "from": "{12, 11}",
+      "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{26, 25}",
-      "to": "{Garbage}",
+      "from": "{12, 11}",
+      "to": "{91, 63, 41, 13, 23, 33, 73}",
       "input": "r"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{26, 25}",
+      "from": "{12, 11}",
       "to": "{Garbage}",
       "input": "x"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{60, 59}",
-      "to": "{81, 61, 63}",
+      "from": "{91, 89}",
+      "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{60, 59}",
+      "from": "{91, 89}",
       "to": "{Garbage}",
       "input": "x"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{74, 73}",
-      "input": "l"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{72, 71}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{46, 45}",
-      "input": "u"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{44, 43}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{8, 7}",
-      "input": "u"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{6, 5}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{38, 37}",
-      "input": "m"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{36, 35}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{72, 71}",
-      "input": "p"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{70, 69}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{36, 35}",
-      "input": "e"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{57, 58}",
-      "input": "o"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{34, 33, 55, 56}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{70, 69}",
-      "input": "m"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{68, 67}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{48, 47}",
-      "input": "s"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{46, 45}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{81, 51, 53, 63}",
-      "input": "r"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{50, 49}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{4, 3}",
-      "input": "d"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{2, 1}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{77, 78}",
-      "input": "t"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{76, 75}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{68, 67}",
-      "input": "e"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{66, 65}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{79, 81}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{81, 31, 23, 13, 53, 63}",
-      "input": "r"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{11, 12}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{81, 31, 29, 53, 63}",
-      "input": "g"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{28, 27}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{2, 1}",
-      "input": "a"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{16, 15}",
-      "input": "e"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{26, 25}",
-      "input": "l"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{34, 33, 55, 56}",
-      "input": "r"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{66, 65}",
-      "input": "t"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{0, 52, 54, 80, 32, 30, 24, 22, 14, 64, 62}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{81, 61, 63}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{76, 75}",
-      "input": "a"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{74, 73}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{42, 41}",
-      "input": "v"
-    },
-    {
-      "from": "{40, 39}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{6, 5}",
-      "input": "d"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{4, 3}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{40, 39}",
-      "input": "o"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{38, 37}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{81, 31, 23, 21, 53, 63}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{44, 43}",
-      "input": "e"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{42, 41}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{79, 81}",
-      "input": "e"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{77, 78}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{81, 31, 23, 13, 53, 63}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "v"
-    },
-    {
-      "from": "{81, 51, 53, 63}",
-      "to": "{Garbage}",
-      "input": "x"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "d"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "e"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "o"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "p"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "r"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "s"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "t"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "u"
-    },
-    {
-      "from": "{16, 15}",
-      "to": "{Garbage}",
-      "input": "v"
     },
     {
       "from": "{16, 15}",
       "to": "{18, 17}",
+      "input": "a"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{16, 15}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{59, 60}",
+      "input": "e"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{57, 58}",
+      "to": "{Garbage}",
       "input": "x"
     },
     {
       "from": "{18, 17}",
       "to": "{Garbage}",
       "input": "a"
+    },
+    {
+      "from": "{18, 17}",
+      "to": "{Garbage}",
+      "input": "b"
     },
     {
       "from": "{18, 17}",
@@ -2477,12 +573,12 @@
     },
     {
       "from": "{18, 17}",
-      "to": "{20, 19}",
+      "to": "{Garbage}",
       "input": "i"
     },
     {
       "from": "{18, 17}",
-      "to": "{Garbage}",
+      "to": "{19, 20}",
       "input": "l"
     },
     {
@@ -2531,377 +627,642 @@
       "input": "x"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
-      "to": "{Garbage}",
+      "from": "{70, 69}",
+      "to": "{91, 71, 73}",
       "input": "l"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{81, 31, 29, 53, 63}",
+      "from": "{70, 69}",
       "to": "{Garbage}",
       "input": "x"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{1, 2}",
+      "to": "{3, 4}",
       "input": "d"
     },
     {
-      "from": "{9, 10}",
-      "to": "{11, 12}",
+      "from": "{1, 2}",
+      "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{9, 10}",
+      "from": "{1, 2}",
       "to": "{Garbage}",
       "input": "x"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{8, 7}",
-      "to": "{Garbage}",
+      "from": "{38, 37}",
+      "to": "{91, 63, 41, 39, 73}",
       "input": "g"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{8, 7}",
-      "to": "{9, 10}",
+      "from": "{38, 37}",
+      "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{8, 7}",
+      "from": "{38, 37}",
       "to": "{Garbage}",
       "input": "x"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "m"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{20, 19}",
-      "to": "{81, 31, 23, 21, 53, 63}",
+      "from": "{25, 26}",
+      "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{20, 19}",
+      "from": "{25, 26}",
+      "to": "{28, 27}",
+      "input": "x"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{1, 2}",
+      "input": "a"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{16, 15}",
+      "input": "b"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{25, 26}",
+      "input": "e"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{35, 36}",
+      "input": "l"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{44, 43, 66, 65}",
+      "input": "r"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{76, 75}",
+      "input": "t"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{0, 24, 42, 40, 14, 64, 34, 90, 22, 32, 62, 72, 74}",
       "to": "{Garbage}",
       "input": "x"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "a"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "d"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "e"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "g"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "i"
     },
     {
-      "from": "{57, 58}",
-      "to": "{60, 59}",
+      "from": "{46, 45}",
+      "to": "{Garbage}",
       "input": "l"
     },
     {
-      "from": "{57, 58}",
-      "to": "{Garbage}",
+      "from": "{46, 45}",
+      "to": "{48, 47}",
       "input": "m"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "o"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "p"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "r"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "s"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "t"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "u"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
       "to": "{Garbage}",
       "input": "v"
     },
     {
-      "from": "{57, 58}",
+      "from": "{46, 45}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{Garbage}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{91, 63, 41, 33, 73, 31}",
+      "input": "t"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{30, 29}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{30, 29}",
       "to": "{Garbage}",
       "input": "x"
     },
@@ -2913,36 +1274,41 @@
     {
       "from": "{48, 47}",
       "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
       "input": "d"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "m"
     },
     {
       "from": "{48, 47}",
       "to": "{50, 49}",
-      "input": "e"
-    },
-    {
-      "from": "{48, 47}",
-      "to": "{Garbage}",
-      "input": "g"
-    },
-    {
-      "from": "{48, 47}",
-      "to": "{Garbage}",
-      "input": "i"
-    },
-    {
-      "from": "{48, 47}",
-      "to": "{Garbage}",
-      "input": "l"
-    },
-    {
-      "from": "{48, 47}",
-      "to": "{Garbage}",
-      "input": "m"
-    },
-    {
-      "from": "{48, 47}",
-      "to": "{Garbage}",
       "input": "o"
     },
     {
@@ -2977,6 +1343,2166 @@
     },
     {
       "from": "{48, 47}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{56, 55}",
+      "input": "u"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{53, 54}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{87, 88}",
+      "input": "t"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{85, 86}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{91, 63, 61, 73}",
+      "input": "r"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{59, 60}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 63, 61, 73}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{30, 29}",
+      "input": "i"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{28, 27}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{70, 69}",
+      "input": "l"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{67, 68}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 71, 73}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{84, 83}",
+      "input": "l"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{82, 81}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{12, 11}",
+      "input": "e"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{10, 9}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{53, 54}",
+      "input": "e"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{51, 52}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{85, 86}",
+      "input": "a"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{84, 83}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{7, 8}",
+      "input": "u"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{5, 6}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{91, 63, 41, 23, 21, 33, 73}",
+      "input": "l"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{19, 20}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{57, 58}",
+      "input": "s"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{56, 55}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 63, 41, 13, 23, 33, 73}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{91, 89}",
+      "input": "e"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{87, 88}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 63, 41, 39, 73}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{79, 80}",
+      "input": "m"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{77, 78}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{38, 37}",
+      "input": "o"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{35, 36}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{5, 6}",
+      "input": "d"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{3, 4}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{77, 78}",
+      "input": "e"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{76, 75}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{46, 45}",
+      "input": "e"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{67, 68}",
+      "input": "o"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{44, 43, 66, 65}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{82, 81}",
+      "input": "p"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{79, 80}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{10, 9}",
+      "input": "s"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{7, 8}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{51, 52}",
+      "input": "v"
+    },
+    {
+      "from": "{50, 49}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 63, 41, 23, 21, 33, 73}",
+      "to": "{Garbage}",
+      "input": "x"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "a"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "b"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "d"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "e"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "g"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "i"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "l"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "m"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "o"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "p"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "r"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "s"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "t"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "u"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
+      "to": "{Garbage}",
+      "input": "v"
+    },
+    {
+      "from": "{91, 63, 41, 33, 73, 31}",
       "to": "{Garbage}",
       "input": "x"
     }

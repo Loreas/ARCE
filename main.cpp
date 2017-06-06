@@ -105,7 +105,7 @@ int main(unsigned int argc, char* argv[]){
 
     /*
     std::string test;
-    if(argc == 1) test = "rol";
+    if(argc == 1) test = "templatit";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
@@ -116,7 +116,7 @@ int main(unsigned int argc, char* argv[]){
     std::vector<std::string> commands = {test, arg1};
     std::cout << bot.checkCommand(commands[0]) << std::endl;
     std::vector<std::string> sug = bot.getFuzzy()->fuzzy(test);
-    bot.getFuzzy()->printAutomata();
+    //bot.getFuzzy()->printAutomata();
     for(std::string s : sug){
         std::cout << s << std::endl;
     }

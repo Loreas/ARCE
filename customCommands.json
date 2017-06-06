@@ -47,6 +47,14 @@
       "arguments": "(0+1+2+3+4+5+6+7+8+9)*",
       "language": "python3",
       "execute": "python3 ./Scripts/roll.py"
+    },
+    {
+      "name": "Ball",
+      "description": "Ask the magic 8-ball for wisdom!",
+      "command": "ball",
+      "arguments": "0",
+      "language": "bash",
+      "execute": "echo 'Trying to ball.'"
     }
   ]
 }
