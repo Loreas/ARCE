@@ -52,3 +52,10 @@
 14:15 - Jonathan Meyer: wacht ff
 14:15 - Sergio Fenoll: Wat is de aanpassing?
 14:15 - Jonathan Meyer: iedereen stil, testing going on
+14:21 - Jonathan Meyer: !log start
+14:21 - Jonathan Meyer: !log start
+14:21 - Willy Wapper: Alright, logging all messages.
+14:21 - Jonathan Meyer: ni veel sneller precies
+14:21 - Jonathan Meyer: integendeel eig
+14:21 - Jonathan Meyer: en ik heb een beetje pc lag
+14:21 - Sergio Fenoll: alright

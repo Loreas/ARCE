@@ -139,18 +139,6 @@ std::string Bot::executeCommand(std::vector<std::string>& command) {
     return "";
 }
 
-void Bot::runScript() {
-
-}
-
-void Bot::receiveMsg() {
-
-}
-
-void Bot::sendMsg() {
-
-}
-
 bool Bot::isEmpty(std::ifstream &file) {
     return file.peek() == std::ifstream::traits_type::eof();
 }

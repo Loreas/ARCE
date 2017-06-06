@@ -93,8 +93,9 @@ int main(unsigned int argc, char* argv[]){
     setupARCE(config_file, upToDate, output, cmd_file);
 
     if (output){
-        std::cout << "Starting up ARCE v1.0...\n" << "Files up to date: " << upToDate << std::endl;
-        std::cout << "Output enabled.\nReading commands from: " << cmd_file << std::endl;
+        std::cout << "Starting up ARCE v1.0...\n" << "Output enabled.\n"
+                  << "Files up to date: " << upToDate << std::endl
+                  << "Reading commands from: " << cmd_file << std::endl;
     }
 
     Bot bot;

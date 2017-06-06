@@ -99,6 +99,14 @@ class bot(fbchat.Client):
         self.authorname = author_name
         self.message = message
 
+        if message == "!exit":
+            self.stop_listening()
+            f = open("./link/link.txt", 'a')
+            f.write(message[1:])
+            f.close()
+            self.send(sys.argv[3], "System shutting down, goodbye!", False)
+            return
+
         print(">", author_name, ":", message)
         if message[0] == '!':
             f = open("./link/link.txt", 'a')
@@ -109,10 +117,6 @@ class bot(fbchat.Client):
 
         if(self.logging):
             self.startlogging(author_name, message)
-
-        if message == "!exit":
-            self.send(sys.argv[3], "System shutting down, goodbye!", False)
-            self.stop_listening()
 
 
     def do_one_listen(self, markAlive=True):

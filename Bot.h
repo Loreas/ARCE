@@ -66,12 +66,6 @@ public:
      */
     std::string executeCommand(std::vector<std::string>& command);
 
-    void runScript();
-
-    void receiveMsg();
-
-    void sendMsg();
-
     /**
      * @brief Checks if the file is empty.
      * @param ifstream file.
@@ -92,7 +86,6 @@ public:
      * @return vector of strings with the credentials
      */
     std::vector<std::string> parseCredentials();
-
 
     /**
      *  @brief The 'main loop' for the bot (will constantly check for messages and parse them
