@@ -5,6 +5,8 @@ import datetime
 import os.path
 from subprocess import call
 import urllib
+import requests
+
 
 
 class bot(fbchat.Client):
@@ -13,6 +15,8 @@ class bot(fbchat.Client):
         self.logging = logging
         self.message_done=message_done
         self.groupID = sys.argv[3]
+        self.message = ""
+        self.authorname =""
 
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
@@ -52,7 +56,8 @@ class bot(fbchat.Client):
     def on_message(self, mid, author_id, author_name, message, metadata):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
-
+        self.message = message
+        self.authorname = author_name
         author_name = self.getUserInfo(author_id)['name']
 
         print(">", author_name, ":", message)
@@ -66,11 +71,31 @@ class bot(fbchat.Client):
             self.startlogging(author_name, message)
 
         # Checkfile for updates
+
+
+
+
+    def do_one_listen(self, markAlive=True):
+        """Does one cycle of the listening loop.
+        This method is only useful if you want to control fbchat from an
+        external event loop."""
+        try:
+            if markAlive: self.ping(self.sticky)
+            try:
+                content = self._pullMessage(self.sticky, self.pool)
+                if content: self._parseMessage(content)
+            except requests.exceptions.RequestException as e:
+                pass
+        except KeyboardInterrupt:
+            self.listening = False
+        except requests.exceptions.Timeout:
+            pass
+        #check for udpdate in the file
         f = open("./link/linkToPython.txt")
         for line in f:
             if(line[:3] == "log"):
                 arg = line[4:-1]
-                self.log(arg, message, author_name)
+                self.log(arg, self.message, self.authorname)
                 print("Log", arg)
             elif(line[:7] == "adduser"):
                 arg = line[8:-1]
@@ -91,12 +116,10 @@ class bot(fbchat.Client):
         f.write("")
         f.close()
 
-        if message == "!exit":
+        if self.message == "!exit":
             self.send(sys.argv[3], "System shutting down, goodbye!", False)
             self.stop_listening()
-
-
-
+        
 
 
 username = sys.argv[1]
