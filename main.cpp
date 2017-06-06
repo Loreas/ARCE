@@ -102,6 +102,7 @@ int main(unsigned int argc, char* argv[]){
     parser.parseCommands(cmd_file, bot, upToDate, output);
     bot.setup(upToDate, output);
 
+    /*
     std::string test;
     if(argc == 1) test = "exit";
     else if(argc == 2){
@@ -118,8 +119,9 @@ int main(unsigned int argc, char* argv[]){
     for(std::string s : sug){
         std::cout << s << std::endl;
     }
+    */
 
-    //bot.run(output);
+    bot.run(output);
 
     if (output) std::cout << "Exiting ARCE." << std::flush;
 

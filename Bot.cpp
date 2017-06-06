@@ -89,8 +89,8 @@ void Bot::buildDFA(std::string regex, bool FAout) {
 
     // Use TFA algorithm implemented by S. Fenoll to optimise DFA
     DFA* dfa = new DFA;
-    tfa(dfaRaw, dfa);
-    //*dfa = dfaRaw;
+    //tfa(dfaRaw, dfa);
+    *dfa = dfaRaw;
 
     // Assign DFA to bot
     this->dfa = dfa;
@@ -195,7 +195,7 @@ void Bot::run(bool CMIoutput){
     while(go){
         file.open("link/link.txt");
         if(isEmpty(file)) {
-            std::this_thread::sleep_for(std::chrono::seconds(3));
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             file.close();
             continue;
         }
@@ -225,7 +225,7 @@ void Bot::run(bool CMIoutput){
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "Exit";
+                        output = "";
                         go = false;
                     }
                     else if (words[0] == "adduser") {

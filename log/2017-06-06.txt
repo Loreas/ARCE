@@ -38,3 +38,17 @@
 13:32 - Willy Wapper: Alright, logging all messages.
 13:32 - Loreas Clonen: Smooi
 13:33 - Loreas Clonen: !log stop
+14:15 - Loreas Clonen: !log start
+14:15 - Loreas Clonen: !log start
+14:15 - Willy Wapper: Alright, logging all messages.
+14:15 - Sergio Fenoll: !roll 20
+14:15 - Willy Wapper: You rolled 6!
+14:15 - Loreas Clonen: Nice
+14:15 - Sergio Fenoll: !ball Will we fail tomorrow?
+14:15 - Loreas Clonen: Das gewoon rap
+14:15 - Willy Wapper: Don't count on it
+14:15 - Sergio Fenoll: Nice
+14:15 - Loreas Clonen: Oh damn
+14:15 - Jonathan Meyer: wacht ff
+14:15 - Sergio Fenoll: Wat is de aanpassing?
+14:15 - Jonathan Meyer: iedereen stil, testing going on

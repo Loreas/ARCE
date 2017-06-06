@@ -2,7 +2,7 @@
 import fbchat
 import sys
 import datetime
-import os.path
+import os
 from subprocess import call
 import urllib
 import logging
@@ -23,6 +23,9 @@ class bot(fbchat.Client):
 
     def check_file(self, path):
         # check for udpdate in the file
+        while(os.stat(path).st_size == 0):
+            continue
+
         f = open(path)
         for line in f:
             content = line.split(' ', 1)
@@ -102,6 +105,7 @@ class bot(fbchat.Client):
             f.write(message[1:])
             f.write("\n")
             f.close()
+            self.check_file("./link/linkToPython.txt")
 
         if(self.logging):
             self.startlogging(author_name, message)
@@ -110,7 +114,6 @@ class bot(fbchat.Client):
             self.send(sys.argv[3], "System shutting down, goodbye!", False)
             self.stop_listening()
 
-        self.check_file("./link/linkToPython.txt")
 
     def do_one_listen(self, markAlive=True):
         """Does one cycle of the listening loop.
@@ -137,7 +140,6 @@ class bot(fbchat.Client):
         # Listen loop & checking for commands in file
         while self.listening:
             self.do_one_listen(markAlive)
-            self.check_file("./link/linkToPython.txt")
 
         self.stop_listening()
 
