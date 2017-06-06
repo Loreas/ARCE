@@ -5,9 +5,11 @@ import datetime
 import os.path
 from subprocess import call
 import urllib
-import requests
+import logging
 
 
+log = logging.getLogger("client")
+log.setLevel(logging.DEBUG)
 
 class bot(fbchat.Client):
     def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
@@ -70,56 +72,47 @@ class bot(fbchat.Client):
         if(self.logging):
             self.startlogging(author_name, message)
 
-        # Checkfile for updates
+    def listen(self, markAlive=True):
+        self.start_listening()
+
+        log.info("Listening...")
+        while self.listening:
+            self.do_one_listen(markAlive)
+            # check for udpdate in the file
+            f = open("./link/linkToPython.txt")
+            for line in f:
+                if (line[:3] == "log"):
+                    arg = line[4:-1]
+                    self.log(arg, self.message, self.authorname)
+                    print("Log", arg)
+                elif (line[:7] == "adduser"):
+                    arg = line[8:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.add_users_to_chat(self.groupID, userId)
+                    print("Adding user", arg)
+                elif (line[:10] == "removeuser"):
+                    arg = line[11:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.remove_user_from_chat(self.groupID, userId)
+                    print("Removing user", arg)
+                else:
+                    self.send(sys.argv[3], line, False)
+            f.close()
+
+            # clear file
+            f = open("./link/linkToPython.txt", 'w')
+            f.write("")
+            f.close()
+
+            if self.message == "!exit":
+                self.send(sys.argv[3], "System shutting down, goodbye!", False)
+                self.stop_listening()
+
+        self.stop_listening()
 
 
 
 
-    def do_one_listen(self, markAlive=True):
-        """Does one cycle of the listening loop.
-        This method is only useful if you want to control fbchat from an
-        external event loop."""
-        try:
-            if markAlive: self.ping(self.sticky)
-            try:
-                content = self._pullMessage(self.sticky, self.pool)
-                if content: self._parseMessage(content)
-            except requests.exceptions.RequestException as e:
-                pass
-        except KeyboardInterrupt:
-            self.listening = False
-        except requests.exceptions.Timeout:
-            pass
-        #check for udpdate in the file
-        f = open("./link/linkToPython.txt")
-        for line in f:
-            if(line[:3] == "log"):
-                arg = line[4:-1]
-                self.log(arg, self.message, self.authorname)
-                print("Log", arg)
-            elif(line[:7] == "adduser"):
-                arg = line[8:-1]
-                userId = self.getUsers(arg)[0]
-                self.add_users_to_chat(self.groupID, userId)
-                print("Adding user", arg)
-            elif(line[:10] == "removeuser"):
-                arg = line[11:-1]
-                userId = self.getUsers(arg)[0]
-                self.remove_user_from_chat(self.groupID, userId)
-                print("Removing user", arg)
-            else:
-                self.send(sys.argv[3], line, False)
-        f.close()
-
-        #clear file
-        f = open("./link/linkToPython.txt", 'w')
-        f.write("")
-        f.close()
-
-        if self.message == "!exit":
-            self.send(sys.argv[3], "System shutting down, goodbye!", False)
-            self.stop_listening()
-        
 
 
 username = sys.argv[1]
