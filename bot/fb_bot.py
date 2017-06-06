@@ -51,8 +51,6 @@ class bot(fbchat.Client):
 
 
 
-
-
     def on_message(self, mid, author_id, author_name, message, metadata):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
@@ -69,9 +67,6 @@ class bot(fbchat.Client):
 
         if(self.logging):
             self.startlogging(author_name, message)
-
-        # Checkfile for updates
-
 
 
 
