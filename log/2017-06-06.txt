@@ -1,0 +1,23 @@
+
+10:44 - Jonathan Meyer: ?
+10:44 - Willy Wapper: Alright, logging all messages.
+10:44 - Jonathan Meyer: nice
+10:44 - Jonathan Meyer: Oke
+10:44 - Jonathan Meyer: dikke stest
+10:45 - Jonathan Meyer: !log stopp
+10:45 - Jonathan Meyer: .
+10:45 - Willy Wapper: Logfile '../log/stopp.txt' doesn't exist.
+10:45 - Jonathan Meyer: !log stop
+10:45 - Jonathan Meyer: .
+10:45 - Jonathan Meyer: ?
+10:45 - Willy Wapper: Alright, logging all messages.
+10:45 - Jonathan Meyer: !adduser Timmy Chen
+10:45 - Jonathan Meyer: ?
+10:45 - Jonathan Meyer: .
+10:48 - Jonathan Meyer: !log 2017-06-06
+10:48 - Jonathan Meyer: .
+10:48 - Willy Wapper: Logfile '../log/2017-06-06.txt' doesn't exist.
+10:48 - Jonathan Meyer: !log 2017-06-05
+10:48 - Jonathan Meyer: .
+10:48 - Jonathan Meyer: ?
+10:48 - Willy Wapper: Logfile '../log/2017-06-05.txt' doesn't exist.

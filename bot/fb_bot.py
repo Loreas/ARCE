@@ -4,6 +4,12 @@ import sys
 import datetime
 import os.path
 from subprocess import call
+import urllib
+import logging
+
+
+log = logging.getLogger("client")
+log.setLevel(logging.DEBUG)
 
 class bot(fbchat.Client):
     def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
@@ -11,18 +17,20 @@ class bot(fbchat.Client):
         self.logging = logging
         self.message_done=message_done
         self.groupID = sys.argv[3]
+        self.message = ""
+        self.authorname =""
 
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()) + ".txt", "a")
+        new = open("log/" + str(c.date.today()), "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
         new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):
 
         print(arg)
-        logPath = "./log/" + arg + ".txt"
+        logPath = "./log/" + arg;
 
         if(arg == "start"):
             self.logging = True
@@ -33,9 +41,15 @@ class bot(fbchat.Client):
             self.send(groupID, "No longer keeping a log.", False)
         else:
             if(os.path.isfile(logPath)):
-                self.sendLocalImage(sys.argv[3], None, False, logPath)
+                #self.sendLocalImage(self.groupID, None, False, logPath)
+                logf = open(logPath, 'r')
+                content = logf.read()
+                pastebin_vars = {'api_dev_key':'57fe1369d02477a235057557cbeabaa1','api_option':'paste','api_paste_code': content}
+                response = urllib.urlopen('http://pastebin.com/api/api_post.php', urllib.urlencode(pastebin_vars))
+                url = response.read()
+                self.send(self.groupID, str(url), False)
             else:
-                self.send(groupID, ("Logfile '" + logPath + "' doesn't exist."), False)
+                self.send(self.groupID, ("Logfile '" + logPath + "' doesn't exist."), False)
 
 
 
@@ -44,9 +58,9 @@ class bot(fbchat.Client):
     def on_message(self, mid, author_id, author_name, message, metadata):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
-
-        if(author_name == None):
-            author_name = self.getUserInfo(author_id)['name']
+        self.message = message
+        self.authorname = author_name
+        author_name = self.getUserInfo(author_id)['name']
 
         print(">", author_name, ":", message)
         if message[0] == '!':
@@ -58,8 +72,39 @@ class bot(fbchat.Client):
         if(self.logging):
             self.startlogging(author_name, message)
 
+    def listen(self, markAlive=True):
+        self.start_listening()
 
+        log.info("Listening...")
+        while self.listening:
+            self.do_one_listen(markAlive)
+            # check for udpdate in the file
+            f = open("./link/linkToPython.txt")
+            for line in f:
+                if (line[:3] == "log"):
+                    arg = line[4:-1]
+                    self.log(arg, self.message, self.authorname)
+                    print("Log", arg)
+                elif (line[:7] == "adduser"):
+                    arg = line[8:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.add_users_to_chat(self.groupID, userId)
+                    print("Adding user", arg)
+                elif (line[:10] == "removeuser"):
+                    arg = line[11:-1]
+                    userId = self.getUsers(arg)[0]
+                    self.remove_user_from_chat(self.groupID, userId)
+                    print("Removing user", arg)
+                else:
+                    self.send(sys.argv[3], line, False)
+            f.close()
 
+            # clear file
+            f = open("./link/linkToPython.txt", 'w')
+            f.write("")
+            f.close()
+
+<<<<<<< HEAD
         # Checkfile for updates
         f = open("./link/linkToPython.txt")
         for line in f:
@@ -82,15 +127,14 @@ class bot(fbchat.Client):
             else:
                 self.send(sys.argv[3], line, False)
         f.close()
+=======
+            if self.message == "!exit":
+                self.send(sys.argv[3], "System shutting down, goodbye!", False)
+                self.stop_listening()
+>>>>>>> 44c4ac97bbfc3e1b24b0714ccea2278173d33cdd
 
-        #clear file
-        f = open("./link/linkToPython.txt", 'w')
-        f.write("")
-        f.close()
+        self.stop_listening()
 
-        if message == "!exit":
-            self.send(sys.argv[3], "System shutting down, goodbye!", False)
-            self.stop_listening()
 
 
 

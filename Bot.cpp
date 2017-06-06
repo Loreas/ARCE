@@ -43,6 +43,12 @@ void Bot::setup(bool upToDate, bool output){
     if(output) std::cout << "Setting up bot...\n";
 
     std::vector<std::string> cmdNames;
+    std::string cmdRegex;
+    for (auto p : commands) {
+        cmdNames.push_back(p.second->getCommand());
+        cmdRegex += p.second->getCommand() + "+";
+    }
+    cmdRegex.pop_back();
     if(upToDate){
         // Read the bot DFA from json
         Parser parser;
@@ -54,14 +60,6 @@ void Bot::setup(bool upToDate, bool output){
             cmdNames.push_back(p.second->getCommand());
     }
     else {
-        // Setting up DFA
-        std::string cmdRegex;
-        for (auto p : commands) {
-            cmdNames.push_back(p.second->getCommand());
-            cmdRegex += p.second->getCommand() + "+";
-        }
-        cmdRegex.pop_back();
-
         // Build complete DFA
         buildDFA(cmdRegex, output);
 
@@ -244,7 +242,7 @@ void Bot::run(bool CMIoutput){
                     }
                     else if (words[0] == "log"){
                         if (words.size() == 2)
-                            output = c;
+                            output = c + "\n";
                         else
                             output = "log command expects following arguments: log start/stop/date";
                     }

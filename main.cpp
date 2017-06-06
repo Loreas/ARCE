@@ -36,8 +36,8 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
     // Setting up directory and files
     system("mkdir ./.config");
     system("mkdir ./link");
-    system("touch ./link/link.txt");
-    system("touch ./link/linkToPython.txt");
+    std::ofstream("./link/link.txt", std::ofstream::out | std::ofstream::trunc);
+    std::ofstream("./link/linkToPython.txt", std::ofstream::out | std::ofstream::trunc);
 
     std::ifstream file(configFile);
     json config;
@@ -102,8 +102,9 @@ int main(unsigned int argc, char* argv[]){
     parser.parseCommands(cmd_file, bot, upToDate, output);
     bot.setup(upToDate, output);
 
+    /*
     std::string test;
-    if(argc == 1) test = "adduser";
+    if(argc == 1) test = "rol";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
@@ -113,43 +114,16 @@ int main(unsigned int argc, char* argv[]){
     std::string arg2 = "4";
     std::vector<std::string> commands = {test, arg1};
     std::cout << bot.checkCommand(commands[0]) << std::endl;
+    std::vector<std::string> sug = bot.getFuzzy()->fuzzy(test);
+    bot.getFuzzy()->printAutomata();
+    for(std::string s : sug){
+        std::cout << s << std::endl;
+    }
+     */
 
     bot.run(output);
 
-
-    /*
-    Fuzzy* fuzzy = bot.getFuzzy();
-    std::string term = "adduse";
-
-    for (std::string suggestie: fuzzy->fuzzy(term)) {
-        std::cout << suggestie << std::endl;
-    }
-    */
-
     if (output) std::cout << "Exiting ARCE." << std::flush;
 
-
-/*
-    DFA dfa1;
-    DFA dfa2;
-    ENFA enfa;
-    RegToeNFA regToeNFA;
-    std::string regex = "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*";
-    regToeNFA.ConvertReTo_eNfa(regex, enfa);
-    enfa.FAtoDot("enfa");
-    MSSC(enfa, dfa1);
-    tfa(dfa1, &dfa2);
-
-
-    dfa1.FAtoDot("dfa1");
-    dfa2.FAtoDot("dfa2");
-    dfa2.FAtoJSON("dfa2");
-
-    std::cout << dfa1.checkString("adduser") << std::endl;
-    std::cout << dfa2.checkString("adduser") << std::endl;
-
-    std::cout << dfa1.checkString("addussr") << std::endl;
-    std::cout << dfa2.checkString("addussr") << std::endl;
-*/
     return 0;
 }

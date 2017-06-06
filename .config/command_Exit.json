@@ -5,13 +5,13 @@
   "states": [
     {
       "name": "{0}",
-      "starting": false,
-      "accepting": false
+      "starting": true,
+      "accepting": true
     },
     {
       "name": "{1}",
-      "starting": true,
-      "accepting": true
+      "starting": false,
+      "accepting": false
     }
   ],
   "transitions": [

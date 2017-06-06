@@ -30,11 +30,11 @@ void Fuzzy::setupFuzzySearch(std::vector<std::string>& terms, bool upToDate) {
             DFA dfa;
             MSSC(lev, dfa);
             DFA smallDFA;
-            tfa(dfa, &smallDFA);
-            automata[term] = smallDFA;
+            //tfa(dfa, &smallDFA);
+            automata[term] = dfa;
             // Write to .config folder
             std::string filename = "./.config/" + term;
-            smallDFA.FAtoJSON(filename);
+            dfa.FAtoJSON(filename);
         }
     }
 }
