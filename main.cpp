@@ -103,13 +103,12 @@ int main(unsigned int argc, char* argv[]){
     bot.setup(upToDate, output);
 
     std::string test;
-    if(argc == 1) test = "addussr";
+    if(argc == 1) test = "exit";
     else if(argc == 2){
         ///// TEMP: Grab the first argument as testing regex
         test = argv[1];
     }
 
-    /*
     std::string arg1 = "5";
     std::string arg2 = "4";
     std::vector<std::string> commands = {test, arg1};
@@ -119,9 +118,8 @@ int main(unsigned int argc, char* argv[]){
     for(std::string s : sug){
         std::cout << s << std::endl;
     }
-     */
 
-    bot.run(output);
+    //bot.run(output);
 
     if (output) std::cout << "Exiting ARCE." << std::flush;
 
