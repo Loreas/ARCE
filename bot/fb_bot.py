@@ -4,6 +4,8 @@ import sys
 import datetime
 import os.path
 from subprocess import call
+import urllib
+
 
 class bot(fbchat.Client):
     def __init__(self, email, password, debug=True, info_log=True, user_agent=None, message_done=False, logging = False):
@@ -15,14 +17,14 @@ class bot(fbchat.Client):
     def startlogging(self, author_name, message):
         call(["mkdir", "log"])
         c = datetime
-        new = open("log/" + str(c.date.today()) + ".txt", "a")
+        new = open("log/" + str(c.date.today()), "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
         new.write(str("\n" + timestamp+ " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):
 
         print(arg)
-        logPath = "./log/" + arg + ".txt"
+        logPath = "./log/" + arg;
 
         if(arg == "start"):
             self.logging = True
@@ -33,9 +35,15 @@ class bot(fbchat.Client):
             self.send(groupID, "No longer keeping a log.", False)
         else:
             if(os.path.isfile(logPath)):
-                self.sendLocalImage(sys.argv[3], None, False, logPath)
+                #self.sendLocalImage(self.groupID, None, False, logPath)
+                logf = open(logPath, 'r')
+                content = logf.read()
+                pastebin_vars = {'api_dev_key':'57fe1369d02477a235057557cbeabaa1','api_option':'paste','api_paste_code': content}
+                response = urllib.urlopen('http://pastebin.com/api/api_post.php', urllib.urlencode(pastebin_vars))
+                url = response.read()
+                self.send(self.groupID, str(url), False)
             else:
-                self.send(groupID, ("Logfile '" + logPath + "' doesn't exist."), False)
+                self.send(self.groupID, ("Logfile '" + logPath + "' doesn't exist."), False)
 
 
 
@@ -45,8 +53,7 @@ class bot(fbchat.Client):
         self.markAsDelivered(author_id, mid)
         self.markAsRead(author_id)
 
-        if(author_name == None):
-            author_name = self.getUserInfo(author_id)['name']
+        author_name = self.getUserInfo(author_id)['name']
 
         print(">", author_name, ":", message)
         if message[0] == '!':
@@ -57,8 +64,6 @@ class bot(fbchat.Client):
 
         if(self.logging):
             self.startlogging(author_name, message)
-
-
 
         # Checkfile for updates
         f = open("./link/linkToPython.txt")
@@ -74,8 +79,8 @@ class bot(fbchat.Client):
                 print("Adding user", arg)
             elif(line[:10] == "removeuser"):
                 arg = line[11:-1]
-                userId = self.getUsers(arg)
-                self.remove_user_from_chat(groupID, userId)
+                userId = self.getUsers(arg)[0]
+                self.remove_user_from_chat(self.groupID, userId)
                 print("Removing user", arg)
             else:
                 self.send(sys.argv[3], line, False)
