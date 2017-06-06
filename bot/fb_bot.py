@@ -67,12 +67,14 @@ class bot(fbchat.Client):
                 arg = line[4:-1]
                 self.log(arg, message, author_name)
                 print("Log", arg)
-            elif(line[:7] == "adduser"):
+            elif(line[:7] == "adduser" and line[7] == " " and len(line) > 7):
+                message = "Adding user" + line[8:-1]
+                self.send(sys.argv[3], message, False)
                 arg = line[8:-1]
                 userId = self.getUsers(arg)[0]
                 self.add_users_to_chat(groupID, userId)
                 print("Adding user", arg)
-            elif(line[:10] == "removeuser"):
+            elif(line[:10] == "removeuser" and line[10] == " " and len(line) > 10):
                 arg = line[11:-1]
                 userId = self.getUsers(arg)
                 self.remove_user_from_chat(groupID, userId)

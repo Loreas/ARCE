@@ -7,130 +7,123 @@
     "d",
     "e",
     "f",
-    "g"
+    "g",
+    "h",
+    "i",
+    "j"
   ],
   "states": [
     {
       "name": "{0}",
-      "starting": true,
+      "starting": false,
       "accepting": false
     },
     {
       "name": "{1}",
-      "starting": false,
+      "starting": true,
       "accepting": true
-    },
-    {
-      "name": "{2}",
-      "starting": false,
-      "accepting": false
     }
   ],
   "transitions": [
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "a"
     },
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "b"
     },
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "c"
     },
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "d"
     },
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "e"
     },
     {
       "from": "{0}",
-      "to": "{1}",
+      "to": "{0}",
       "input": "f"
     },
     {
       "from": "{0}",
+      "to": "{0}",
+      "input": "g"
+    },
+    {
+      "from": "{0}",
+      "to": "{0}",
+      "input": "h"
+    },
+    {
+      "from": "{0}",
+      "to": "{0}",
+      "input": "i"
+    },
+    {
+      "from": "{0}",
+      "to": "{0}",
+      "input": "j"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "a"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "b"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "c"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "d"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "e"
+    },
+    {
+      "from": "{1}",
+      "to": "{1}",
+      "input": "f"
+    },
+    {
+      "from": "{1}",
       "to": "{1}",
       "input": "g"
     },
     {
       "from": "{1}",
       "to": "{1}",
-      "input": "a"
+      "input": "h"
     },
     {
       "from": "{1}",
       "to": "{1}",
-      "input": "b"
+      "input": "i"
     },
     {
       "from": "{1}",
       "to": "{1}",
-      "input": "c"
-    },
-    {
-      "from": "{1}",
-      "to": "{1}",
-      "input": "d"
-    },
-    {
-      "from": "{1}",
-      "to": "{1}",
-      "input": "e"
-    },
-    {
-      "from": "{1}",
-      "to": "{1}",
-      "input": "f"
-    },
-    {
-      "from": "{1}",
-      "to": "{1}",
-      "input": "g"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "a"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "b"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "c"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "d"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "e"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "f"
-    },
-    {
-      "from": "{2}",
-      "to": "{2}",
-      "input": "g"
+      "input": "j"
     }
   ]
 }

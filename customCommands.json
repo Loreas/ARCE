@@ -1,26 +1,22 @@
 {
   "commands": [
     {
-      "name": "Template",
-      "description": "A template description.",
-      "command": "template",
-      "arguments": "(a(0+1)*)+(b(2+3)*)",
-      "language": "python3",
-      "execute": "python3 ./Scripts/Template.py"
-    },
-    {
       "name": "Add User",
       "description": "Adds a user to the group chat",
       "command": "adduser",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
+      "arguments": "",
+      "amountArgs": "2",
+      "form": "adduser <name> <surname>",
       "language": "bash",
       "execute": "echo 'Trying to add user.'"
     },
     {
       "name": "Remove User",
       "description": "Adds a user to the group chat",
-      "command": "removeuser",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
+      "command": "rmuser",
+      "arguments": "(a+b+c+d+e+f+g)(a+b+c+d+e+f+g)*",
+      "amountArgs": "2",
+      "form": "adduser <name> <surname>",
       "language": "bash",
       "execute": "echo 'Trying to remove user.'"
     },
@@ -28,17 +24,41 @@
       "name": "Log",
       "description": "Adds functionality of logging the chat",
       "command": "log",
-      "arguments": "(a+b+c+d+e+f+g+h+i+j)*",
+      "arguments": "",
+      "amountArgs": "1",
+      "form": "log <start/stop/datum>",
       "language": "bash",
       "execute": "echo 'Trying to log.'"
+    },
+    {
+      "name": "Exit",
+      "description": "Shuts the bot down",
+      "command": "exit",
+      "arguments": "",
+      "amountArgs": "0",
+      "form": "exit",
+      "language": "bash",
+      "execute": "echo 'Trying to exit.'"
     },
     {
       "name": "Roll",
       "description": "Picks a random number between one and a given number",
       "command": "roll",
-      "arguments": "(0+1+2+3+4+5+6+7+8+9)*",
+      "arguments": "(1+2+3+4+5+6+7+8+9)(0+1+2+3+4+5+6+7+8+9)*",
+      "amountArgs": "1",
+      "form": "roll <value>",
       "language": "python3",
       "execute": "python3 ./Scripts/roll.py"
+    },
+    {
+      "name": "Ball",
+      "description": "Answers your most burning questions",
+      "command": "ball",
+      "arguments": "",
+      "amountArgs": "-1",
+      "form": "ball <question>",
+      "language": "python3",
+      "execute": "python3 ./Scripts/ball.py"     
     }
   ]
-}
+}	

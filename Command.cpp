@@ -6,17 +6,18 @@
 #include "Parser.h"
 
 
-Command::Command(std::string name, std::string desc, std::string cmd, std::string regex,
-                 std::string lang, std::string exec, std::string end, bool upToDate) {
+Command::Command(std::string name, std::string desc, std::string cmd, std::string regex, int ammountArgs,
+                 std::string commandForm, std::string lang, std::string exec, bool upToDate) {
     this->name = name;
     this->desc = desc;
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), ::tolower);
 
     command_regex = cmd;
     arg_regex = regex;
+    ammount_args = ammountArgs;
+    form = commandForm;
     language = lang;
     execute = exec;
-    end_message = "";
     buildDFA(upToDate);
 }
 
@@ -44,12 +45,16 @@ std::string Command::getArgRegex() const {
     return arg_regex;
 }
 
-std::string Command::getExecute() const {
-    return execute;
+int Command::getAmmountArgs() const  {
+    return ammount_args;
 }
 
-std::string Command::getEndMessage() const {
-    return end_message;
+std::string Command::getForm() const {
+    return form;
+}
+
+std::string Command::getExecute() const {
+    return execute;
 }
 
 std::string Command::getLanguage() const {

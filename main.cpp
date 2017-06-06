@@ -83,7 +83,6 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
 
 int main(unsigned int argc, char* argv[]){
 
-
     //// DEBUG & TESTING ZONE ////
     std::cout << std::flush;
     bool upToDate;
@@ -117,6 +116,7 @@ int main(unsigned int argc, char* argv[]){
 
     bot.run(output);
 
+
     /*
     Fuzzy* fuzzy = bot.getFuzzy();
     std::string term = "adduse";
@@ -129,30 +129,27 @@ int main(unsigned int argc, char* argv[]){
     if (output) std::cout << "Exiting ARCE." << std::flush;
 
 
-    /*
+/*
     DFA dfa1;
     DFA dfa2;
     ENFA enfa;
     RegToeNFA regToeNFA;
-    std::string regex = "(a+b+c+d+e+f+g+h+i+j)*";
+    std::string regex = "(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)(a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z)*";
     regToeNFA.ConvertReTo_eNfa(regex, enfa);
+    enfa.FAtoDot("enfa");
     MSSC(enfa, dfa1);
     tfa(dfa1, &dfa2);
 
+
     dfa1.FAtoDot("dfa1");
     dfa2.FAtoDot("dfa2");
+    dfa2.FAtoJSON("dfa2");
 
-    std::vector<std::string> woorden = {"roll", "rolt"};
-    std::vector<std::string> termen = {"roll", "rol", "rolt", "rolll"};
+    std::cout << dfa1.checkString("adduser") << std::endl;
+    std::cout << dfa2.checkString("adduser") << std::endl;
 
-    Fuzzy fuzzy;
-    fuzzy.setupFuzzySearch(woorden, false);
-
-    for (std::string term: termen) {
-        std::cout << term << ":" << std::endl;
-        for (std::string suggestie: fuzzy.fuzzy(term))
-            std::cout << "\t" << suggestie << std::endl;
-    }
-    */
+    std::cout << dfa1.checkString("addussr") << std::endl;
+    std::cout << dfa2.checkString("addussr") << std::endl;
+*/
     return 0;
 }
