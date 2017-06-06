@@ -8,7 +8,6 @@ import urllib
 import logging
 import requests
 
-
 log = logging.getLogger("client")
 log.setLevel(logging.DEBUG)
 
@@ -58,6 +57,7 @@ class bot(fbchat.Client):
         c = datetime
         new = open("./log/" + str(c.date.today()) +".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
+        new.write(str("\nLog on " + std(c.date.today())))
         new.write(str("\n" + timestamp + " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):

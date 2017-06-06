@@ -58,4 +58,9 @@
 14:21 - Jonathan Meyer: ni veel sneller precies
 14:21 - Jonathan Meyer: integendeel eig
 14:21 - Jonathan Meyer: en ik heb een beetje pc lag
-14:21 - Sergio Fenoll: alright
+14:21 - Sergio Fenoll: alrightStarted logging: 14:57
+14:57 - Jonathan Meyer: !log startStarted logging: 14:57
+14:57 - Jonathan Meyer: !log startStarted logging: 14:57
+14:57 - Willy Wapper: Alright, logging all messages.Started logging: 14:57
+14:57 - Jonathan Meyer: oke GStarted logging: 14:57
+14:57 - Jonathan Meyer: testje
