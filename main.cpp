@@ -83,7 +83,6 @@ void setupARCE(std::string configFile, bool& upToDate, bool& output, std::string
 
 int main(unsigned int argc, char* argv[]){
 
-    
     //// DEBUG & TESTING ZONE ////
     std::cout << std::flush;
     bool upToDate;
@@ -121,7 +120,6 @@ int main(unsigned int argc, char* argv[]){
         std::cout << s << std::endl;
     }
      */
-
 
     bot.run(output);
 

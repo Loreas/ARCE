@@ -1,71 +1,20 @@
 {
   "type": "DFA", 
   "alphabet": [
-    "a",
-    "b"
   ],
   "states": [
     {
-      "name": "{4, 2, 0}",
+      "name": "{0}",
       "starting": true,
-      "accepting": false
-    },
-    {
-      "name": "{5, 1}",
-      "starting": false,
       "accepting": true
     },
     {
-      "name": "{5, 3}",
-      "starting": false,
-      "accepting": true
-    },
-    {
-      "name": "{Garbage}",
+      "name": "{1}",
       "starting": false,
       "accepting": false
     }
   ],
   "transitions": [
-    {
-      "from": "{4, 2, 0}",
-      "to": "{5, 1}",
-      "input": "a"
-    },
-    {
-      "from": "{4, 2, 0}",
-      "to": "{5, 3}",
-      "input": "b"
-    },
-    {
-      "from": "{5, 1}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{5, 1}",
-      "to": "{Garbage}",
-      "input": "b"
-    },
-    {
-      "from": "{5, 3}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{5, 3}",
-      "to": "{Garbage}",
-      "input": "b"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "a"
-    },
-    {
-      "from": "{Garbage}",
-      "to": "{Garbage}",
-      "input": "b"
-    }
+
   ]
 }

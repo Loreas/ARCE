@@ -26,10 +26,13 @@ std::vector<std::string> Parser::parseCommands(std::string filename, Bot& bot, b
         std::string desc = command["description"];
         std::string cmd = command["command"];
         std::string arg = command["arguments"];
+        std::string args = command["amountArgs"];
+        int ammountArgs = std::stoi(args);
+        std::string form = command["form"];
         std::string lang = command["language"];
         std::string exec = command["execute"];
-        std::string end = "temp";
-        Command* c = new Command(name, desc, cmd, arg, lang, exec, end, upToDate);
+        Command* c = new Command(name, desc, cmd, arg, ammountArgs,
+                                 form, lang, exec, upToDate);
         bot.addCommand(c);
         names.push_back(name);
     }

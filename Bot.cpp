@@ -55,6 +55,9 @@ void Bot::setup(bool upToDate, bool output){
         DFA* dfa = new DFA;
         *dfa = parser.parseDFA("./.config/botDFA.json");
         this->dfa = dfa;
+
+        for (auto p : commands)
+            cmdNames.push_back(p.second->getCommand());
     }
     else {
         // Build complete DFA
@@ -101,24 +104,39 @@ bool Bot::checkCommand(std::string& command) const {
 
 std::string Bot::executeCommand(std::vector<std::string>& command) {
     Command* com = commands.at(command.at(0)); // The vector contains: {command, arg1, arg2...}
-    std::string arguments;
+    std::string arguments = "";
     bool errorFound = false;
+    int missingArguments = 0;
     std::string errorMessage = "";
 
-    for (int i = 1; i < command.size(); i++) {
-        if (!com->getDFA()->checkString(command[i])) {
-            errorMessage += "Argument \"" + command[i] + "\" is not of the right form.\n";
-            errorFound = true;
-        }
-        arguments += " " + command[i];
+    // Check if correct amount of arguments given
+    if (com->getAmmountArgs() == -1) {
     }
-
+    else if (command.size()-1 < com->getAmmountArgs()) {
+        errorMessage += "Command \"" + command[0] + "\" is missing " + std::to_string(std::abs((int)(com->getAmmountArgs() - command.size() - 1))) + " arguments\n";
+        errorMessage += com->getName() + " command has the following form: " + com->getForm() + "\n";
+        return errorMessage;
+    }
+    else if (command.size()-1 > com->getAmmountArgs()) {
+        errorMessage += "Command \"" + command[0] + "\" has " + std::to_string((int)(command.size() - 1 - com->getAmmountArgs())) + " to many arguments\n";
+        errorMessage += com->getName() + " command has the following form: " + com->getForm() + "\n";
+        return errorMessage;
+    }
+    else {
+        for (int i = 1; i <= com->getAmmountArgs(); i++) {
+            if (!com->getDFA()->checkString(command[i])) {
+                errorMessage +=
+                    "Argument " + std::to_string(i) + ": \"" + command[i] + "\" is not of the right form.\n";
+                errorFound = true;
+            }
+            arguments += " " + command[i];
+        }
+    }
     if (errorFound) return errorMessage;
 
     std::string exec = com->getExecute() + arguments;
     system(exec.c_str());
-    return com->getEndMessage();
-
+    return "";
 }
 
 void Bot::runScript() {
@@ -194,7 +212,7 @@ void Bot::run(bool CMIoutput){
                      words.push_back(word);
                  }
                  if(!checkCommand(words[0])) {
-                     std::vector<std::string> typos = fuzzy->fuzzy(c);
+                     std::vector<std::string> typos = fuzzy->fuzzy(words[0]);
                      if (typos.size() != 0) {
                          output = "Did you mean:\n";
                          for (auto typo : typos) {
@@ -207,7 +225,7 @@ void Bot::run(bool CMIoutput){
                  }
                  else {
                     if (words[0] == "exit"){
-                        output = "";
+                        output = "Exit";
                         go = false;
                     }
                     else if (words[0] == "adduser") {
@@ -229,9 +247,10 @@ void Bot::run(bool CMIoutput){
                             output = "log command expects following arguments: log start/stop/date";
                     }
                     else {
-                        output = executeCommand(words) + "\n";
+                        output = executeCommand(words);
                     }
                  }
+                 if (CMIoutput) std::cout << output;
                  std::ofstream link("link/linkToPython.txt", std::ofstream::app);
                  link << output;
                  link.close();
@@ -242,7 +261,12 @@ void Bot::run(bool CMIoutput){
             // Clear the file (overwrite with empty file)
             file.open("link/link.txt", std::ofstream::out | std::ofstream::trunc);
             file.close();
-        }
+    }
+
+    file.close();
+    // Clear the file (overwrite with empty file)
+    file.open("link/linkToPython.txt", std::ofstream::out | std::ofstream::trunc);
+    file.close();
 
     pclose(in);
     if (CMIoutput) std::cout << "Exiting main loop\n";

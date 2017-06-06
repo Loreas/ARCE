@@ -139,7 +139,10 @@ void FA::FAtoJSON(std::string filename) {
         }
 
     }
-    transition_string.pop_back(); transition_string.pop_back(); // Remove last ',' -kusjes, Jona
+    if (transition_string.size() > 1 ) {
+        transition_string.pop_back();
+        transition_string.pop_back(); // Remove last ', ' -kusjes, Jona
+    }
     j << transition_string << std::endl;
     j << "  ]" << std::endl;
 

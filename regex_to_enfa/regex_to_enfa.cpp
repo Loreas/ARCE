@@ -21,6 +21,9 @@ void RegToeNFA::ConvertReTo_eNfa(std::string& regex, ENFA& automaton) {
     std::tuple<bool, std::set<std::string>, std::string> alphabet = ValidityAndAlphabetRegex(regex);
 
     if (std::get<0>(alphabet)) {
+        if (regex == "" or regex == "ε")
+            regex = "/a";
+
         automaton.setAlphabet(std::get<1>(alphabet));
         automaton.setEpsilon(std::get<2>(alphabet));
         this->buildeNFA(regex, automaton);
