@@ -1,66 +1,87 @@
 
-12:36 - Jonathan Meyer: piemel
-12:36 - Willy Wapper: Alright, logging all messages.
-12:36 - Jonathan Meyer: beter da dit werkt
-12:36 - Jonathan Meyer: homoows
-12:37 - Jonathan Meyer: !log stop
-12:37 - Jonathan Meyer: l
-12:39 - Jonathan Meyer: kaka
-12:39 - Willy Wapper: Alright, logging all messages.
-12:39 - Jonathan Meyer: !log stop
-12:39 - Jonathan Meyer: kaka
-12:39 - Jonathan Meyer: ok
-12:41 - Jonathan Meyer: lol
-12:41 - Willy Wapper: Alright, logging all messages.
-12:41 - Jonathan Meyer: kaka
-12:41 - Jonathan Meyer: uw mama
-12:41 - Jonathan Meyer: is dik
-12:41 - Jonathan Meyer: !log stop
-13:02 - Jonathan Meyer: waarheid
-13:02 - Willy Wapper: Alright, logging all messages.
-13:02 - Jonathan Meyer: testing
-13:02 - Jonathan Meyer: bl
-13:02 - Jonathan Meyer: a
-13:02 - Jonathan Meyer: !lo stop
-13:02 - Jonathan Meyer: lol
-13:02 - Jonathan Meyer: log
-13:02 - Jonathan Meyer: lok
-13:02 - Jonathan Meyer: kok
-13:02 - Jonathan Meyer: kdkdkd
-13:02 - Willy Wapper: Did you mean:
-13:02 - Willy Wapper: log
-13:02 - Jonathan Meyer: !log stop
-13:07 - Jonathan Meyer: alles oke
-13:07 - Willy Wapper: Alright, logging all messages.
-13:08 - Jonathan Meyer: !log stop
-13:08 - Jonathan Meyer: alles ok
-13:32 - Loreas Clonen: !log start
-13:32 - Willy Wapper: Alright, logging all messages.
-13:32 - Loreas Clonen: Smooi
-13:33 - Loreas Clonen: !log stop
-14:15 - Loreas Clonen: !log start
-14:15 - Loreas Clonen: !log start
-14:15 - Willy Wapper: Alright, logging all messages.
-14:15 - Sergio Fenoll: !roll 20
-14:15 - Willy Wapper: You rolled 6!
-14:15 - Loreas Clonen: Nice
-14:15 - Sergio Fenoll: !ball Will we fail tomorrow?
-14:15 - Loreas Clonen: Das gewoon rap
-14:15 - Willy Wapper: Don't count on it
-14:15 - Sergio Fenoll: Nice
-14:15 - Loreas Clonen: Oh damn
-14:15 - Jonathan Meyer: wacht ff
-14:15 - Sergio Fenoll: Wat is de aanpassing?
-14:15 - Jonathan Meyer: iedereen stil, testing going on
-14:21 - Jonathan Meyer: !log start
-14:21 - Jonathan Meyer: !log start
-14:21 - Willy Wapper: Alright, logging all messages.
-14:21 - Jonathan Meyer: ni veel sneller precies
-14:21 - Jonathan Meyer: integendeel eig
-14:21 - Jonathan Meyer: en ik heb een beetje pc lag
-14:21 - Sergio Fenoll: alrightStarted logging: 14:57
-14:57 - Jonathan Meyer: !log startStarted logging: 14:57
-14:57 - Jonathan Meyer: !log startStarted logging: 14:57
-14:57 - Willy Wapper: Alright, logging all messages.Started logging: 14:57
-14:57 - Jonathan Meyer: oke GStarted logging: 14:57
-14:57 - Jonathan Meyer: testje
+Log on 2017-06-06
+21:44 - Jonathan Meyer: !log start
+Log on 2017-06-06
+21:44 - Jonathan Meyer: !log start
+Log on 2017-06-06
+21:44 - Willy Wapper: Alright, logging all messages.
+Log on 2017-06-06
+21:44 - Jonathan Meyer: ewa nice a matti
+Log on 2017-06-06
+21:44 - Jonathan Meyer: @Willy Wapper je bent goeie gast
+Log on 2017-06-06
+21:48 - Jonathan Meyer: En Sergio, de code is pretty much complete?
+Log on 2017-06-06
+21:50 - Sergio Fenoll: yup
+Log on 2017-06-06
+21:50 - Sergio Fenoll: ik ga pushen
+Log on 2017-06-06
+21:51 - Sergio Fenoll: it is pushed
+Log on 2017-06-06
+21:59 - Sergio Fenoll: jona, ik ben de foto op slide 2 kwijt, ik stuur de ppt door en gij rate die/voegt defoto weer toe
+Log on 2017-06-06
+22:03 - Willy Wapper: ARCE-bot at your service!
+Log on 2017-06-06
+22:03 - Sergio Fenoll: @Jonathan Meyer just do you dont forget
+Log on 2017-06-06
+22:03 - Sergio Fenoll: !ball ayy u wanna ball
+Log on 2017-06-06
+22:03 - Willy Wapper: Better not tell you now
+Log on 2017-06-06
+22:03 - Willy Wapper: Better not tell you now
+Log on 2017-06-06
+22:03 - Willy Wapper: It is decidedly so
+Log on 2017-06-06
+22:03 - Willy Wapper: It is decidedly so
+Log on 2017-06-06
+22:03 - Sergio Fenoll: uh
+Log on 2017-06-06
+22:03 - Sergio Fenoll: !ball
+Log on 2017-06-06
+22:03 - Willy Wapper: Signs point to yes
+Log on 2017-06-06
+22:03 - Willy Wapper: Signs point to yes
+Log on 2017-06-06
+22:03 - Willy Wapper: My sources say no
+Log on 2017-06-06
+22:03 - Willy Wapper: My sources say no
+Log on 2017-06-06
+22:03 - Jonathan Meyer: mooi
+Log on 2017-06-06
+22:03 - Jonathan Meyer: mooi
+Log on 2017-06-06
+22:03 - Jonathan Meyer: mooi
+Log on 2017-06-06
+22:03 - Dawid Miroyan: !roll 20
+Log on 2017-06-06
+22:03 - Willy Wapper: You rolled 13!
+Log on 2017-06-06
+22:03 - Willy Wapper: You rolled 13!
+Log on 2017-06-06
+22:03 - Willy Wapper: You rolled 12!
+Log on 2017-06-06
+22:03 - Willy Wapper: You rolled 12!
+Log on 2017-06-06
+22:03 - Sergio Fenoll: ik neem aan dat er een tweede bot op mijn systeem runt
+Log on 2017-06-06
+22:04 - Jonathan Meyer: lol of meerdere
+Log on 2017-06-06
+22:04 - Sergio Fenoll: !roll 20
+Log on 2017-06-06
+22:04 - Willy Wapper: You rolled 10!
+Log on 2017-06-06
+22:04 - Sergio Fenoll: heb er eentje gekillt :P
+Log on 2017-06-06
+22:05 - Sergio Fenoll: !ball
+Log on 2017-06-06
+22:05 - Willy Wapper: Very doubtful
+Log on 2017-06-06
+22:19 - Loreas Clonen: !log start
+Log on 2017-06-06
+22:19 - Loreas Clonen: !log start
+Log on 2017-06-06
+22:19 - Willy Wapper: Alright, logging all messages.
+Log on 2017-06-06
+22:19 - Jonathan Meyer: om te kutten me onze eigen bot
+Log on 2017-06-06
+22:19 - Loreas Clonen: memorabele momenten bijhoudne

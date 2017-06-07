@@ -33,15 +33,17 @@ class bot(fbchat.Client):
                 self.log(arg, self.message, self.authorname)
                 print("Log", arg)
             elif (content[0] == "adduser"):
-                arg = content[1][:-1]
-                userId = self.getUsers(arg)[0]
-                self.add_users_to_chat(self.groupID, userId)
-                print("Adding user", arg)
+                # arg = content[1][:-1]
+                # userId = self.getUsers(arg)[0]
+                # self.add_users_to_chat(self.groupID, userId)
+                # print("Adding user", arg)
+                self.send(self.groupID, "API in use is deprecated. Cannot add users",False)
             elif (content[0] == "removeuser"):
-                arg = content[1][:-1]
-                userId = self.getUsers(arg)[0]
-                self.remove_user_from_chat(self.groupID, userId)
-                print("Removing user", arg)
+                # arg = content[1][:-1]
+                # userId = self.getUsers(arg)[0]
+                # self.remove_user_from_chat(self.groupID, userId)
+                # print("Removing user", arg)
+                self.send(self.groupID, "API in use is deprecated. Cannot remove users",False)
             else:
                 self.send(self.groupID, line, False)
         f.close()
@@ -57,7 +59,7 @@ class bot(fbchat.Client):
         c = datetime
         new = open("./log/" + str(c.date.today()) +".txt", "a")
         timestamp = datetime.datetime.now().time().strftime("%H:%M")
-        new.write(str("\nLog on " + std(c.date.today())))
+        new.write(str("\nLog on " + str(c.date.today())))
         new.write(str("\n" + timestamp + " - " + author_name + ": " + message))
 
     def log(self, arg,  message, author_name):
@@ -76,6 +78,8 @@ class bot(fbchat.Client):
             out = ""
             for s in loglist:
                 out += s[:-4] + "\n"
+            if len(loglist) == 0:
+                out = "No logs yet..."
             self.send(self.groupID, out, False)
         else:
             if(os.path.isfile(logPath)):

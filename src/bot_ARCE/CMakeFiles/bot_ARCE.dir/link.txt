@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbot_ARCE.a  CMakeFiles/bot_ARCE.dir/Bot.cpp.o CMakeFiles/bot_ARCE.dir/Command.cpp.o CMakeFiles/bot_ARCE.dir/Parser.cpp.o
+/usr/bin/ranlib libbot_ARCE.a

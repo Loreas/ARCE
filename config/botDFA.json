@@ -1,0 +1,1704 @@
+{
+  "type": "DFA", 
+  "alphabet": [
+    "a",
+    "b",
+    "d",
+    "e",
+    "g",
+    "i",
+    "l",
+    "m",
+    "n",
+    "o",
+    "r",
+    "s",
+    "t",
+    "u",
+    "x"
+  ],
+  "states": [
+    {
+      "name": "26, 28",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "22",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "25",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "21",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "20",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "7",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "19",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "9",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "17",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "8",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "15, 24",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "23",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "30",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "29",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "16, 27",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "0",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "14, 3",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "31, 32",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "10, 11, 12, 13, 18, 2, 6",
+      "starting": false,
+      "accepting": true
+    },
+    {
+      "name": "4, 5",
+      "starting": false,
+      "accepting": false
+    },
+    {
+      "name": "1",
+      "starting": true,
+      "accepting": false
+    }
+  ],
+  "transitions": [
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "26, 28",
+      "to": "14, 3",
+      "input": "s"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "26, 28",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "22",
+      "to": "10, 11, 12, 13, 18, 2, 6",
+      "input": "g"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "22",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "25",
+      "to": "22",
+      "input": "o"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "25",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "21",
+      "to": "17",
+      "input": "i"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "21",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "20",
+      "to": "10, 11, 12, 13, 18, 2, 6",
+      "input": "e"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "20",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "7",
+      "to": "23",
+      "input": "o"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "7",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "19",
+      "to": "30",
+      "input": "d"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "19",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "9",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "17",
+      "to": "10, 11, 12, 13, 18, 2, 6",
+      "input": "t"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "17",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "8",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "8",
+      "to": "21",
+      "input": "x"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "15, 24",
+      "to": "26, 28",
+      "input": "u"
+    },
+    {
+      "from": "15, 24",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "23",
+      "to": "20",
+      "input": "t"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "23",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "30",
+      "to": "15, 24",
+      "input": "d"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "30",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "29",
+      "to": "15, 24",
+      "input": "m"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "29",
+      "to": "31, 32",
+      "input": "o"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "29",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "16, 27",
+      "to": "10, 11, 12, 13, 18, 2, 6",
+      "input": "l"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "16, 27",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "0",
+      "to": "31, 32",
+      "input": "a"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "0",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "14, 3",
+      "to": "4, 5",
+      "input": "e"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "14, 3",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "31, 32",
+      "to": "16, 27",
+      "input": "l"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "31, 32",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "r"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "10, 11, 12, 13, 18, 2, 6",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "a"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "b"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "e"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "l"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "n"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "4, 5",
+      "to": "10, 11, 12, 13, 18, 2, 6",
+      "input": "r"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "4, 5",
+      "to": "9",
+      "input": "x"
+    },
+    {
+      "from": "1",
+      "to": "19",
+      "input": "a"
+    },
+    {
+      "from": "1",
+      "to": "0",
+      "input": "b"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "d"
+    },
+    {
+      "from": "1",
+      "to": "8",
+      "input": "e"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "g"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "i"
+    },
+    {
+      "from": "1",
+      "to": "25",
+      "input": "l"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "m"
+    },
+    {
+      "from": "1",
+      "to": "7",
+      "input": "n"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "o"
+    },
+    {
+      "from": "1",
+      "to": "29",
+      "input": "r"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "s"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "t"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "u"
+    },
+    {
+      "from": "1",
+      "to": "9",
+      "input": "x"
+    }
+  ]
+}

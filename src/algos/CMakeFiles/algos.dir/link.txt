@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalgos.a  CMakeFiles/algos.dir/Levenshtein.cpp.o CMakeFiles/algos.dir/MSSC.cpp.o CMakeFiles/algos.dir/regex_to_enfa.cpp.o CMakeFiles/algos.dir/tfa.cpp.o
+/usr/bin/ranlib libalgos.a

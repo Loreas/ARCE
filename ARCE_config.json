@@ -1,7 +1,7 @@
 {
-    "commands_file": "./customCommands.json",
+    "commands_file": "./commands.json",
     "force_update": false,
     "ignore_update": false,
-    "last_updated": 1496759350,
+    "last_updated": 1496776445,
     "output": true
 }

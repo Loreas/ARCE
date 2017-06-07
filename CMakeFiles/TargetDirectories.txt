@@ -1,0 +1,12 @@
+/home/sergio/Projects/C++/ARCE/CMakeFiles/rebuild_cache.dir
+/home/sergio/Projects/C++/ARCE/CMakeFiles/ARCE.dir
+/home/sergio/Projects/C++/ARCE/CMakeFiles/edit_cache.dir
+/home/sergio/Projects/C++/ARCE/src/algos/CMakeFiles/rebuild_cache.dir
+/home/sergio/Projects/C++/ARCE/src/algos/CMakeFiles/algos.dir
+/home/sergio/Projects/C++/ARCE/src/algos/CMakeFiles/edit_cache.dir
+/home/sergio/Projects/C++/ARCE/src/automata/CMakeFiles/rebuild_cache.dir
+/home/sergio/Projects/C++/ARCE/src/automata/CMakeFiles/automata.dir
+/home/sergio/Projects/C++/ARCE/src/automata/CMakeFiles/edit_cache.dir
+/home/sergio/Projects/C++/ARCE/src/bot_ARCE/CMakeFiles/rebuild_cache.dir
+/home/sergio/Projects/C++/ARCE/src/bot_ARCE/CMakeFiles/bot_ARCE.dir
+/home/sergio/Projects/C++/ARCE/src/bot_ARCE/CMakeFiles/edit_cache.dir

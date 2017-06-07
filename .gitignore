@@ -1,7 +1,8 @@
+.git/
 .idea/
 cmake-build-debug/
-CMakeList.txt
-*.dot
 ARCE
-bot/fbchat/__pycache_
-bot/fbchat/*.pyc
+bot/fbchat/__pycache_/
+*.pyc
+CMakeCache.txt
+compile_commands.json
