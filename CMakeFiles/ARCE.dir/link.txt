@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/ARCE.dir/src/main.cpp.o  -o ARCE src/algos/libalgos.a src/automata/libautomata.a src/bot_ARCE/libbot_ARCE.a src/algos/libalgos.a src/bot_ARCE/libbot_ARCE.a src/automata/libautomata.a 
