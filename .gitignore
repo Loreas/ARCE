@@ -4,5 +4,8 @@ cmake-build-debug/
 ARCE
 bot/fbchat/__pycache_/
 *.pyc
+*.o
+*.a
+CMakeFiles/
 CMakeCache.txt
 compile_commands.json
